@@ -10,6 +10,13 @@ html {
     padding: 10px;
 }
 
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Initial style */
 .initial-view {
     width: 100%;
     text-align: center;
