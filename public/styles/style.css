@@ -1,3 +1,20 @@
 html {
+    font-family: Papyrus, fantasy;
+    box-sizing: border-box;
     background-image: linear-gradient(90deg, lightgreen, lightblue);
+}
+
+.container {
+    padding: 10px;
+}
+
+.initial-view {
+    width: 100%;
+    text-align: center;
+}
+
+.initial-add {
+    font-size: 30vw;
+    font-weight: bold;
+    text-decoration: none;
 }
