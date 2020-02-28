@@ -1,7 +1,9 @@
 html {
     font-family: Papyrus, fantasy;
     box-sizing: border-box;
-    background-image: linear-gradient(90deg, lightgreen, lightblue);
+    background-image: linear-gradient(to top left, rgba(144, 238, 149, 0.705), rgba(255, 251, 0, 0.637));
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 .container {
