@@ -6,9 +6,9 @@ creatInitialListLink.addEventListener('click', (e) => {
     let title = getListTitle();
     localStorage.setItem('initialListTitle', title);
 
-    let container = document.querySelector('.container');
-    let initialView = document.querySelector('.initial-view');
-    container.removeChild(initialView);
+    // let container = document.querySelector('.container');
+    // let initialView = document.querySelector('.initial-view');
+    // container.removeChild(initialView);
 
     window.location.href = '/lists';
 });
