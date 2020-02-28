@@ -8,7 +8,11 @@ app.use(engine);
 app.set('views', `${__dirname}/views`);
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('initial');
+});
+
+app.get('/lists', (req, res) => {
+    res.render('lists');
 });
 
 app.listen(8000, () => {
