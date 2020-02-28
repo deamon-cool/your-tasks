@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo list</title>
+@layout('layouts.layout')
 
-    <link rel="stylesheet" href="/styles/style.css">
+@section('content')
 
-</head>
-<body>
-    <h1>Hi Damian :)</h1>
-    <p>You don't expected that it will be so fast :)</p>
-</body>
-</html>
+<div class="initial-view">
+    <a class="initial-add" href="">+</a>
+</div>
+
+@endsection
+
+@section('scripts')
+
+<script src="/scritps/index.js"></script>
+
+@endsection
