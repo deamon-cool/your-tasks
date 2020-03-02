@@ -21,6 +21,7 @@ html {
 }
 
 /* Initial style */
+
 .initial-view {
     width: 100%;
     text-align: center;
@@ -30,4 +31,26 @@ html {
     font-size: 30vw;
     font-weight: bold;
     text-decoration: none;
+}
+
+/* Lists style */
+
+.list-container {
+    float: left;
+    width: 47.9999%;
+    padding: 5px;
+}
+
+.list-card {
+    width: 100%;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px gray;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.list-card:hover {
+    box-shadow: 20px 20px 10px gray;
+    transition: 0.2s;
+    z-index: 2;
 }
