@@ -8,11 +8,19 @@ app.use(engine);
 app.set('views', `${__dirname}/views`);
 
 app.get('/', (req, res) => {
-    res.render('initial');
+    res.render('login');
 });
 
-app.get('/lists', (req, res) => {
-    res.render('lists');
+app.get('/register', (req, res) => {
+    res.render('register');
+});
+
+app.get('/main', (req, res) => {
+    res.render('main');
+});
+
+app.get('/progress', (req, res) => {
+    res.render('progress');
 });
 
 app.listen(8000, () => {
