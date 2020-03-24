@@ -1,7 +1,7 @@
 header {
     position: relative;
-    background-color: var(--main-blue-color);
-    box-shadow: 0 5px 6px var(--main-light-blue-color);
+    background-color: var(--general-blue-color);
+    box-shadow: 0 5px 6px var(--general-light-blue-color);
     padding: 20px;
     margin: 0;
 }
@@ -18,20 +18,20 @@ header button {
     background-color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: var(--main-radius);
+    border-radius: var(--general-radius);
     cursor: pointer;
 }
 
 header i {
-    color: var(--main-blue-color);
+    color: var(--general-blue-color);
 }
 
 header button:hover {
-    background-color: var(--main-lighter-blue-color);
+    background-color: var(--general-lighter-blue-color);
 }
 
 header button:hover i {
-    color: var(--main-blue-color);
+    color: var(--general-blue-color);
 }
 
 header button:focus {
@@ -39,11 +39,11 @@ header button:focus {
 }
 
 header button:active {
-    background-color: var(--main-light-blue-color);
+    background-color: var(--general-light-blue-color);
 }
 
 header button:active i {
-    color: var(--main-lighter-blue-color);
+    color: var(--general-lighter-blue-color);
 }
 
 nav {
@@ -52,7 +52,8 @@ nav {
     right: 0;
     background-color: white;
     padding: 20px;
-    border-radius: var(--main-radius);
+    border-radius: var(--general-radius);
+    /* transform: translateY(-100%); */
 }
 
 nav ul {
@@ -62,11 +63,11 @@ nav ul {
 }
 
 nav ul li {
-    border-bottom: 2px solid var(--main-lighter-blue-color);
+    border-bottom: 2px solid var(--general-lighter-blue-color);
 }
 
 nav ul li:first-of-type {
-    border-top: 2px solid var(--main-lighter-blue-color);
+    border-top: 2px solid var(--general-lighter-blue-color);
 }
 
 nav ul li a {

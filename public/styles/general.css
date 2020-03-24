@@ -5,11 +5,11 @@
 
 /* Global variable */
 :root {
-    --main-blue-color: rgb(59,89,152);
-    --main-light-blue-color: rgb(139,157,195);
-    --main-lighter-blue-color: rgb(223,227,238);
-    --main-light-color: rgb(247,247,247);
-    --main-radius: 10px;
+    --general-blue-color: rgb(59,89,152);
+    --general-light-blue-color: rgb(139,157,195);
+    --general-lighter-blue-color: rgb(223,227,238);
+    --general-light-color: rgb(247,247,247);
+    --general-radius: 10px;
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: var(--main-light-color);
+    background-color: var(--general-light-color);
     font-family: 'Lato', sans-serif;
     padding: 0;
     margin: 0;
