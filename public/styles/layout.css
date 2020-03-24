@@ -51,6 +51,7 @@ header button:active i {
 /* Navigation list */
 
 nav {
+    display: none;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -58,7 +59,12 @@ nav {
     box-shadow: 0 5px 6px var(--general-light-blue-color);
     padding: 20px;
     border-radius: var(--general-radius);
-    /* transform: translateY(-100%); */
+    animation: shownav;
+    animation-duration: 1s;
+}
+
+nav.show-nav {
+    display: block;
 }
 
 nav ul {
@@ -90,5 +96,15 @@ nav ul li a {
 
 nav ul li a i {
     padding-right: 10px;
+}
+
+@keyframes shownav {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
