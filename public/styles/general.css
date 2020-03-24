@@ -9,6 +9,7 @@
     --main-light-blue-color: rgb(139,157,195);
     --main-lighter-blue-color: rgb(223,227,238);
     --main-light-color: rgb(247,247,247);
+    --main-radius: 10px;
 }
 
 * {
