@@ -75,6 +75,10 @@ nav ul li:first-of-type {
     border-top: 2px solid var(--general-lighter-blue-color);
 }
 
+nav ul li:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
 nav ul li a {
     display: block;
     color: var(--general-blue-color);
