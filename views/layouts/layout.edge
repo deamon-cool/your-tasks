@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo App</title>
+    <title>Todo List</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/layout.css">
 
     @!section('styles')
 
@@ -17,9 +18,18 @@
     {{--  here has to be navbar, title, and nav button with menu list, logout etc. --}}
     {{--  @!section('container')  --}}
 
-    <nav>
+    <header>
+        <h1>Todo List, Hello Damian :)</h1>
+        <button id="toggle" class="toggle">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+    </header>
 
-    </nav>
+
+
+    <div class="container">
+
+    </div>
 
     @!section('scripts')
 
