@@ -1,7 +1,15 @@
-
 /* General style for all page */
 
+/* Fonts from google fonts */
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/* Global variable */
+:root {
+    --main-blue-color: rgb(59,89,152);
+    --main-light-blue-color: rgb(139,157,195);
+    --main-lighter-blue-color: rgb(223,227,238);
+    --main-light-color: rgb(247,247,247);
+}
 
 * {
     box-sizing: border-box;
