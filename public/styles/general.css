@@ -8,8 +8,8 @@
 }
 
 body {
+    background-color: rgba(0,0,0,0.01);
     font-family: 'Lato', sans-serif;
-    color: red;
     padding: 0;
     margin: 0;
 }
