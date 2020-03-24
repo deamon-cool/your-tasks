@@ -12,9 +12,36 @@ header h1 {
 }
 
 header button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
     background-color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 header i {
     color: var(--main-blue-color);
+}
+
+header button:hover {
+    background-color: var(--main-lighter-blue-color);
+}
+
+header button:hover i {
+    color: var(--main-blue-color);
+}
+
+header button:focus {
+    outline: none;
+}
+
+header button:active {
+    background-color: var(--main-light-blue-color);
+}
+
+header button:active i {
+    color: var(--main-lighter-blue-color);
 }
