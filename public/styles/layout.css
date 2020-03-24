@@ -18,7 +18,7 @@ header button {
     background-color: white;
     padding: 10px 15px;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--main-radius);
     cursor: pointer;
 }
 
@@ -45,3 +45,35 @@ header button:active {
 header button:active i {
     color: var(--main-lighter-blue-color);
 }
+
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--main-radius);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    border-bottom: 2px solid var(--main-lighter-blue-color);
+}
+
+nav ul li:first-of-type {
+    border-top: 2px solid var(--main-lighter-blue-color);
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
