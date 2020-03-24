@@ -1,3 +1,5 @@
+/* Main header */
+
 header {
     position: relative;
     background-color: var(--general-blue-color);
@@ -46,11 +48,14 @@ header button:active i {
     color: var(--general-lighter-blue-color);
 }
 
+/* Navigation list */
+
 nav {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 15px;
     background-color: white;
+    box-shadow: 0 5px 6px var(--general-light-blue-color);
     padding: 20px;
     border-radius: var(--general-radius);
     /* transform: translateY(-100%); */
@@ -72,9 +77,14 @@ nav ul li:first-of-type {
 
 nav ul li a {
     display: block;
+    color: var(--general-blue-color);
     text-decoration: none;
     width: 100%;
     height: 100%;
     padding: 20px;
+}
+
+nav ul li a i {
+    padding-right: 10px;
 }
 
