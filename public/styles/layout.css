@@ -60,7 +60,7 @@ nav {
     padding: 20px;
     border-radius: var(--general-radius);
     animation: shownav;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
 }
 
 nav.show-nav {
@@ -100,11 +100,11 @@ nav ul li a i {
 
 @keyframes shownav {
     from {
-        transform: translateY(-100%);
+        opacity: 0;
     }
 
     to {
-        transform: translateY(0);
+        opacity: 1;
     }
 }
 
