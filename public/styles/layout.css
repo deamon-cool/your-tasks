@@ -108,3 +108,7 @@ nav#nav-layout ul li a i {
     }
 }
 
+section#section-layout {
+    display: flex;
+    flex-direction: row;
+}
