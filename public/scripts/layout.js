@@ -1,12 +1,13 @@
-let toggle = document.getElementById('toggle');
+let showNavButton = document.getElementById('show-nav-button');
 let nav = document.querySelector('nav');
 
-toggle.addEventListener('click', () => {
-    nav.classList.toggle('show-nav');
+showNavButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    nav.classList.add('show-nav');
 });
 
-window.addEventListener('click', (e) => {
-    if (e.target !== toggle) {
+nav.addEventListener('mouseleave', () => {
+    if (nav.className === 'show-nav') {
         nav.classList.remove('show-nav');
     }
 });
