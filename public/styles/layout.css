@@ -111,4 +111,15 @@
 #section-layout {
     display: flex;
     flex-direction: row;
+    height: 100vh;
+}
+
+#section-layout #groups-layout {
+    width: 30%;
+    background-color: greenyellow
+}
+
+#section-layout #lists-layout {
+    width: 70%;
+    background-color: lightcoral;
 }
