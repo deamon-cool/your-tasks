@@ -1,13 +1,13 @@
 let showNavButton = document.getElementById('show-nav-button');
-let nav = document.querySelector('nav');
+let navMenu = document.getElementById('nav-layout');
 
 showNavButton.addEventListener('click', (e) => {
     e.preventDefault();
-    nav.classList.add('show-nav');
+    navMenu.classList.add('show-nav');
 });
 
-nav.addEventListener('mouseleave', () => {
-    if (nav.className === 'show-nav') {
-        nav.classList.remove('show-nav');
+navMenu.addEventListener('mouseleave', () => {
+    if (navMenu.className === 'show-nav') {
+        navMenu.classList.remove('show-nav');
     }
 });
