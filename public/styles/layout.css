@@ -24,7 +24,7 @@ header button {
     cursor: pointer;
 }
 
-header i {
+header button i {
     color: var(--general-blue-color);
 }
 
