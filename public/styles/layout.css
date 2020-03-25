@@ -1,6 +1,6 @@
 /* Main header */
 
-header#header-layout {
+#header-layout {
     position: relative;
     background-color: var(--general-blue-color);
     box-shadow: 0 5px 6px var(--general-light-blue-color);
@@ -8,12 +8,12 @@ header#header-layout {
     margin: 0;
 }
 
-header#header-layout h1 {
+#header-layout h1 {
     color: white;
     margin: 0;
 }
 
-header#header-layout button {
+#header-layout button {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -24,33 +24,33 @@ header#header-layout button {
     cursor: pointer;
 }
 
-header#header-layout button i {
+#header-layout button i {
     color: var(--general-blue-color);
 }
 
-header#header-layout button:hover {
+#header-layout button:hover {
     background-color: var(--general-lighter-blue-color);
 }
 
-header#header-layout button:hover i {
+#header-layout button:hover i {
     color: var(--general-blue-color);
 }
 
-header#header-layout button:focus {
+#header-layout button:focus {
     outline: none;
 }
 
-header#header-layout button:active {
+#header-layout button:active {
     background-color: var(--general-light-blue-color);
 }
 
-header#header-layout button:active i {
+#header-layout button:active i {
     color: var(--general-lighter-blue-color);
 }
 
 /* Navigation list */
 
-nav#nav-layout {
+#nav-layout {
     display: none;
     position: absolute;
     top: 15px;
@@ -63,29 +63,29 @@ nav#nav-layout {
     animation-duration: 0.5s;
 }
 
-nav#nav-layout.show-nav {
+#nav-layout.show-nav {
     display: block;
 }
 
-nav#nav-layout ul {
+#nav-layout ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav#nav-layout ul li {
+#nav-layout ul li {
     border-bottom: 2px solid var(--general-lighter-blue-color);
 }
 
-nav#nav-layout ul li:first-of-type {
+#nav-layout ul li:first-of-type {
     border-top: 2px solid var(--general-lighter-blue-color);
 }
 
-nav#nav-layout ul li:hover {
+#nav-layout ul li:hover {
     background-color: var(--general-lighter-blue-color);
 }
 
-nav#nav-layout ul li a {
+#nav-layout ul li a {
     display: block;
     color: var(--general-blue-color);
     text-decoration: none;
@@ -94,7 +94,7 @@ nav#nav-layout ul li a {
     padding: 20px;
 }
 
-nav#nav-layout ul li a i {
+#nav-layout ul li a i {
     padding-right: 10px;
 }
 
@@ -108,7 +108,7 @@ nav#nav-layout ul li a i {
     }
 }
 
-section#section-layout {
+#section-layout {
     display: flex;
     flex-direction: row;
 }
