@@ -8,7 +8,7 @@
 }
 
 #groups-ul button {
-    width: 100%;
+    width: 100px;
     text-align: left;
     font-family: inherit;
     font-size: inherit;
@@ -28,7 +28,6 @@
 #groups-ul button:focus {
     outline: none;
 }
-
 
 #groups-ul>li:first-of-type {
     border-top: 1px solid var(--general-lighter-blue-color);
