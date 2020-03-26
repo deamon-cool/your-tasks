@@ -13,42 +13,44 @@
 
 @section('groups-layout')
 
-<ul>
-    <li>Work
-        <ul>
-            <li>Today</li>
-            <li>Tomorrow</li>
+{{--  !!! TODO !!! : #groups-ul content should be filled by request to the serevr and getting data about groups --}}
+<ul id="groups-ul">
+    {{-- !!! TODO !!! : here have to be links that send request to server for lists data.When clicked then #lists-ul and lists-layout should be filled. --}}
+    <li><a href="###/request/for/groupname">Work</a>
+        <ul class="lists-ul">
+            {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
+            <li><a href="#scroll-to-id-element">Today</a></li>
+            <li><a href="#scroll-to-id-element">Tomorrowww</a></li>
             <li><button>New...</button></li>
         </ul>
     </li>
-    <li>Free time
-        <ul>
-            <li>Today</li>
-            <li>Tomorrow</li>
+
+    <li><a href="###/request/for/groupname">Group Name</a>
+        <ul class="lists-ul">
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><button>New...</button></li>
         </ul>
     </li>
-    <li>Week
-        <ul>
-            <li>Monday</li>
-            <li>Tuesday</li>
-            <li>Wednesday</li>
-            <li>Thursday</li>
-            <li>Friday</li>
-            <li>Saturday</li>
-            <li>Sunday</li>
+
+    <li><a href="###/request/for/groupname">Group Name 2</a>
+        <ul class="lists-ul">
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name</a></li>
+            <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><button>New...</button></li>
-        </ul>
-    </li>
-    <li>Month
-        <ul>
-            <li>January</li>
-            <li>February</li>
-            <li>March</li>
-            <li>April</li>
-            <li>May</li>
-            <li>June</li>
-            <li>July</li>
         </ul>
     </li>
 </ul>
