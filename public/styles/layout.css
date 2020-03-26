@@ -126,10 +126,12 @@ body {
     width: 30%;
     height: inherit;
     overflow: auto;
-    background-color: greenyellow
+    border-right: 1px solid var(--general-lighter-blue-color);
 }
 
 #section-layout #lists-layout {
     width: 70%;
-    background-color: lightcoral;
+    height: inherit;
+    overflow: auto;
+    background-color: white;
 }
