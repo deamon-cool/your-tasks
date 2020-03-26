@@ -124,15 +124,25 @@ body {
 }
 
 #section-layout #groups-layout {
-    width: 30%;
+    width: 20%;
     height: inherit;
     overflow: auto;
     border-right: 1px solid var(--general-lighter-blue-color);
 }
 
 #section-layout #lists-layout {
-    width: 70%;
+    width: 80%;
     height: inherit;
     overflow: auto;
     background-color: white;
+}
+
+@media (max-width: 1100px) {
+    #section-layout #groups-layout {
+        width: 30%;
+    }
+
+    #section-layout #lists-layout {
+        width: 70%;
+    }
 }
