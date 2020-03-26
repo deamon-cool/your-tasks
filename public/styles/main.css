@@ -19,13 +19,17 @@
     border-radius: var(--general-radius);
     cursor: pointer;
 }
+
 #groups-ul button:hover {
     background-color: var(--general-lighter-blue-color);
     margin-left: 5px;
 }
+
 #groups-ul button:focus {
     outline: none;
 }
+
+
 #groups-ul>li:first-of-type {
     border-top: 1px solid var(--general-lighter-blue-color);
 }
@@ -39,6 +43,7 @@
 #groups-ul>li>button {
     font-weight: bold;
 }
+
 #groups-ul>li>a {
     display: block;
     width: 100%;
@@ -49,6 +54,8 @@
 
 #groups-ul>li>a:hover {
     background-color: var(--general-lighter-blue-color);
+    padding-left: 5px;
+    border-radius: var(--general-radius);
 }
 
 #groups-ul>li>a>i {
@@ -76,4 +83,6 @@
 
 .lists-ul>li>a:hover {
     background-color: var(--general-lighter-blue-color);
+    padding-left: 5px;
+    border-radius: var(--general-radius);
 }
