@@ -7,6 +7,18 @@
     margin: 0;
 }
 
+#groups-ul button {
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: white;
+    padding-left: 5px;
+    border: 1px solid var(--general-lighter-blue-color);
+    border-radius: var(--general-radius);
+    cursor: pointer;
+}
 #groups-ul>li:first-of-type {
     border-top: 1px solid var(--general-lighter-blue-color);
 }
