@@ -1,5 +1,7 @@
 @layout('layouts.layout')
 
+{{--  Additional styles for this page edge  --}}
+
 @section('styles')
 
 <link rel="stylesheet" href="/styles/main.css">
@@ -7,11 +9,65 @@
 @endsection
 
 
+{{--  Groups of list created by user --}}
+
+@section('groups-layout')
+
+<ul>
+    <li>Work
+        <ul>
+            <li>Today</li>
+            <li>Tomorrow</li>
+            <li><button>New...</button></li>
+        </ul>
+    </li>
+    <li>Free time
+        <ul>
+            <li>Today</li>
+            <li>Tomorrow</li>
+            <li><button>New...</button></li>
+        </ul>
+    </li>
+    <li>Week
+        <ul>
+            <li>Monday</li>
+            <li>Tuesday</li>
+            <li>Wednesday</li>
+            <li>Thursday</li>
+            <li>Friday</li>
+            <li>Saturday</li>
+            <li>Sunday</li>
+            <li><button>New...</button></li>
+        </ul>
+    </li>
+    <li>Month
+        <ul>
+            <li>January</li>
+            <li>February</li>
+            <li>March</li>
+            <li>April</li>
+            <li>May</li>
+            <li>June</li>
+            <li>July</li>
+        </ul>
+    </li>
+</ul>
+
+@endsection
+
+
+{{--  Created by user lists in specify group  --}}
+
+@section('lists-layout')
+
+haha
+@endsection
+
+
+{{--  Scripts for this page edge  --}}
 
 @section('scripts')
 
 <script src="/scripts/main.js"></script>
 
 @endsection
-
-{{--  Here has to be all tasks and visible information about them  --}}
