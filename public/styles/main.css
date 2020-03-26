@@ -6,4 +6,8 @@
 
 #groups-ul>li {
     list-style: none;
+#groups-ul>li>a {
+    text-decoration: none;
+    font-weight: bold;
+}
 }
