@@ -36,6 +36,9 @@
     border-bottom: 1px solid var(--general-lighter-blue-color);
 }
 
+#groups-ul>li>button {
+    font-weight: bold;
+}
 #groups-ul>li>a {
     display: block;
     width: 100%;
