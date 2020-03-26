@@ -1,0 +1,8 @@
+#groups-ul {
+    padding: 20px 0px 20px 20px;
+    margin: 0;
+}
+
+#groups-ul>li {
+    list-style: none;
+}
