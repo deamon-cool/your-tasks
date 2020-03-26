@@ -1,5 +1,9 @@
 /* Main header */
 
+body {
+    overflow: hidden;
+}
+
 #header-layout {
     position: relative;
     background-color: var(--general-blue-color);
