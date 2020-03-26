@@ -1,18 +1,32 @@
 /* Style for groups */
 
 #groups-ul {
+    font-size: 20px;
     color: var(--general-blue-color);
-    padding: 20px 0px 20px 20px;
+    padding: 20px;
     margin: 0;
+}
+
+#groups-ul>li:first-of-type {
+    border-top: 1px solid var(--general-lighter-blue-color);
 }
 
 #groups-ul>li {
     list-style: none;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--general-lighter-blue-color);
 }
 
 #groups-ul>li>a {
-    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
     font-weight: bold;
+    text-decoration: none;
+}
+
+#groups-ul>li>a:hover {
+    background-color: var(--general-lighter-blue-color);
 }
 
 #groups-ul>li>a>i {
@@ -23,13 +37,21 @@
 /* Style for lists under groups */
 
 .lists-ul {
-    list-style: none;
+    padding-left: 40px;
 }
 
 .lists-ul>li {
-
+    list-style: none;
+    padding: 2px 0;
 }
 
 .lists-ul>li>a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
 
+.lists-ul>li>a:hover {
+    background-color: var(--general-lighter-blue-color);
 }
