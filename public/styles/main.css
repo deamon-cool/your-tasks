@@ -1,3 +1,5 @@
+/* Style for groups */
+
 #groups-ul {
     color: var(--general-blue-color);
     padding: 20px 0px 20px 20px;
@@ -6,8 +8,27 @@
 
 #groups-ul>li {
     list-style: none;
+}
+
+#groups-ul>li>i {
+
+}
+
 #groups-ul>li>a {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* Style for lists under groups */
+
+.lists-ul {
+    list-style: none;
+}
+
+.lists-ul>li {
+
+}
+
+.lists-ul>li>a {
+
 }
