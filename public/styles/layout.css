@@ -108,14 +108,20 @@
     }
 }
 
+body {
+    overflow: hidden;
+}
+
 #section-layout {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: 90vh;
 }
 
 #section-layout #groups-layout {
     width: 30%;
+    height: inherit;
+    overflow: auto;
     background-color: greenyellow
 }
 
