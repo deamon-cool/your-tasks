@@ -19,6 +19,10 @@
     border-radius: var(--general-radius);
     cursor: pointer;
 }
+#groups-ul button:hover {
+    background-color: var(--general-lighter-blue-color);
+    margin-left: 5px;
+}
 #groups-ul button:focus {
     outline: none;
 }
