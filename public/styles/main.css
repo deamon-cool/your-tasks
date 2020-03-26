@@ -19,6 +19,9 @@
     border-radius: var(--general-radius);
     cursor: pointer;
 }
+#groups-ul button:focus {
+    outline: none;
+}
 #groups-ul>li:first-of-type {
     border-top: 1px solid var(--general-lighter-blue-color);
 }
