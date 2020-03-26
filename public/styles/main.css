@@ -10,14 +10,15 @@
     list-style: none;
 }
 
-#groups-ul>li>i {
-
-}
-
 #groups-ul>li>a {
     text-decoration: none;
     font-weight: bold;
 }
+
+#groups-ul>li>a>i {
+    padding-right: 5px;
+}
+
 
 /* Style for lists under groups */
 
