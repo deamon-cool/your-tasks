@@ -161,7 +161,9 @@
 /* Style for task */
 
 #lists .list-container .tasks .task-container {
-
+    background-color: white;
+    border: 1px solid var(--general-lighter-blue-color);
+    cursor: grab;
 }
 
 #lists .list-container .tasks .task-container .content {
