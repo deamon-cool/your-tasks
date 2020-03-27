@@ -49,6 +49,7 @@
     display: block;
     width: 100%;
     height: 100%;
+    color: inherit;
     font-weight: bold;
     text-decoration: none;
 }
@@ -78,6 +79,7 @@
     display: block;
     width: 100%;
     height: 100%;
+    color: inherit;
     text-decoration: none;
 }
 
@@ -93,13 +95,14 @@
 /* Style for lists */
 
 #lists {
+    color: var(--general-blue-color);
     padding: 20px;
 }
 
 /* style for list container */
 
 #lists .list-container {
-
+    margin-bottom: 30px;
 }
 
 /* Style for header in list */
@@ -113,7 +116,7 @@
 }
 
 #lists .list-container .header button {
-
+    color: inherit;
 }
 
 #lists .list-container .header button i {
