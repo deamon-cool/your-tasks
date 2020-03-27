@@ -138,7 +138,17 @@
     background-color: var(--general-lighter-blue-color);
 }
 
-/* Style for tasks in list */
+#lists .list-container .header button:focus {
+    outline: none;
+}
+
+#lists .list-container .header button:active {
+    background-color: var(--general-light-blue-color);
+}
+
+#lists .list-container .header button:active i {
+    color: var(--general-lighter-blue-color);
+}
 
 #lists .tasks {
 
