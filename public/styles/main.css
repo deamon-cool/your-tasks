@@ -102,6 +102,8 @@
 /* style for list container */
 
 #lists .list-container {
+    border: 1px solid var(--general-lighter-blue-color);
+    box-shadow: 0 5px 6px var(--general-light-blue-color);
     margin-bottom: 30px;
 }
 
