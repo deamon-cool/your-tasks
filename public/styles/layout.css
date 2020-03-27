@@ -36,10 +36,6 @@ body {
     background-color: var(--general-lighter-blue-color);
 }
 
-#header-layout button:hover i {
-    color: var(--general-blue-color);
-}
-
 #header-layout button:focus {
     outline: none;
 }
