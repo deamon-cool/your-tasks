@@ -113,14 +113,17 @@
 #lists .list-container .header {
     display: flex;
     flex-direction: row;
+
 }
 
 #lists .list-container .header h2 {
-    margin: 0;
+    margin: 0 auto 0 0;
 }
 
 #lists .list-container .header button {
     color: inherit;
+
+
 }
 
 #lists .list-container .header button i {
