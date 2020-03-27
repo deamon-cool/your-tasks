@@ -113,7 +113,6 @@
 #lists .list-container .header {
     display: flex;
     flex-direction: row;
-
 }
 
 #lists .list-container .header h2 {
@@ -124,6 +123,10 @@
     color: inherit;
 
 
+}
+
+#lists .list-container .header button:first-of-type {
+    margin-right: 10px;
 }
 
 #lists .list-container .header button i {
