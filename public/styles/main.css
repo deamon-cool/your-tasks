@@ -128,6 +128,7 @@
 #lists .list-container .header button {
     background-color: white;
     color: inherit;
+    padding: 5px 10px;
     border: none;
     border-radius: var(--general-radius);
     cursor: pointer;
