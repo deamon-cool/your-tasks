@@ -154,6 +154,8 @@
 
 #lists .list-container .tasks {
     margin-top: 10px;
+    background-color: var(--general-light-blue-color);
+    padding-bottom: 40px;
 }
 
 /* Style for task */
