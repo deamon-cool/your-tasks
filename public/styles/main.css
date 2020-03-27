@@ -150,36 +150,42 @@
     color: var(--general-lighter-blue-color);
 }
 
-#lists .tasks {
+/* Style for tasks in list */
 
+#lists .list-container .tasks {
+    padding-top: 10px;
 }
 
 /* Style for task */
 
-#lists .tasks .task-container {
+#lists .list-container .tasks .task-container {
 
 }
 
-#lists .tasks .task-container input[type=checkbox] {
+#lists .list-container .tasks .task-container .content {
 
 }
 
-#lists .tasks .task-container p {
+#lists .list-container .tasks .task-container .content input[type=checkbox] {
+
+}
+
+#lists .list-container .tasks .task-container .content p {
     margin: 0;
 }
 
-#lists .tasks .task-container .hours {
+#lists .list-container .tasks .task-container .content .hours {
 
 }
 
-#lists .tasks .task-container .title {
+#lists .list-container .tasks .task-container .content .title {
 
 }
 
-#lists .tasks .task-container .description {
+#lists .list-container .tasks .task-container .description {
 
 }
 
-#lists .tasks .task-container i {
+#lists .list-container .tasks .task-container i {
 
 }
