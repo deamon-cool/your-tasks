@@ -111,7 +111,8 @@
 /* Style for header in list */
 
 #lists .list-container .header {
-
+    display: flex;
+    flex-direction: row;
 }
 
 #lists .list-container .header h2 {
