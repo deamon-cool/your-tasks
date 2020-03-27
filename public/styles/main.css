@@ -63,7 +63,6 @@
     padding-right: 5px;
 }
 
-
 /* Style for lists under groups */
 
 .lists-ul {
@@ -93,10 +92,67 @@
 
 /* Style for lists */
 
+#lists {
 
+}
 
+/* style for list container */
+
+#lists .list-container {
+
+}
 
 /* Style for header in list */
 
+#lists .list-container .header {
 
-/* Style for tasks */
+}
+
+#lists .list-container .header h2 {
+    margin: 0;
+}
+
+#lists .list-container .header button {
+
+}
+
+#lists .list-container .header button i {
+
+}
+
+
+/* Style for tasks in list */
+
+#lists .tasks {
+
+}
+
+/* Style for task */
+
+#lists .tasks .task-container {
+
+}
+
+#lists .tasks .task-container input[type=checkbox] {
+
+}
+
+#lists .tasks .task-container p {
+    margin: 0;
+}
+
+#lists .tasks .task-container .hours {
+
+}
+
+#lists .tasks .task-container .title {
+
+}
+
+#lists .tasks .task-container .description {
+
+}
+
+#lists .tasks .task-container i {
+
+}
