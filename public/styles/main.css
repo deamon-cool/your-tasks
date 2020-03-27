@@ -113,6 +113,8 @@
 #lists .list-container .header {
     display: flex;
     flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--general-lighter-blue-color);
 }
 
 #lists .list-container .header h2 {
