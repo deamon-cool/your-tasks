@@ -227,5 +227,5 @@
 
 #lists .list-container .tasks .task-container i {
     margin: auto 5px;
-    cursor: grab;
+    cursor: pointer;
 }
