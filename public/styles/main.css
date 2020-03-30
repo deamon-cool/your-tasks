@@ -162,7 +162,7 @@
 
 #lists .list-container .tasks .task-container {
     display: flex;
-    flex: row;
+    flex-direction: row;
     background-color: white;
     border: 1px solid var(--general-lighter-blue-color);
 }
@@ -177,7 +177,7 @@
 
 #lists .list-container .tasks .task-container .content .row-1 {
     display: flex;
-    flex: row;
+    flex-direction: row;
 }
 
 #lists .list-container .tasks .task-container .content .row-1 input[type=checkbox] {
