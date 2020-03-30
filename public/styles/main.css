@@ -167,6 +167,18 @@
     border: 1px solid var(--general-lighter-blue-color);
 }
 
+#lists .list-container .tasks .task-container input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    color: var(--general-blue-color);
+    background-color: white;
+    border: 1px solid var(--general-blue-color);
+    border-radius: var(--general-radius);
+    margin: auto 0;
+}
+
 #lists .list-container .tasks .task-container .content {
 
 }
@@ -179,10 +191,6 @@
 #lists .list-container .tasks .task-container .content .row-1 {
     display: flex;
     flex-direction: row;
-}
-
-#lists .list-container .tasks .task-container .content .row-1 input[type=checkbox] {
-
 }
 
 #lists .list-container .tasks .task-container .content .row-1 .hours {
