@@ -165,6 +165,7 @@
     flex-direction: row;
     background-color: white;
     border: 1px solid var(--general-lighter-blue-color);
+    cursor: grab;
 }
 
 #lists .list-container .tasks .task-container input[type="checkbox"] {
