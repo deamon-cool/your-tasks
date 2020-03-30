@@ -195,11 +195,9 @@
     outline: none;
 }
 
+/* #lists .list-container .tasks .task-container .content {
 
-
-#lists .list-container .tasks .task-container .content {
-
-}
+} */
 
 #lists .list-container .tasks .task-container .content p {
     font-size: 18px;
@@ -215,9 +213,9 @@
 
 }
 
-#lists .list-container .tasks .task-container .content .row-1 .title {
+/* #lists .list-container .tasks .task-container .content .row-1 .title {
 
-}
+} */
 
 #lists .list-container .tasks .task-container .content .row-1 .description {
 
