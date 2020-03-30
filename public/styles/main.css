@@ -231,6 +231,8 @@
 
 #lists .list-container .tasks .task-container i {
     padding: 10px;
-    margin: auto 5px;
+    margin: auto 5px auto auto;
     cursor: pointer;
 }
+
+/* #lists .list-container .tasks .task-container i !!!!! clicked style */
