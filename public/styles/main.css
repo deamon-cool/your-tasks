@@ -170,23 +170,27 @@
 
 }
 
-#lists .list-container .tasks .task-container .content input[type=checkbox] {
-
-}
-
 #lists .list-container .tasks .task-container .content p {
     margin: 0;
 }
 
-#lists .list-container .tasks .task-container .content .hours {
+#lists .list-container .tasks .task-container .content .row-1 {
 
 }
 
-#lists .list-container .tasks .task-container .content .title {
+#lists .list-container .tasks .task-container .content .row-1 input[type=checkbox] {
 
 }
 
-#lists .list-container .tasks .task-container .description {
+#lists .list-container .tasks .task-container .content .row-1 .hours {
+
+}
+
+#lists .list-container .tasks .task-container .content .row-1 .title {
+
+}
+
+#lists .list-container .tasks .task-container .content .description {
 
 }
 
