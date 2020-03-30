@@ -164,8 +164,14 @@
     display: flex;
     flex-direction: row;
     background-color: white;
-    border: 1px solid var(--general-lighter-blue-color);
+    border-top: 1px solid var(--general-lighter-blue-color);
+    border-right: 1px solid var(--general-lighter-blue-color);
+    border-left: 1px solid var(--general-lighter-blue-color);
     cursor: grab;
+}
+
+#lists .list-container .tasks .task-container:last-of-type {
+    border-bottom: 1px solid var(--general-lighter-blue-color);
 }
 
 #lists .list-container .tasks .task-container input[type="checkbox"] {
