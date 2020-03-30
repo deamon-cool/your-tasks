@@ -165,7 +165,6 @@
     flex: row;
     background-color: white;
     border: 1px solid var(--general-lighter-blue-color);
-    cursor: grab;
 }
 
 #lists .list-container .tasks .task-container .content {
@@ -198,5 +197,5 @@
 }
 
 #lists .list-container .tasks .task-container i {
-
+    cursor: grab;
 }
