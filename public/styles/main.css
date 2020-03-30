@@ -175,7 +175,7 @@
     padding: 1px 5px;
     border: 1px solid var(--general-blue-color);
     border-radius: 5px;
-    margin: auto 0;
+    margin: auto 5px;
 }
 
 #lists .list-container .tasks .task-container input[type="checkbox"]::before {
