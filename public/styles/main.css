@@ -177,15 +177,13 @@
     border: 1px solid var(--general-blue-color);
     border-radius: 5px;
     margin: auto 5px;
+    cursor: pointer;
 }
 
 #lists .list-container .tasks .task-container input[type="checkbox"]::before {
     content: '✔';
     font-size: 20px;
     font-weight: 700;
-}
-
-#lists .list-container .tasks .task-container input[type="checkbox"]::before {
     visibility: hidden;
 }
 
