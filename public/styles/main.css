@@ -211,7 +211,7 @@
 }
 
 #lists .list-container .tasks .task-container .content .row-1 .hours {
-
+    padding-right: 10px;
 }
 
 /* #lists .list-container .tasks .task-container .content .row-1 .title {
@@ -223,6 +223,7 @@
 }
 
 #lists .list-container .tasks .task-container i {
+    padding: 10px;
     margin: auto 5px;
     cursor: pointer;
 }
