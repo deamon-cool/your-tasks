@@ -179,7 +179,6 @@
 #lists .list-container .tasks .task-container .content .row-1 {
     display: flex;
     flex: row;
-
 }
 
 #lists .list-container .tasks .task-container .content .row-1 input[type=checkbox] {
@@ -194,7 +193,7 @@
 
 }
 
-#lists .list-container .tasks .task-container .content .description {
+#lists .list-container .tasks .task-container .content .row-1 .description {
 
 }
 
