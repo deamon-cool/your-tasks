@@ -229,10 +229,31 @@
 
 }
 
-#lists .list-container .tasks .task-container i {
+#lists .list-container .tasks .task-container button {
+    background-color: white;
+    color: inherit;
     padding: 10px;
     margin: auto 5px auto auto;
+    border: none;
+    border-radius: var(--general-radius);
     cursor: pointer;
 }
 
-/* #lists .list-container .tasks .task-container i !!!!! clicked style */
+#lists .list-container .tasks .task-container button:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#lists .list-container .tasks .task-container button:focus {
+    outline: none;
+}
+
+#lists .list-container .tasks .task-container button:active {
+    background-color: var(--general-light-blue-color);
+}
+
+#lists .list-container .tasks .task-container button:active i {
+    color: var(--general-lighter-blue-color);
+}
+
+
+
