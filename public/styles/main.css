@@ -183,7 +183,7 @@
     padding: 3px 8px;
     border: 1px solid var(--general-blue-color);
     border-radius: 5px;
-    margin: auto 5px;
+    margin: auto 10px;
     cursor: pointer;
 }
 
@@ -254,6 +254,4 @@
 #lists .list-container .tasks .task-container button:active i {
     color: var(--general-lighter-blue-color);
 }
-
-
 
