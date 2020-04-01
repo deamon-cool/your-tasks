@@ -105,7 +105,7 @@
     border: 1px solid var(--general-lighter-blue-color);
     box-shadow: 0 5px 6px var(--general-light-blue-color);
     padding: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 /* Style for header in list */
@@ -118,6 +118,7 @@
 }
 
 #lists .list-container .header h2 {
+    font-size: 30px;
     margin: 0 auto 0 0;
 }
 
