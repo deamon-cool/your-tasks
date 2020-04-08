@@ -11,3 +11,5 @@ navMenu.addEventListener('mouseleave', () => {
         navMenu.classList.remove('show-nav');
     }
 });
+
+// !!! TODO !!! Add handlers for all buttons

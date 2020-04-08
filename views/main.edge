@@ -13,9 +13,11 @@
 
 @section('groups-layout')
 
-{{--  !!! TODO !!! : #groups-ul content should be filled by request to the serevr and getting data about groups --}}
+{{--  !!! TODO !!! : #groups-ul content fill from the MongoDb --}}
+{{--  !!! TODO !!! : Each group link renders new lists(with tasks) from MongoDb --}}
+{{--  !!! TODO !!! : In current group all lists(with tasks) are downloaded from MongoDb --}}
+{{--  !!! TODO !!! : In current group all list links scroll to list(with tasks) --}}
 <ul id="groups-ul">
-    {{-- !!! TODO !!! : here have to be links that send request to server for lists data.When clicked then #lists-ul and lists-layout should be filled. --}}
     <li>
         <a href="###/request/for/groupname">
             <i class="fa fa-angle-right"></i>Work
@@ -39,10 +41,6 @@
             <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><a href="#scroll-to-id-element">List Name</a></li>
             <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><button>New...</button></li>
         </ul>
     </li>
@@ -52,22 +50,6 @@
             <i class="fa fa-angle-right"></i>Group Name2
         </a>
         <ul class="lists-ul">
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><a href="#scroll-to-id-element">List Name</a></li>
             <li><a href="#scroll-to-id-element">List Name 22</a></li>
             <li><button>New...</button></li>
@@ -84,6 +66,7 @@
 
 @section('lists-layout')
 
+{{--  !!! TODO !!! : #lists content fill from the MongoDb lists and tasks collection --}}
 <div id="lists">
 
     <div class="list-container">
@@ -120,357 +103,14 @@
                 <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
             </div>
 
-
-
             {{--  Example tasks here  --}}
 
-            <div class="task-container" id="5e8d90b546a7bc276c167861">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container" id="5e8d90b546a7bc276c167862">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container" id="5e8d90b546a7bc276c167863">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container" id="5e8d90b546a7bc276c167864">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container" id="5e8d90b546a7bc276c167865">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
 
         </div>
 
     </div>
-
 
     {{--  Example lists here --}}
-
-    {{--  <div class="list-container">
-        <div class="header">
-            <h2>Tomorrowww</h2>
-            <button><i class="fa fa-plus fa-2x"></i></button>
-            <button><i class="fa fa-trash fa-2x"></i></button>
-        </div>
-        <div class="tasks">
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-
-                </div>
-
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-
-        </div>
-
-    </div>
-
-    <div class="list-container">
-        <div class="header">
-            <h2>Today</h2>
-            <button><i class="fa fa-plus fa-2x"></i></button>
-            <button><i class="fa fa-trash fa-2x"></i></button>
-        </div>
-        <div class="tasks">
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-
-                </div>
-
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-            <div class="task-container">
-                <input type="checkbox">
-                <div class="content">
-                    <div class="row-1">
-                        <div class="hours">
-                            <p>7:00-8:00</p>
-                        </div>
-                        <div class="title">
-                            <p>Trening na chełmskiej</p>
-                        </div>
-                    </div>
-                    <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
-                    </div>
-                </div>
-                <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
-            </div>
-
-
-        </div>
-
-    </div>  --}}
 
 
 </div>
