@@ -17,47 +17,25 @@
 {{--  !!! TODO !!! : Each group link renders new lists(with tasks) from MongoDb --}}
 {{--  !!! TODO !!! : In current group all lists(with tasks) are downloaded from MongoDb --}}
 {{--  !!! TODO !!! : In current group all list links scroll to list(with tasks) --}}
-<ul id="groups-ul">
-    <li>
-        <a href="###/request/for/groupname">
-            <i class="fa fa-angle-right"></i>Work
-        </a>
-        <ul class="lists-ul">
-            {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
-            <li><a href="#scroll-to-id-element">Today</a></li>
-            <li><a href="#scroll-to-id-element">Tomorrowww</a></li>
-            <li><button>New...</button></li>
-        </ul>
-    </li>
 
-    <li>
-        <a href="###/request/for/groupname">
-            <i class="fa fa-angle-right"></i>Group Name
-        </a>
-        <ul class="lists-ul">
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><button>New...</button></li>
-        </ul>
-    </li>
+<div id="groups">
+    <ul class="groups-ul">
+        <li>
+            <a href="###">
+                <i class="fa fa-angle-right"></i>Work
+            </a>
+            <ul class="lists-ul">
+                {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
+                <li><a href="#scroll-to-id-element">Today</a></li>
+                <li><a href="#scroll-to-id-element">Tomorrowww</a></li>
+                <li><button>New...</button></li>
+            </ul>
+        </li>
+    </ul>
 
-    <li>
-        <a href="###/request/for/groupname2">
-            <i class="fa fa-angle-right"></i>Group Name2
-        </a>
-        <ul class="lists-ul">
-            <li><a href="#scroll-to-id-element">List Name</a></li>
-            <li><a href="#scroll-to-id-element">List Name 22</a></li>
-            <li><button>New...</button></li>
-        </ul>
-    </li>
+    <button id="new-group-button">New...</button>
+</div>
 
-    <li><button>New...</button></li>
-</ul>
 
 @endsection
 
