@@ -102,13 +102,15 @@
 /* Style for window creating new group/list */
 
 #groups .window-container {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 79px;
     left: 0;
     width: 30%;
     height: 100%;
     background-color: rgba(0,0,0,.5);
+    animation: showwindow;
+    animation-duration: 0.5s;
 }
 
 #groups .window-container .window-create-new {
@@ -183,6 +185,16 @@
 
 #groups .window-container .window-create-new form .row input[type=submit]:hover {
     background-color: var(--general-lighter-blue-color);
+}
+
+@keyframes showwindow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 
