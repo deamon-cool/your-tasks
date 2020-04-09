@@ -24,7 +24,7 @@
 
 #groups button:hover {
     background-color: var(--general-lighter-blue-color);
-    margin-left: 5px;
+    padding-left: 10px;
 }
 
 #groups button:focus {
