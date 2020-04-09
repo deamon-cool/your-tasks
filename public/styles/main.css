@@ -99,6 +99,92 @@
     border-radius: var(--general-radius);
 }
 
+/* Style for window creating new group/list */
+
+#groups .window-container {
+    /* display: none; */
+    position: absolute;
+    top: 79px;
+    left: 0;
+    width: 30%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+
+#groups .window-container .window-create-new {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--general-radius);
+    box-shadow: 0 5px 6px black;
+    margin: 150px 30px;
+}
+
+#groups .window-container .window-create-new form {
+    display: flex;
+    flex-direction: column;
+}
+
+#groups .window-container .window-create-new form label {
+    font-weight: bold;
+    border-bottom: 2px solid var(--general-lighter-blue-color);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#groups .window-container .window-create-new form input {
+    font-family: inherit;
+    font-size: 18px;
+    color: var(--general-blue-color);
+    padding: 5px 10px;
+    border: 1px solid var(--general-light-blue-color);
+    border-radius: var(--general-radius);
+}
+
+#groups .window-container .window-create-new form input:focus {
+    outline: none;
+}
+
+#groups .window-container .window-create-new form input[type=text] {
+    margin-bottom: 30px;
+}
+
+#groups .window-container .window-create-new form input[type=text]::placeholder {
+    color: var(--general-light-blue-color);
+}
+
+#groups .window-container .window-create-new form input[type=text]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#groups .window-container .window-create-new form input[type=text]:focus {
+    background-color: var(--general-lighter-blue-color);
+}
+
+
+#groups .window-container .window-create-new form .row {
+    flex-direction: row;
+    width: 100%;
+}
+
+#groups .window-container .window-create-new form .row input[type=button] {
+    background-color: white;
+    cursor: pointer;
+}
+
+#groups .window-container .window-create-new form .row input[type=button]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#groups .window-container .window-create-new form .row input[type=submit] {
+    float: right;
+    background-color: white;
+    cursor: pointer;
+}
+
+#groups .window-container .window-create-new form .row input[type=submit]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
 
 /* Style for lists with tasks on the right side */
 
