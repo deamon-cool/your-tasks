@@ -15,7 +15,11 @@ newGroupButton.addEventListener('click', () => {
 });
 
 let newGroupWindow = document.querySelector('#groups .window-container');
+let cancelCreateGroupButton = newGroupWindow.querySelector('.window-create-new form .row input[type=button]');
 
+cancelCreateGroupButton.addEventListener('click', () => {
+    newGroupWindow.style.display = 'none';
+});
 
 
 
