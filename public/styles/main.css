@@ -70,6 +70,10 @@
     padding-right: 5px;
 }
 
+#groups .groups-ul>li .new-list-button {
+    margin: 5px 0 0 40px;
+}
+
 /* Style for lists under groups */
 
 .lists-ul {
