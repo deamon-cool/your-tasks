@@ -8,17 +8,10 @@
 // window with input and submit
 // -sending created Group/List to Mongo Db
 
-// let groupsUl = document.querySelector('#groups-ul');
-// let newGroupButton = groupsUl.querySelector('#new-group>button');
-// newGroupButton.addEventListener('click', (e) => {
-//     let p = document.createElement('p');
-//     p.textContent = 'nooo widzę ;) ';
-//     groupsUl.appendChild(p);
-//     groupsUl.querySelector('#new-group').style.display = 'none';
-//     setTimeout(() => {
-//         groupsUl.querySelector('#new-group').style.display = 'block';
-//     }, 2000);
-// });
+let newGroupButton = document.querySelector('#groups .new-group-button');
+newGroupButton.addEventListener('click', () => {
+
+});
 
 
 
