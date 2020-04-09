@@ -46,7 +46,7 @@
     border-bottom: 1px solid var(--general-lighter-blue-color);
 }
 
-#groups #new-group-button {
+#groups .new-group-button {
     font-weight: bold;
     margin: 10px 0;
 }
