@@ -8,10 +8,13 @@
 // window with input and submit
 // -sending created Group/List to Mongo Db
 
+// Creating new Group Functionality
 let newGroupButton = document.querySelector('#groups .new-group-button');
 newGroupButton.addEventListener('click', () => {
-
+    newGroupWindow.style.display = 'block';
 });
+
+let newGroupWindow = document.querySelector('#groups .window-container');
 
 
 
