@@ -137,7 +137,6 @@
     font-family: inherit;
     font-size: 18px;
     color: var(--general-blue-color);
-    padding: 5px 10px;
     border: 1px solid var(--general-light-blue-color);
     border-radius: var(--general-radius);
 }
@@ -147,6 +146,7 @@
 }
 
 #groups .window-container .window-create-new form input[type=text] {
+    padding: 5px 10px;
     margin-bottom: 30px;
 }
 
@@ -170,6 +170,7 @@
 
 #groups .window-container .window-create-new form .row input[type=button] {
     background-color: white;
+    padding: 5px 25px;
     cursor: pointer;
 }
 
@@ -180,6 +181,7 @@
 #groups .window-container .window-create-new form .row input[type=submit] {
     float: right;
     background-color: white;
+    padding: 5px 25px;
     cursor: pointer;
 }
 
