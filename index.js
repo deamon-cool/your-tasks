@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.use(engine);
 app.set('views', `${__dirname}/views`);
 
-app.get('/', (req, res) => {
+app.post('/', (req, res) => {
     res.render('login');
 });
 
@@ -16,6 +16,11 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
+    res.render('main');
+});
+
+app.post('/main', (req, res) => {
+    console.log(res);
     res.render('main');
 });
 
