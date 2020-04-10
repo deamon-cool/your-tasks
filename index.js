@@ -1,7 +1,10 @@
 const express = require('express');
 const {engine} = require('express-edge');
+const bodyParser = require('body-parser');
+
 
 app = express();
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.use(engine);
@@ -20,7 +23,8 @@ app.get('/main', (req, res) => {
 });
 
 app.post('/main', (req, res) => {
-    console.log(res);
+    console.log('-------------------------------------------------------------------------->');
+    console.log(req.body);
     res.render('main');
 });
 
