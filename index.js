@@ -3,6 +3,8 @@ const {engine} = require('express-edge');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const Group = require('./database/model/Group');
+
 
 // Database connection
 mongoose.connect('mongodb://localhost/to-do-list-db', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -28,13 +30,22 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
+
     res.render('main');
 });
 
+// Store new group in Db
 app.post('/main/store/group', (req, res) => {
-    console.log('-------------------------------------------------------------------------->');
-    console.log(req.body);
-    res.render('main');
+    Group.find({}).then(groups => {
+        Group.create({
+            position: groups.length,
+            name: req.body.name
+        }).then(() => {
+            res.redirect(302, '/main');
+        }).catch(e => {
+            console.log('Err :| ------>' + e);
+        });
+    });
 });
 
 app.get('/progress', (req, res) => {
