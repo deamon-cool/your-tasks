@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(engine);
 app.set('views', `${__dirname}/views`);
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
     res.render('login');
 });
 
