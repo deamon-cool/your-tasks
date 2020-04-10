@@ -20,9 +20,12 @@
 
 <div id="groups">
     <ul class="groups-ul">
-        <li>
+
+        @each(group in groups)
+
+        <li id="{{group._id}}">
             <a href="###">
-                <i class="fa fa-angle-right"></i>Work
+                <i class="fa fa-angle-right"></i>{{group.name}}
             </a>
             <ul class="lists-ul">
                 {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
@@ -33,6 +36,7 @@
             <button class="new-list-button">New...</button>
         </li>
 
+        @endeach
 
     </ul>
 
