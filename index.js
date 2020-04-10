@@ -1,7 +1,14 @@
 const express = require('express');
 const {engine} = require('express-edge');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
+
+// Database connection
+mongoose.connect('mongodb://localhost/to-do-list-db', {useNewUrlParser: true, useUnifiedTopology: true});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error :|'));
+db.once('open', () => console.log('connected :)'));
 
 // Express configuration
 app = express();
