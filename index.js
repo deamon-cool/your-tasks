@@ -3,6 +3,7 @@ const {engine} = require('express-edge');
 const bodyParser = require('body-parser');
 
 
+// Express configuration
 app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -10,6 +11,7 @@ app.use(express.static('public'));
 app.use(engine);
 app.set('views', `${__dirname}/views`);
 
+// Request handlers (controllers)
 app.get('/', (req, res) => {
     res.render('login');
 });
@@ -32,6 +34,7 @@ app.get('/progress', (req, res) => {
     res.render('progress');
 });
 
+// Run server
 app.listen(8000, () => {
     console.log(`Server running at http://${'127.0.0.1'}:${8000}/`);
 });
