@@ -22,7 +22,7 @@ app.get('/main', (req, res) => {
     res.render('main');
 });
 
-app.post('/main', (req, res) => {
+app.post('/main/store/group', (req, res) => {
     console.log('-------------------------------------------------------------------------->');
     console.log(req.body);
     res.render('main');
