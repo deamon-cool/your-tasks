@@ -8,13 +8,15 @@
 // window with input and submit
 // -sending created Group/List to Mongo Db
 
+let groupsDiv = document.querySelector('#groups');
+
 // Creating new Group Functionality
-let newGroupButton = document.querySelector('#groups .new-group-button');
+let newGroupButton = groupsDiv.querySelector('.new-group-button');
 newGroupButton.addEventListener('click', () => {
     newGroupWindow.style.display = 'block';
 });
 
-let newGroupWindow = document.querySelector('#groups .window-container');
+let newGroupWindow = groupsDiv.querySelector('.window-container');
 let cancelCreateGroupButton = newGroupWindow.querySelector('.window-create-new form .row input[type=button]');
 
 cancelCreateGroupButton.addEventListener('click', () => {
