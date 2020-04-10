@@ -30,8 +30,9 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-
-    res.render('main');
+    Group.find({}).then(groups => {
+        res.render('main', {groups: groups});
+    });
 });
 
 // Store new group in Db
