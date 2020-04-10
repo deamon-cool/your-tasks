@@ -44,7 +44,8 @@ app.post('/main/store/group', (req, res) => {
             res.redirect(302, '/main');
         }).catch(e => {
             console.log('Err :| ------>' + e);
-            res.redirect('/error')
+
+            res.redirect('/error');
         });
     });
 });
