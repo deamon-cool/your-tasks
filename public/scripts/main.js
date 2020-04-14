@@ -52,12 +52,6 @@ groupsLi.forEach(group => {
 
         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
         showWindow(listWindow);
-
-        // HERE YOU END ! Look on the paper TOPIC:  Creating window after click New..(List))
-        // NOTES: 1. think about creating window in main.edge as with creating Groups, and get only references to DOMs
-        // in this way u only change 'action="/main/store/list/:id' (or more-> check)
-        // You can create function createWindow()/openWindow() to do that(argument group or group.id)
-        // and u add only style.display =v isible/none
     });
 });
 
