@@ -23,7 +23,15 @@ cancelCreateGroupButton.addEventListener('click', () => {
     newGroupWindow.style.display = 'none';
 });
 
+// Creating new List Functionality
+let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
+groupsLi.forEach(group => {
+    let newListButton = group.querySelector('.new-list-button');
+    newListButton.addEventListener('click', () => {
+        console.log(group.id);
 
+    });
+});
 
 // !!! TODO !!! In lists-layout
 // LIST
