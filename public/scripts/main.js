@@ -10,28 +10,63 @@
 
 let groupsDiv = document.querySelector('#groups');
 
-// Creating new Group Functionality
+
+// Setting Window for creating new Group/List
+function setWindow(actionForm, title, inputHint) {
+    let windowContainer = groupsDiv.querySelector('.window-container');
+    let form = windowContainer.querySelector('.window-create-new form');
+    let label = form.querySelector('label');
+    let input = form.querySelector('input[type=text]');
+
+    form.setAttribute('action', actionForm);
+    label.textContent = title;
+    input.setAttribute('placeholder', inputHint);
+
+    let cancelButton = form.querySelector('.row input[type=button]');
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    return windowContainer;
+}
+
+// Showing set window
+function showWindow(window) {
+    window.style.display = 'block';
+}
+
+
+// Creating new Group -> Window Functionality
 let newGroupButton = groupsDiv.querySelector('.new-group-button');
 newGroupButton.addEventListener('click', () => {
-    newGroupWindow.style.display = 'block';
+    let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+    showWindow(groupWindow);
 });
 
-let newGroupWindow = groupsDiv.querySelector('.window-container');
-let cancelCreateGroupButton = newGroupWindow.querySelector('.window-create-new form .row input[type=button]');
-
-cancelCreateGroupButton.addEventListener('click', () => {
-    newGroupWindow.style.display = 'none';
-});
-
-// Creating new List Functionality
+// Creating new List -> Window Functionality
 let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
 groupsLi.forEach(group => {
     let newListButton = group.querySelector('.new-list-button');
     newListButton.addEventListener('click', () => {
         console.log(group.id);
 
+        let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+        showWindow(listWindow);
+
+        // HERE YOU END ! Look on the paper TOPIC:  Creating window after click New..(List))
+        // NOTES: 1. think about creating window in main.edge as with creating Groups, and get only references to DOMs
+        // in this way u only change 'action="/main/store/list/:id' (or more-> check)
+        // You can create function createWindow()/openWindow() to do that(argument group or group.id)
+        // and u add only style.display =v isible/none
     });
 });
+
+
+
+
+
+
+
 
 // !!! TODO !!! In lists-layout
 // LIST
