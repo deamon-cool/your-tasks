@@ -10,7 +10,7 @@ const Group = require('./database/model/Group');
 mongoose.connect('mongodb://localhost/to-do-list-db', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error :|'));
-db.once('open', () => console.log('connected :)'));
+db.once('open', () => console.log('connected to db :)'));
 
 // Express configuration
 app = express();
