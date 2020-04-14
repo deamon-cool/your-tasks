@@ -48,8 +48,6 @@ let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
 groupsLi.forEach(group => {
     let newListButton = group.querySelector('.new-list-button');
     newListButton.addEventListener('click', () => {
-        console.log(group.id);
-
         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
         showWindow(listWindow);
     });
