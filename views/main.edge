@@ -42,7 +42,7 @@
 
     <button class="new-group-button">New...</button>
 
-    {{--  Creating new group window  --}}
+    {{--  Creating new group/list window  --}}
     <div class="window-container">
         <div class="window-create-new">
             <form action="/main/store/group" method="POST">
@@ -53,22 +53,6 @@
                     <input type="submit" value="✔">
                 </div>
             </form>
-        </div>
-    </div>
-
-    {{--  Creating new List window  --}}
-    <div id="window-container-list">
-        <div class="window-container">
-            <div class="window-create-new">
-                <form action="/main/store/list" method="POST">
-                    <label for="name">New List:</label>
-                    <input type="text" name="name" placeholder="List Name">
-                    <div class="row">
-                        <input type="button" value="X">
-                        <input type="submit" value="✔">
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 
