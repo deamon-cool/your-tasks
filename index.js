@@ -51,6 +51,11 @@ app.post('/main/store/group', (req, res) => {
     });
 });
 
+// Store new list in Db
+app.post('/main/store/list/:id', (req, res) => {
+    console.log(req.url);
+});
+
 app.get('/progress', (req, res) => {
     res.render('progress');
 });
