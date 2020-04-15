@@ -53,7 +53,20 @@ app.post('/main/store/group', (req, res) => {
 
 // Store new list in Db
 app.post('/main/store/list/:id', (req, res) => {
-    console.log(req.url);
+    const groupId = req.url.slice(req.url.search(':') + 1);
+
+    Group.findOne({_id: groupId})
+    .then(group => {
+        let position = group.listIds.length;
+
+        List.create({
+            position: position,
+            name: req.body.name
+        })
+        .then(list => {
+            Group.update(group, {$push:{listIds: list._id}});
+        });
+    });
 });
 
 app.get('/progress', (req, res) => {
