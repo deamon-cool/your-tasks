@@ -69,7 +69,7 @@ app.post('/main/store/list/:id', (req, res) => {
             name: req.body.name
         })
         .then(list => {
-            Group.update(group, {$push:{listIds: list._id}})
+            Group.updateOne(group, {$push:{listIds: list._id}})
             .then(() => {
                 res.redirect(302, '/main');
             });
