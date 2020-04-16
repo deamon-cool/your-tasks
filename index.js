@@ -1,5 +1,5 @@
 const express = require('express');
-const {engine} = require('express-edge');
+const { engine } = require('express-edge');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -8,14 +8,14 @@ const List = require('./database/model/List');
 
 
 // Database connection
-mongoose.connect('mongodb://localhost/to-do-list-db', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/to-do-list-db', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error :|'));
 db.once('open', () => console.log('connected to db :)'));
 
 // Express configuration
 app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.use(engine);
