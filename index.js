@@ -30,30 +30,49 @@ app.get('/register', (req, res) => {
     res.render('register');
 });
 
-app.get('/main', (req, res) => {
-    Group.find({})
-        .then(groups => {
-            res.render('main', { groups: groups });
-        });
+app.get('/main', async (req, res) => {
+    const groups = await Group.find({});
+
+    res.render('main', { groups: groups });
+
+    // Group.find({})
+    //     .then(groups => {
+    //         res.render('main', { groups: groups });
+    //     });
 });
 
 // Store new group in Db
-app.post('/main/store/group', (req, res) => {
-    Group.find({})
-        .then(groups => {
-            Group.create({
-                position: groups.length,
-                name: req.body.name
-            })
-                .then(() => {
-                    res.redirect(302, '/main');
-                })
-                .catch(e => {
-                    console.log('Err ----------------------------------------------------->' + e);
+app.post('/main/store/group', async (req, res) => {
+    try {
+        const groups = await Group.find({});
 
-                    res.redirect(500, '/error');
-                });
+        await Group.create({
+            position: groups.length,
+            name: req.body.name
         });
+
+        return res.redirect(302, '/main');
+    } catch(e) {
+        console.log('Err ----------------------------------------------------->' + e);
+
+        return res.redirect(500, '/error');
+    }
+
+    // Group.find({})
+    //     .then(groups => {
+    //         Group.create({
+    //             position: groups.length,
+    //             name: req.body.name
+    //         })
+    //             .then(() => {
+    //                 res.redirect(302, '/main');
+    //             })
+    //             .catch(e => {
+    //                 console.log('Err ----------------------------------------------------->' + e);
+
+    //                 res.redirect(500, '/error');
+    //             });
+    //     });
 });
 
 // Store new list in Db
