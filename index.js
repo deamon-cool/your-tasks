@@ -77,29 +77,6 @@ app.post('/main/store/list/:id', async (req, res) => {
 
         return res.redirect(500, '/error');
     }
-
-
-    // Group.findOne({ _id: groupId })
-    //     .then(group => {
-    //         let position = group.listIds.length;
-
-    //         List.create({
-    //             position: position,
-    //             name: req.body.name
-    //         })
-    //             .then(list => {
-    //                 Group.updateOne(group, { $push: { listIds: list._id } })
-    //                     .then(() => {
-    //                         res.redirect(302, '/main');
-    //                     });
-    //             });
-    //     })
-    //     .catch(e => {
-    //         console.log('Err ----------------------------------------------------->' + e);
-
-    //         res.redirect(500, '/error');
-    //     });
-
 });
 
 app.get('/progress', (req, res) => {
