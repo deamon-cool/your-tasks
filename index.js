@@ -30,20 +30,24 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-    Group.find({}).then(groups => {
+    Group.find({})
+    .then(groups => {
         res.render('main', {groups: groups});
     });
 });
 
 // Store new group in Db
 app.post('/main/store/group', (req, res) => {
-    Group.find({}).then(groups => {
+    Group.find({})
+    .then(groups => {
         Group.create({
             position: groups.length,
             name: req.body.name
-        }).then(() => {
+        })
+        .then(() => {
             res.redirect(302, '/main');
-        }).catch(e => {
+        })
+        .catch(e => {
             console.log('Err :| ------>' + e);
 
             res.redirect('/error');
