@@ -30,10 +30,32 @@ app.get('/register', (req, res) => {
     res.render('register');
 });
 
+// Load all data
 app.get('/main', async (req, res) => {
     const groups = await Group.find({});
 
-    res.render('main', { groups: groups });
+    let packets = [];
+    groups.forEach(group => {
+        const listIds = group.listIds;
+
+        let lists = [];
+        listIds.forEach(async id => {
+            const list = await List.findOne({_id: id});
+
+            lists.push(list);
+        });
+
+        const data = {
+            group: group,
+            lists: lists
+        };
+
+        packets.push(data);
+    });
+
+    res.render('main', {packets: packets});
+
+    // res.render('main', { groups: groups });
 });
 
 // Store new group in Db
