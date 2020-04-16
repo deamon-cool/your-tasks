@@ -32,49 +32,55 @@ app.get('/register', (req, res) => {
 
 app.get('/main', (req, res) => {
     Group.find({})
-    .then(groups => {
-        res.render('main', {groups: groups});
-    });
+        .then(groups => {
+            res.render('main', { groups: groups });
+        });
 });
 
 // Store new group in Db
 app.post('/main/store/group', (req, res) => {
     Group.find({})
-    .then(groups => {
-        Group.create({
-            position: groups.length,
-            name: req.body.name
-        })
-        .then(() => {
-            res.redirect(302, '/main');
-        })
-        .catch(e => {
-            console.log('Err :| ------>' + e);
+        .then(groups => {
+            Group.create({
+                position: groups.length,
+                name: req.body.name
+            })
+                .then(() => {
+                    res.redirect(302, '/main');
+                })
+                .catch(e => {
+                    console.log('Err ----------------------------------------------------->' + e);
 
-            res.redirect('/error');
+                    res.redirect(500, '/error');
+                });
         });
-    });
 });
 
 // Store new list in Db
 app.post('/main/store/list/:id', (req, res) => {
     const groupId = req.url.slice(req.url.search(':') + 1);
 
-    Group.findOne({_id: groupId})
-    .then(group => {
-        let position = group.listIds.length;
+    Group.findOne({ _id: groupId })
+        .then(group => {
+            let position = group.listIds.length;
 
-        List.create({
-            position: position,
-            name: req.body.name
+            List.create({
+                position: position,
+                name: req.body.name
+            })
+                .then(list => {
+                    Group.updateOne(group, { $push: { listIds: list._id } })
+                        .then(() => {
+                            res.redirect(302, '/main');
+                        });
+                });
         })
-        .then(list => {
-            Group.updateOne(group, {$push:{listIds: list._id}})
-            .then(() => {
-                res.redirect(302, '/main');
-            });
+        .catch(e => {
+            console.log('Err ----------------------------------------------------->' + e);
+
+            res.redirect(500, '/error');
         });
-    });
+
 });
 
 app.get('/progress', (req, res) => {
