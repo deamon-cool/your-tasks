@@ -32,50 +32,35 @@ app.get('/register', (req, res) => {
 
 // Load all data
 app.get('/main', async (req, res) => {
-    const groups = await Group.find({});
+    try {
+        const groups = await Group.find({});
 
-    let packets = [];
+        let packets = [];
 
-    for (let i = 0; i < groups.length; i++) {
-        const listIds = groups[i].listIds;
+        for (let i = 0; i < groups.length; i++) {
+            const listIds = groups[i].listIds;
 
-        let lists = [];
-        for (let j = 0; j < listIds.length; j++) {
-            const list = await List.findOne({ _id: listIds[j] });
+            let lists = [];
+            for (let j = 0; j < listIds.length; j++) {
+                const list = await List.findOne({ _id: listIds[j] });
 
-            lists.push(list);
+                lists.push(list);
+            }
+
+            const data = {
+                group: groups[i],
+                lists: lists
+            };
+
+            packets.push(data);
         }
 
-        const data = {
-            group: groups[i],
-            lists: lists
-        };
+        return res.render('main', { packets: packets });
+    } catch (e) {
+        console.log('Err ----------------------------------------------------->' + e);
 
-        packets.push(data);
+        return res.redirect(500, '/error');
     }
-
-    // groups.forEach(group => {
-    //     const listIds = group.listIds;
-
-    //     let lists = [];
-    //     listIds.forEach(id => {
-    //         List.findOne({ _id: id })
-    //             .then(lists.push());
-    //         // lists.push(list);
-    //     });
-
-    //     const data = {
-    //         group: group,
-    //         lists: lists
-    //     };
-
-    //     packets.push(data);
-    // });
-
-    console.log(packets);
-    console.log('END-----------------------------------------------------------------------');
-
-    res.render('main', {packets: packets});
 });
 
 // Store new group in Db
