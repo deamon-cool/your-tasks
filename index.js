@@ -124,7 +124,7 @@ app.post('/main/store/group', async (req, res) => {
         });
 
         //TEST -> added group id to random user
-        await User.updateOne({$expr:{name: 'Damian'}}, {$push:{groupIds: group._id}});
+        await User.updateOne({ $expr: { name: 'Damian' } }, { $push: { groupIds: group._id } });
 
         return res.redirect(302, '/main');
     } catch (e) {
