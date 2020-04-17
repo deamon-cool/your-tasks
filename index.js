@@ -3,8 +3,10 @@ const { engine } = require('express-edge');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const User = require('./database/model/User');
 const Group = require('./database/model/Group');
 const List = require('./database/model/List');
+const Task = require('./database/model/Task');
 
 
 // Database connection
