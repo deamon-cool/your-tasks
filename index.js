@@ -37,7 +37,46 @@ app.get('/main', async (req, res) => {
     try {
         const groups = await Group.find({});
 
-        let packets = [];
+        let packets = {};
+
+        // TEST data object
+        // packets = {
+        //     name: 'Damian',
+        //     groups: [
+        //         {   // group 0
+        //             _id: '5e996d6467b75416e0830535',
+        //             position: 0,
+        //             name: 'Group 0',
+        //             lists: [
+        //                 {   // list 0
+        //                     _id: '5e996d6467b75416e0830535',
+        //                     position: 0,
+        //                     name: 'List 0',
+        //                     tasks: [
+        //                         {   // task 0
+        //                             _id: '5e996d6467b75416e0830535',
+        //                             position: 0,
+        //                             status: false,
+        //                             startTime: 6,
+        //                             endTime: 7,
+        //                             title: 'Task 0',
+        //                             description: 'description about task 0'
+        //                         },
+        //                         {
+        //                             // task 1
+        //                         }
+        //                     ]
+        //                 },
+        //                 {
+        //                     // list 1
+        //                 }
+        //             ]
+        //         },
+        //         {
+        //             // group 1
+        //         }
+        //     ]
+        // };
 
         for (let i = 0; i < groups.length; i++) {
             const listIds = groups[i].listIds;
