@@ -82,63 +82,6 @@ app.get('/main', async (req, res) => {
             }
         }
 
-        // TEST data object
-        // packets = {
-        //     name: 'Damian',
-        //     groups: [
-        //         {   // group 0
-        //             _id: '5e996d6467b75416e0830535',
-        //             position: 0,
-        //             name: 'Group 0',
-        //             lists: [
-        //                 {   // list 0
-        //                     _id: '5e996d6467b75416e0830535',
-        //                     position: 0,
-        //                     name: 'List 0',
-        //                     tasks: [
-        //                         {   // task 0
-        //                             _id: '5e996d6467b75416e0830535',
-        //                             position: 0,
-        //                             status: false,
-        //                             startTime: 6,
-        //                             endTime: 7,
-        //                             title: 'Task 0',
-        //                             description: 'description about task 0'
-        //                         },
-        //                         {
-        //                             // task 1
-        //                         }
-        //                     ]
-        //                 },
-        //                 {
-        //                     // list 1
-        //                 }
-        //             ]
-        //         },
-        //         {
-        //             // group 1
-        //         }
-        //     ]
-        // };
-
-        // for (let i = 0; i < groups.length; i++) {
-        //     const listIds = groups[i].listIds;
-
-        //     let lists = [];
-        //     for (let j = 0; j < listIds.length; j++) {
-        //         const list = await List.findOne({ _id: listIds[j] });
-
-        //         lists.push(list);
-        //     }
-
-        //     const data = {
-        //         group: groups[i],
-        //         lists: lists
-        //     };
-
-        //     packets.push(data);
-        // }
-
         return res.render('main', { packets: packets });
     } catch (e) {
         console.log('Err ----------------------------------------------------->' + e);
