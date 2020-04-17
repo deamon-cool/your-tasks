@@ -87,23 +87,23 @@ app.get('/main', async (req, res) => {
         //     ]
         // };
 
-        for (let i = 0; i < groups.length; i++) {
-            const listIds = groups[i].listIds;
+        // for (let i = 0; i < groups.length; i++) {
+        //     const listIds = groups[i].listIds;
 
-            let lists = [];
-            for (let j = 0; j < listIds.length; j++) {
-                const list = await List.findOne({ _id: listIds[j] });
+        //     let lists = [];
+        //     for (let j = 0; j < listIds.length; j++) {
+        //         const list = await List.findOne({ _id: listIds[j] });
 
-                lists.push(list);
-            }
+        //         lists.push(list);
+        //     }
 
-            const data = {
-                group: groups[i],
-                lists: lists
-            };
+        //     const data = {
+        //         group: groups[i],
+        //         lists: lists
+        //     };
 
-            packets.push(data);
-        }
+        //     packets.push(data);
+        // }
 
         return res.render('main', { packets: packets });
     } catch (e) {
