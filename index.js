@@ -44,54 +44,54 @@ app.get('/main', async (req, res) => {
         });
     }
 
-    try {
-        let packets = {};
+    // try {
+    let packets = {};
 
-        packets.name = users[0].name;
+    packets.name = users[0].name;
 
-        //TEST -> load ids of group from test user
-        const groupIds = users[0].groupIds
     if(users[0].groupIds === undefined) {
         return res.render('main', { packets: packets });
     }
 
-        packets.groups = [];
-        // download all Groups
-        for (let i = 0; i < groupIds.length; i++) {
-            const group = await Group.findOne({ _id: groupIds[i] });
+    //TEST -> load ids of group from test user
     const groupIds = users[0].groupIds;
 
-            const listIds = group.listIds;
-            delete group.listIds;
+    packets.groups = [];
+    // download all Groups
+    for (let i = 0; i < groupIds.length; i++) {
+        const group = await Group.findOne({ _id: groupIds[i] });
 
-            packets.groups.push(group);
+        const listIds = group.listIds;
+        delete group.listIds;
 
-            packets.groups[i].lists = [];
-            // download all Lists
-            for (let j = 0; j < listIds.length; j++) {
-                const list = await List.findOne({ _id: listIds[j] });
+        packets.groups.push(group);
 
-                const taskIds = list.taskIds;
-                delete list.taskIds;
+        packets.groups[i].lists = [];
+        // download all Lists
+        for (let j = 0; j < listIds.length; j++) {
+            const list = await List.findOne({ _id: listIds[j] });
 
-                packets.groups[i].lists.push(list);
+            const taskIds = list.taskIds;
+            delete list.taskIds;
 
-                packets.groups[i].lists[j].tasks = [];
-                // download all Tasks
-                for (let k = 0; k < taskIds; k++) {
-                    const task = await Task.findOne({ _id: taskIds[k] });
+            packets.groups[i].lists.push(list);
 
-                    packets.groups[i].lists[j].tasks.push(task);
-                }
+            packets.groups[i].lists[j].tasks = [];
+            // download all Tasks
+            for (let k = 0; k < taskIds; k++) {
+                const task = await Task.findOne({ _id: taskIds[k] });
+
+                packets.groups[i].lists[j].tasks.push(task);
             }
         }
-
-        return res.render('main', { packets: packets });
-    } catch (e) {
-        console.log('Err ----------------------------------------------------->' + e);
-
-        return res.redirect(500, '/error');
     }
+
+    return res.render('main', { packets: packets });
+    // } catch (e) {
+    //     console.log('Err ----------------------------------------------------->' + e);
+
+    //     return res.redirect(500, '/error');
+    // }
 });
 
 // Store new group in Db
