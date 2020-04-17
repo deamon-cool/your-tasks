@@ -56,6 +56,7 @@ app.get('/main', async (req, res) => {
         // download all Groups
         for (let i = 0; i < groupIds.length; i++) {
             const group = await Group.findOne({ _id: groupIds[i] });
+    const groupIds = users[0].groupIds;
 
             const listIds = group.listIds;
             delete group.listIds;
