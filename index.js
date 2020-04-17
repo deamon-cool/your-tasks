@@ -34,6 +34,7 @@ app.get('/register', (req, res) => {
 
 // Load all data
 app.get('/main', async (req, res) => {
+
     //TEST -> creating test user
     const users = await User.find({});
     if (users === null || users.length === 0) {
@@ -44,9 +45,42 @@ app.get('/main', async (req, res) => {
     }
 
     try {
-        const groups = await Group.find({});
-
         let packets = {};
+
+        packets.name = users[0].name;
+
+        //TEST -> load ids of group from test user
+        const groupIds = users[0].groupIds
+
+        packets.groups = [];
+        // download all Groups
+        for (let i = 0; i < groupIds.length; i++) {
+            const group = await Group.findOne({ _id: groupIds[i] });
+
+            const listIds = group.listIds;
+            delete group.listIds;
+
+            packets.groups.push(group);
+
+            packets.groups[i].lists = [];
+            // download all Lists
+            for (let j = 0; j < listIds.length; j++) {
+                const list = await List.findOne({ _id: listIds[j] });
+
+                const taskIds = list.taskIds;
+                delete list.taskIds;
+
+                packets.groups[i].lists.push(list);
+
+                packets.groups[i].lists[j].tasks = [];
+                // download all Tasks
+                for (let k = 0; k < taskIds; k++) {
+                    const task = await Task.findOne({ _id: taskIds[k] });
+
+                    packets.groups[i].lists[j].tasks.push(task);
+                }
+            }
+        }
 
         // TEST data object
         // packets = {
