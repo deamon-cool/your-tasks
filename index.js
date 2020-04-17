@@ -118,10 +118,13 @@ app.post('/main/store/group', async (req, res) => {
     try {
         const groups = await Group.find({});
 
-        await Group.create({
+        const group = await Group.create({
             position: groups.length,
             name: req.body.name
         });
+
+        //TEST -> added group id to random user
+        await User.updateOne({$expr:{name: 'Damian'}}, {$push:{groupIds: group._id}});
 
         return res.redirect(302, '/main');
     } catch (e) {
