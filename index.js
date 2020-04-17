@@ -35,27 +35,47 @@ app.get('/main', async (req, res) => {
     const groups = await Group.find({});
 
     let packets = [];
-    groups.forEach(group => {
-        const listIds = group.listIds;
+
+    for (let i = 0; i < groups.length; i++) {
+        const listIds = groups[i].listIds;
 
         let lists = [];
-        listIds.forEach(async id => {
-            const list = await List.findOne({_id: id});
+        for (let j = 0; j < listIds.length; j++) {
+            const list = await List.findOne({ _id: listIds[j] });
 
             lists.push(list);
-        });
+        }
 
         const data = {
-            group: group,
+            group: groups[i],
             lists: lists
         };
 
         packets.push(data);
-    });
+    }
+
+    // groups.forEach(group => {
+    //     const listIds = group.listIds;
+
+    //     let lists = [];
+    //     listIds.forEach(id => {
+    //         List.findOne({ _id: id })
+    //             .then(lists.push());
+    //         // lists.push(list);
+    //     });
+
+    //     const data = {
+    //         group: group,
+    //         lists: lists
+    //     };
+
+    //     packets.push(data);
+    // });
+
+    console.log(packets);
+    console.log('END-----------------------------------------------------------------------');
 
     res.render('main', {packets: packets});
-
-    // res.render('main', { groups: groups });
 });
 
 // Store new group in Db
