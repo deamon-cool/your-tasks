@@ -34,6 +34,15 @@ app.get('/register', (req, res) => {
 
 // Load all data
 app.get('/main', async (req, res) => {
+    //TEST -> creating test user
+    const users = await User.find({});
+    if (users === null || users.length === 0) {
+        await User.create({
+            name: 'Damian Hehe',
+            password: '123',
+        });
+    }
+
     try {
         const groups = await Group.find({});
 
