@@ -51,6 +51,9 @@ app.get('/main', async (req, res) => {
 
         //TEST -> load ids of group from test user
         const groupIds = users[0].groupIds
+    if(users[0].groupIds === undefined) {
+        return res.render('main', { packets: packets });
+    }
 
         packets.groups = [];
         // download all Groups
