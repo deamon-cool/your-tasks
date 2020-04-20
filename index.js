@@ -67,7 +67,7 @@ app.get('/main', async (req, res) => {
         packets.groups.push(group);
 
         packets.groups[i].lists = [];
-        // download all Lists
+        // download all Lists in Group
         for (let j = 0; j < listIds.length; j++) {
             const list = await List.findOne({ _id: listIds[j] });
 
@@ -77,7 +77,7 @@ app.get('/main', async (req, res) => {
             packets.groups[i].lists.push(list);
 
             packets.groups[i].lists[j].tasks = [];
-            // download all Tasks
+            // download all Tasks in List
             for (let k = 0; k < taskIds; k++) {
                 const task = await Task.findOne({ _id: taskIds[k] });
 
@@ -85,6 +85,8 @@ app.get('/main', async (req, res) => {
             }
         }
     }
+
+    console.log(packets);
 
     return res.render('main', { packets: packets });
     // } catch (e) {
