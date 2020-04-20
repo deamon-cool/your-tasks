@@ -20,7 +20,7 @@
 <div id="groups">
     <ul class="groups-ul">
 
-        @each(group in groups)
+        @each(group in packet.groups)
 
         <li id="{{group._id}}">
             <a href="###">
@@ -28,8 +28,13 @@
             </a>
             <ul class="lists-ul">
                 {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
-                <li><a href="#scroll-to-id-element">Today</a></li>
-                <li><a href="#scroll-to-id-element">Tomorrowww</a></li>
+
+                @each(list in group.lists)
+
+                <li><a href="#scroll-to-id-element">{{list.name}}</a></li>
+
+                @endeach
+
             </ul>
 
             <button class="new-list-button">New...</button>
