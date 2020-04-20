@@ -45,18 +45,18 @@ app.get('/main', async (req, res) => {
     }
 
     try {
-        let packets = {};
+        let packet = {};
 
-        packets.name = users[0].name;
+        packet.user = users[0].name;
 
         if (users[0].groupIds === undefined) {
-            return res.render('main', { packets: packets });
+            return res.render('main', { packet: packet });
         }
 
         //TEST -> load ids of group from test user
         const groupIds = users[0].groupIds;
 
-        packets.groups = [];
+        packet.groups = [];
         // download all Groups
         for (let i = 0; i < groupIds.length; i++) {
             const group = await Group.findOne({ _id: groupIds[i] });
@@ -64,9 +64,9 @@ app.get('/main', async (req, res) => {
             const listIds = group.listIds;
             delete group.listIds;
 
-            packets.groups.push(group);
+            packet.groups.push(group);
 
-            packets.groups[i].lists = [];
+            packet.groups[i].lists = [];
             // download all Lists in Group
             for (let j = 0; j < listIds.length; j++) {
                 const list = await List.findOne({ _id: listIds[j] });
@@ -74,21 +74,21 @@ app.get('/main', async (req, res) => {
                 const taskIds = list.taskIds;
                 delete list.taskIds;
 
-                packets.groups[i].lists.push(list);
+                packet.groups[i].lists.push(list);
 
-                packets.groups[i].lists[j].tasks = [];
+                packet.groups[i].lists[j].tasks = [];
                 // download all Tasks in List
                 for (let k = 0; k < taskIds; k++) {
                     const task = await Task.findOne({ _id: taskIds[k] });
 
-                    packets.groups[i].lists[j].tasks.push(task);
+                    packet.groups[i].lists[j].tasks.push(task);
                 }
             }
         }
 
-        console.log(packets);
+        console.log(packet);
 
-        return res.render('main', { packets: packets });
+        return res.render('main', { packet: packet });
     } catch (e) {
         console.log('Err ----------------------------------------------------->' + e);
 
