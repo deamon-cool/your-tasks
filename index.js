@@ -32,7 +32,7 @@ app.get('/register', (req, res) => {
     res.render('register');
 });
 
-// Load data first group>lists>tasks
+// Load first group, its lists and its tasks
 app.get('/main', async (req, res) => {
 
     //TEST -> creating test user
