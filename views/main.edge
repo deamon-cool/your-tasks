@@ -74,6 +74,10 @@
 {{--  !!! TODO !!! : #lists content fill from the MongoDb lists and tasks collection --}}
 <div id="lists">
 
+    @each(group in packet.groups)
+
+    @each(list in group.lists)
+
     <div class="list-container">
 
         <div class="header">
@@ -114,6 +118,10 @@
         </div>
 
     </div>
+
+    @endeach
+
+    @endeach
 
     {{--  Example lists here --}}
 
