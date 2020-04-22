@@ -78,10 +78,10 @@
 
     @each(list in group.lists)
 
-    <div class="list-container">
+    <div id="{{list.id}}" class="list-container">
 
         <div class="header">
-            <h2>Today</h2>
+            <h2>{{list.name}}</h2>
             <button><i class="fa fa-plus fa-2x"></i></button>
             <button><i class="fa fa-trash fa-2x"></i></button>
         </div>
