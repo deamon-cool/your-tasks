@@ -79,7 +79,7 @@ app.get('/main', async (req, res) => {
                 packet.groups[i].lists[j].tasks = [];
 
                 // download only Tasks belongs to Group[0]
-                if(packet.group[0]) {
+                if(i === 0) {
                     // download all Tasks in List
                     for (let k = 0; k < taskIds; k++) {
                         const task = await Task.findOne({ _id: taskIds[k] });
