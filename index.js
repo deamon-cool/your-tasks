@@ -98,6 +98,9 @@ app.get('/main', async (req, res) => {
             }
         }
 
+        // Flag for rendering only first group
+        packet.renderedId = packet.groups[0].id;
+
         return res.render('main', { packet: packet });
     } catch (e) {
         console.log('Err ----------------------------------------------------->' + e);
