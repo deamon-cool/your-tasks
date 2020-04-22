@@ -366,3 +366,96 @@
     color: var(--general-lighter-blue-color);
 }
 
+#lists .window-container {
+    display: none;
+    position: absolute;
+    top: 79px;
+    left: 30%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    animation: showwindow;
+    animation-duration: 0.5s;
+}
+
+#lists .window-container .window-create-new {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--general-radius);
+    box-shadow: 0 5px 6px black;
+    margin: 100px 250px;
+}
+
+#lists .window-container .window-create-new p {
+    font-size: 24px;
+    font-weight: bold;
+    border-bottom: 2px solid var(--general-lighter-blue-color);
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+}
+
+#lists .window-container .window-create-new form {
+    display: flex;
+    flex-direction: column;
+}
+
+#lists .window-container .window-create-new form label {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+#lists .window-container .window-create-new form input {
+    font-family: inherit;
+    font-size: 20px;
+    color: var(--general-blue-color);
+    border: 1px solid var(--general-light-blue-color);
+    border-radius: var(--general-radius);
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+#lists .window-container .window-create-new form>input:last-of-type {
+    margin-bottom: 40px;
+}
+
+#lists .window-container .window-create-new form input:focus {
+    outline: none;
+}
+
+#lists .window-container .window-create-new form>input::placeholder {
+    color: var(--general-light-blue-color);
+}
+
+#lists .window-container .window-create-new form>input:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#lists .window-container .window-create-new form>input[type=number] {
+    width: 50%;
+}
+
+#lists .window-container .window-create-new form .row {
+    flex-direction: row;
+    width: 100%;
+}
+
+#lists .window-container .window-create-new form input[type=button] {
+    background-color: white;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+#lists .window-container .window-create-new form input[type=button]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#lists .window-container .window-create-new form input[type=submit] {
+    float: right;
+    background-color: white;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+#lists .window-container .window-create-new form input[type=submit]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
