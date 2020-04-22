@@ -61,6 +61,7 @@ app.get('/main', async (req, res) => {
         for (let i = 0; i < groupIds.length; i++) {
             const group = await Group.findOne({ _id: groupIds[i] });
 
+            packet.groups[i] = {};
             packet.groups[i].id = group._id;
             packet.groups[i].position = group.position;
             packet.groups[i].name = group.name;
@@ -71,6 +72,7 @@ app.get('/main', async (req, res) => {
             for (let j = 0; j < listIds.length; j++) {
                 const list = await List.findOne({ _id: listIds[j] });
 
+                packet.groups[i].lists[j] = {};
                 packet.groups[i].lists[j].id = list._id;
                 packet.groups[i].lists[j].position = list.position;
                 packet.groups[i].lists[j].name = list.name;
@@ -83,6 +85,7 @@ app.get('/main', async (req, res) => {
                     for (let k = 0; k < taskIds; k++) {
                         const task = await Task.findOne({ _id: taskIds[k] });
 
+                        packet.groups[i].lists[j].tasks[k] = {};
                         packet.groups[i].lists[j].tasks[k].id = task._id;
                         packet.groups[i].lists[j].tasks[k].position = task.position;
                         packet.groups[i].lists[j].tasks[k].status = task.status;
