@@ -76,6 +76,8 @@
 
     @each(group in packet.groups)
 
+    @if(group.id === packet.renderedId)
+
     @each(list in group.lists)
 
     <div id="{{list.id}}" class="list-container">
@@ -120,6 +122,8 @@
     </div>
 
     @endeach
+
+    @endif
 
     @endeach
 
