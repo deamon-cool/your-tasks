@@ -98,8 +98,6 @@ app.get('/main', async (req, res) => {
             }
         }
 
-        console.log(packet);
-
         return res.render('main', { packet: packet });
     } catch (e) {
         console.log('Err ----------------------------------------------------->' + e);
