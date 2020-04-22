@@ -3,11 +3,6 @@
 // !!! TODO !!! 3. In menu task add one more option Copy (FUTURE)
 
 
-// !!! TODO !!! In groups-layout:
-// -setting buttons listener 'New...' in groups-layout -> adding new Group/List name
-// window with input and submit
-// -sending created Group/List to Mongo Db
-
 let groupsDiv = document.querySelector('#groups');
 
 
