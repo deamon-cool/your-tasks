@@ -66,6 +66,7 @@ body {
 
 #nav-layout.show-nav {
     display: block;
+    z-index: 1;
 }
 
 #nav-layout ul {
