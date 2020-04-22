@@ -123,6 +123,20 @@
 
     @endeach
 
+    {{--  Creating new task window  --}}
+    <div class="window-container">
+        <div class="window-create-new">
+            <form action="/main/store/task" method="POST">
+                <label for="name">New Task:</label>
+                <input type="text" name="name" placeholder="Task Name">
+                <div class="row">
+                    <input type="button" value="X">
+                    <input type="submit" value="✔">
+                </div>
+            </form>
+        </div>
+    </div>
+
     {{--  Example lists here --}}
 
 
