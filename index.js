@@ -61,30 +61,35 @@ app.get('/main', async (req, res) => {
         for (let i = 0; i < groupIds.length; i++) {
             const group = await Group.findOne({ _id: groupIds[i] });
 
-            const listIds = group.listIds;
-            delete group.listIds;
-
-            packet.groups.push(group);
-
+            packet.groups[i].id = group._id;
+            packet.groups[i].position = group.position;
+            packet.groups[i].name = group.name;
             packet.groups[i].lists = [];
+
+            const listIds = group.listIds;
             // download all Lists in Group
             for (let j = 0; j < listIds.length; j++) {
                 const list = await List.findOne({ _id: listIds[j] });
 
-                const taskIds = list.taskIds;
-                delete list.taskIds;
-
-                packet.groups[i].lists.push(list);
-
+                packet.groups[i].lists[j].id = list._id;
+                packet.groups[i].lists[j].position = list.position;
+                packet.groups[i].lists[j].name = list.name;
                 packet.groups[i].lists[j].tasks = [];
 
+                const taskIds = list.taskIds;
                 // download only Tasks belongs to Group[0]
                 if(i === 0) {
                     // download all Tasks in List
                     for (let k = 0; k < taskIds; k++) {
                         const task = await Task.findOne({ _id: taskIds[k] });
 
-                        packet.groups[i].lists[j].tasks.push(task);
+                        packet.groups[i].lists[j].tasks[k].id = task._id;
+                        packet.groups[i].lists[j].tasks[k].position = task.position;
+                        packet.groups[i].lists[j].tasks[k].status = task.status;
+                        packet.groups[i].lists[j].tasks[k].startTime = task.startTime;
+                        packet.groups[i].lists[j].tasks[k].endTime = task.endTime;
+                        packet.groups[i].lists[j].tasks[k].title = task.title;
+                        packet.groups[i].lists[j].tasks[k].description = task.description;
                     }
                 }
             }
