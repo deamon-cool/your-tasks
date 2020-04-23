@@ -49,7 +49,8 @@ app.get('/main', async (req, res) => {
 
         packet.user = users[0].name;
 
-        if (users[0].groupIds === undefined) {
+        // TEST -> For users[0]
+        if (users[0].groupIds === undefined || users[0].groupIds.length === 0) {
             return res.render('main', { packet: packet });
         }
 
