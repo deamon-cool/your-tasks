@@ -104,7 +104,7 @@ app.get('/main', async (req, res) => {
 
         return res.render('main', { packet: packet });
     } catch (e) {
-        console.log('Err ----------------------------------------------------->' + e);
+        console.log('Err for: /main ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
@@ -134,7 +134,7 @@ app.post('/main/store/group', async (req, res) => {
 
         return res.redirect(302, '/main');
     } catch (e) {
-        console.log('Err ----------------------------------------------------->' + e);
+        console.log('Err for: /main/store/group ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
@@ -161,7 +161,7 @@ app.post('/main/store/list/:id', async (req, res) => {
 
         return res.redirect(302, '/main');
     } catch (e) {
-        console.log('Err ----------------------------------------------------->' + e);
+        console.log('Err for: /main/store/list/:id ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
