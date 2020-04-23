@@ -89,7 +89,10 @@
         </div>
 
         <div class="tasks">
-            <div class="task-container" id="5e8d90b546a7bc276c167860">
+
+            @each(task in list.tasks)
+
+            <div class="task-container" id="{{task.id}}">
 
                 <input type="checkbox">
 
@@ -97,22 +100,24 @@
 
                     <div class="row-1">
                         <div class="hours">
-                            <p>6:00-8:00</p>
+                            <p>{{task.startTime}} - {{task.endTime}}</p>
                         </div>
 
                         <div class="title">
-                            <p>Trening na chełmskiej</p>
+                            <p>{{task.title}}</p>
                         </div>
                     </div>
 
                     <div class="description">
-                        <p>Rozgrzewka 15min, biegi cardio 15min, interwał 15min, bieg swobodny 10min, lekkie rozciąganie 15min</p>
+                        <p>{{task.description}}</p>
                     </div>
 
                 </div>
 
                 <button><i class="fa fa-ellipsis-v fa-2x"></i></button>
             </div>
+
+            @endeach
 
             {{--  Example tasks here  --}}
 
