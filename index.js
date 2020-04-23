@@ -184,7 +184,7 @@ app.post('/main/store/task/:id', async (req, res) => {
             description: req.body.description,
         });
 
-        await List.updateOne({ $push: { taskIds: task._id } });
+        await List.updateOne(list, { $push: { taskIds: task._id } });
 
         return res.redirect(302, '/main');
     } catch (e) {
