@@ -150,7 +150,7 @@ app.post('/main/store/list/:id', async (req, res) => {
 
     try {
         const group = await Group.findOne({ _id: groupId });
-        let position = group.listIds.length;
+        const position = group.listIds.length;
 
         const list = await List.create({
             position: position,
