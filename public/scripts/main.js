@@ -5,7 +5,6 @@
 
 let groupsDiv = document.querySelector('#groups');
 
-
 // Setting Window for creating new Group/List
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = groupsDiv.querySelector('.window-container');
@@ -18,6 +17,7 @@ function setWindow(actionForm, title, inputHint) {
     input.setAttribute('placeholder', inputHint);
 
     let cancelButton = form.querySelector('.row input[type=button]');
+
     cancelButton.addEventListener('click', () => {
         windowContainer.style.display = 'none';
     });
@@ -35,6 +35,7 @@ function showWindow(window) {
 let newGroupButton = groupsDiv.querySelector('.new-group-button');
 newGroupButton.addEventListener('click', () => {
     let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+
     showWindow(groupWindow);
 });
 
@@ -42,6 +43,7 @@ newGroupButton.addEventListener('click', () => {
 let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
 groupsLi.forEach(group => {
     let newListButton = group.querySelector('.new-list-button');
+
     newListButton.addEventListener('click', () => {
         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
         showWindow(listWindow);
