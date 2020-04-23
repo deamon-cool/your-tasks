@@ -50,11 +50,32 @@ groupsLi.forEach(group => {
 
 //-------------------- Setting right window side
 
+let listsDiv = document.querySelector('#lists');
 
+// Setting Window for creating new Task
+function setNewTaskWindow(actionForm) {
+    let windowContainer = listsDiv.querySelector('.window-container');
+    let form = windowContainer.querySelector('.window-create-new form');
 
+    form.setAttribute('action', actionForm);
 
+    let cancelButton = form.querySelector('.row input[type=button]');
 
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
 
+    return windowContainer;
+}
 
+// Creating new Task -> Window Functionality
+let listContainers = listsDiv.querySelectorAll('.list-container');
+listContainers.forEach(list => {
+    let newTaskButton = list.querySelector('.header button:first-of-type');
 
+    newTaskButton.addEventListener('click', () => {
+        let TaskWindow = setNewTaskWindow('/main/store/task/:' + list.id);
+        showWindow(TaskWindow);
+    });
+});
 
