@@ -430,7 +430,7 @@
     background-color: var(--general-lighter-blue-color);
 }
 
-#lists .window-container .window-create-new form>input[type=number] {
+#lists .window-container .window-create-new form>input[type=time] {
     width: 50%;
 }
 
