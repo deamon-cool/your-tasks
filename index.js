@@ -81,7 +81,7 @@ app.get('/main', async (req, res) => {
 
                 const taskIds = list.taskIds;
                 // download only Tasks belongs to Group[0]
-                if(i === 0) {
+                if (i === 0) {
                     // download all Tasks in List
                     for (let k = 0; k < taskIds; k++) {
                         const task = await Task.findOne({ _id: taskIds[k] });
@@ -166,6 +166,34 @@ app.post('/main/store/list/:id', async (req, res) => {
         return res.redirect(500, '/error');
     }
 });
+
+// Store new task in Db
+app.post('/main/store/task/:id', async (req, res) => {
+    const listId = req.url.slice(req.url.search(':') + 1);
+
+    try {
+        const list = await List.findOne({ _id: listId });
+        const position = list.taskIds.length;
+
+        const task = await Task.create({
+            position: position,
+            status: false,
+            startTime: req.body.starttime,
+            endTime: req.body.endtime,
+            title: req.body.title,
+            description: req.body.description,
+        });
+
+        await List.updateOne({ $push: { taskIds: task._id } });
+
+        return res.redirect(302, '/main');
+    } catch (e) {
+        console.log('Err for: /main/store/task/:id ----------------------------------------------------->\n' + e);
+
+        return res.redirect(500, '/error');
+    }
+});
+
 
 app.get('/progress', (req, res) => {
     res.render('progress');
