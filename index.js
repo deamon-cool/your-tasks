@@ -142,6 +142,10 @@ app.post('/main/store/group', async (req, res) => {
 
 // Store new list in Db
 app.post('/main/store/list/:id', async (req, res) => {
+    if (req.body.name === '') {
+        return res.redirect(302, '/main');
+    }
+
     const groupId = req.url.slice(req.url.search(':') + 1);
 
     try {
