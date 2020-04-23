@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const TaskSchema = mongoose.Schema({
     position: Number,
     status: Boolean,
-    startTime: Number,
-    endTime: Number,
+    startTime: String,
+    endTime: String,
     title: String,
     description: String
 });
