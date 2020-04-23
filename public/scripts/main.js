@@ -3,6 +3,8 @@
 // !!! TODO !!! 3. In menu task add one more option Copy (FUTURE)
 
 
+//-------------------- Setting left window side
+
 let groupsDiv = document.querySelector('#groups');
 
 // Setting Window for creating new Group/List
@@ -50,6 +52,8 @@ groupsLi.forEach(group => {
     });
 });
 
+
+//-------------------- Setting right window side
 
 
 
