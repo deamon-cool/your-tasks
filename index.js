@@ -117,6 +117,10 @@ app.get('main/:id', (req, res) => {
 
 // Store new group in Db
 app.post('/main/store/group', async (req, res) => {
+    if (req.body.name === '') {
+        return res.redirect(302, '/main');
+    }
+
     try {
         const groups = await Group.find({});
 
