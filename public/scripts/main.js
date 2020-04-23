@@ -58,4 +58,3 @@ groupsLi.forEach(group => {
 
 
 
-// !!! TODO !!! Draging and droping tasks LOOK: if you have too long list then you need scroll. So when you drag task you must consider auto scrolling too
