@@ -74,8 +74,8 @@ listContainers.forEach(list => {
     let newTaskButton = list.querySelector('.header button:first-of-type');
 
     newTaskButton.addEventListener('click', () => {
-        let TaskWindow = setNewTaskWindow('/main/store/task/:' + list.id);
-        showWindow(TaskWindow);
+        let taskWindow = setNewTaskWindow('/main/store/task/:' + list.id);
+        showWindow(taskWindow);
     });
 });
 
