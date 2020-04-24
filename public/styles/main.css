@@ -434,6 +434,12 @@
     width: 50%;
 }
 
+#lists .window-container .window-create-new form>input[type=time]::-webkit-inner-spin-button,
+#lists .window-container .window-create-new form>input[type=time]::-webkit-outer-spin-button {
+    display: none;
+    margin: 0;
+}
+
 #lists .window-container .window-create-new form .row {
     flex-direction: row;
     width: 100%;
