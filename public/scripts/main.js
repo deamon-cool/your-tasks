@@ -25,6 +25,9 @@ function setWindow(actionForm, title, inputHint) {
 // Showing set window
 function showWindow(window) {
     window.style.display = 'block';
+
+    let firstInput = window.querySelectorAll('input')[0];
+    firstInput.focus();
 }
 
 
