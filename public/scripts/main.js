@@ -5,8 +5,7 @@ let groupsDiv = document.querySelector('#groups');
 // Setting Window for creating new Group/List
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = groupsDiv.querySelector('.window-container');
-    let windowCreateNew = windowContainer.querySelector('.window-create-new');
-    let form = windowCreateNew.querySelector('form');
+    let form = windowContainer.querySelector('.window-create-new form');
     let label = form.querySelector('label');
     let input = form.querySelector('input[type=text]');
 
@@ -20,8 +19,10 @@ function setWindow(actionForm, title, inputHint) {
         windowContainer.style.display = 'none';
     });
 
-    windowCreateNew.addEventListener('mouseleave', () => {
-        windowContainer.style.display = 'none';
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
     });
 
     return windowContainer;
@@ -63,14 +64,13 @@ let listsDiv = document.querySelector('#lists');
 // Setting Window for creating new Task
 function setNewTaskWindow(actionForm) {
     let windowContainer = listsDiv.querySelector('.window-container');
-    let windowCreateNew = windowContainer.querySelector('.window-create-new');
-    let form = windowCreateNew.querySelector('form');
+    let form = windowContainer.querySelector('.window-create-new form');
     let timeInputs = form.querySelectorAll('input[type=time]');
 
     form.setAttribute('action', actionForm);
 
     timeInputs.forEach(input => {
-        if(input.value === '') {
+        if (input.value === '') {
             input.value = '00:00';
         }
     });
@@ -81,8 +81,10 @@ function setNewTaskWindow(actionForm) {
         windowContainer.style.display = 'none';
     });
 
-    windowCreateNew.addEventListener('mouseleave', () => {
-        windowContainer.style.display = 'none';
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
     });
 
     return windowContainer;
