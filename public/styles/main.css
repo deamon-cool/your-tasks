@@ -430,6 +430,11 @@
     background-color: var(--general-lighter-blue-color);
 }
 
+#lists .window-container .window-create-new form>input[type=time]:focus,
+#lists .window-container .window-create-new form>input[type=text]:focus {
+    background-color: var(--general-lighter-blue-color);
+}
+
 #lists .window-container .window-create-new form>input[type=time] {
     width: 50%;
 }
