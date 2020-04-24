@@ -56,8 +56,10 @@ let listsDiv = document.querySelector('#lists');
 function setNewTaskWindow(actionForm) {
     let windowContainer = listsDiv.querySelector('.window-container');
     let form = windowContainer.querySelector('.window-create-new form');
+    let timeInputs = form.querySelectorAll('input[type=time]');
 
     form.setAttribute('action', actionForm);
+    timeInputs.forEach(input => input.value = '00:00');
 
     let cancelButton = form.querySelector('.row input[type=button]');
 
