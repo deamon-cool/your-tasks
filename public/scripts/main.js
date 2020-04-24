@@ -5,7 +5,8 @@ let groupsDiv = document.querySelector('#groups');
 // Setting Window for creating new Group/List
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = groupsDiv.querySelector('.window-container');
-    let form = windowContainer.querySelector('.window-create-new form');
+    let windowCreateNew = windowContainer.querySelector('.window-create-new');
+    let form = windowCreateNew.querySelector('form');
     let label = form.querySelector('label');
     let input = form.querySelector('input[type=text]');
 
@@ -16,6 +17,10 @@ function setWindow(actionForm, title, inputHint) {
     let cancelButton = form.querySelector('.row input[type=button]');
 
     cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    windowCreateNew.addEventListener('mouseleave', () => {
         windowContainer.style.display = 'none';
     });
 
@@ -58,7 +63,8 @@ let listsDiv = document.querySelector('#lists');
 // Setting Window for creating new Task
 function setNewTaskWindow(actionForm) {
     let windowContainer = listsDiv.querySelector('.window-container');
-    let form = windowContainer.querySelector('.window-create-new form');
+    let windowCreateNew = windowContainer.querySelector('.window-create-new');
+    let form = windowCreateNew.querySelector('form');
     let timeInputs = form.querySelectorAll('input[type=time]');
 
     form.setAttribute('action', actionForm);
@@ -67,6 +73,10 @@ function setNewTaskWindow(actionForm) {
     let cancelButton = form.querySelector('.row input[type=button]');
 
     cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    windowCreateNew.addEventListener('mouseleave', () => {
         windowContainer.style.display = 'none';
     });
 
