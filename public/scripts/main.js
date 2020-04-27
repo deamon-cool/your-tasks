@@ -45,9 +45,11 @@ newGroupButton.addEventListener('click', () => {
     showWindow(groupWindow);
 });
 
-// Creating new List -> Window Functionality
+// Get all groups
 let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
 groupsLi.forEach(group => {
+
+    // Creating new List -> Window Functionality
     let newListButton = group.querySelector('.new-list-button');
 
     newListButton.addEventListener('click', () => {
@@ -90,9 +92,11 @@ function setNewTaskWindow(actionForm) {
     return windowContainer;
 }
 
-// Creating new Task -> Window Functionality
+// Get all lists
 let listContainers = listsDiv.querySelectorAll('.list-container');
 listContainers.forEach(list => {
+
+    // Creating new Task -> Window Functionality
     let newTaskButton = list.querySelector('.header button:first-of-type');
 
     newTaskButton.addEventListener('click', () => {
