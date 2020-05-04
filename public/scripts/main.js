@@ -122,3 +122,23 @@ function setListeners(task) {
         updateTaskInDb(id, undefined, status);
     });
 }
+
+// Update task in Database
+async function updateTaskInDb(taskId, pos, sta, start, end, tit, descr) {
+    let url = '/main/update/task/:' + taskId;
+    let data = {
+        position: pos,
+        status: sta,
+        startTime: start,
+        endTime: end,
+        title: tit,
+        description: descr
+    };
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    };
+
+    await fetch(url, init);
+}
