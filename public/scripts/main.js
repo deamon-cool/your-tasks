@@ -110,3 +110,15 @@ listContainers.forEach(list => {
         setListeners(task);
     });
 });
+
+// Set listeners for task
+function setListeners(task) {
+    let checkbox = task.querySelector('input[type=checkbox]');
+
+    checkbox.addEventListener('click', () => {
+        let status = checkbox.checked;
+        let id = task.id;
+
+        updateTaskInDb(id, undefined, status);
+    });
+}
