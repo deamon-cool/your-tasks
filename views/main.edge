@@ -94,7 +94,11 @@
 
             <div class="task-container" id="{{task.id}}">
 
+                @if(task.status)
+                <input type="checkbox" checked>
+                @else
                 <input type="checkbox">
+                @endif
 
                 <div class="content">
 
