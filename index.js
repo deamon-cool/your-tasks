@@ -194,6 +194,13 @@ app.post('/main/store/task/:id', async (req, res) => {
     }
 });
 
+// Update task in Db
+app.post('/main/update/task/:id', async (req, res) => {
+    const taskId = req.url.slice(req.url.search(':') + 1);
+    console.log(taskId);
+    console.log(req.body);
+});
+
 
 app.get('/progress', (req, res) => {
     res.render('progress');
