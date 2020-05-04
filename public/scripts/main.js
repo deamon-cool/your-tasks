@@ -103,5 +103,10 @@ listContainers.forEach(list => {
         let taskWindow = setNewTaskWindow('/main/store/task/:' + list.id);
         showWindow(taskWindow);
     });
-});
 
+    // Get all tasks from list
+    let taskContainers = list.querySelectorAll('.tasks .task-container');
+    taskContainers.forEach(task => {
+        setListeners(task);
+    });
+});
