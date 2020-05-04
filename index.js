@@ -18,6 +18,8 @@ db.once('open', () => console.log('connected to db :)'));
 // Express configuration
 app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
 
 app.use(engine);
