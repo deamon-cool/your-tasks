@@ -13,10 +13,6 @@
 
 @section('groups-layout')
 
-{{--  !!! TODO !!! : Each group link renders new lists(with tasks) from MongoDb --}}
-{{--  !!! TODO !!! : In current group all lists(with tasks) are downloaded from MongoDb --}}
-{{--  !!! TODO !!! : In current group all list links scroll to list(with tasks) --}}
-
 <div id="groups">
     <ul class="groups-ul">
 
@@ -71,7 +67,6 @@
 
 @section('lists-layout')
 
-{{--  !!! TODO !!! : #lists content fill from the MongoDb lists and tasks collection --}}
 <div id="lists">
 
     @each(group in packet.groups)
