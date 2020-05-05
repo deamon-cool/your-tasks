@@ -117,15 +117,14 @@ function setListeners(task) {
 
     checkbox.addEventListener('click', () => {
         let status = checkbox.checked;
-        let id = task.id;
+        let url = '/main/update/task/status/:' + task.id;
 
-        updateTaskInDb(id, undefined, status);
+        updateTaskInDb(url, undefined, status, undefined, undefined, undefined, undefined);
     });
 }
 
 // Update task in Database
-async function updateTaskInDb(taskId, pos, sta, start, end, tit, descr) {
-    let url = '/main/update/task/:' + taskId;
+async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     let data = {
         position: pos,
         status: sta,
