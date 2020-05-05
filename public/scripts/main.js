@@ -147,8 +147,8 @@ async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     let data = {
         position: pos,
         status: sta,
-        startTime: start,
-        endTime: end,
+        starttime: start,
+        endtime: end,
         title: tit,
         description: descr
     };
