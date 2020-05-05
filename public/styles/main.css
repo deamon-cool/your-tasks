@@ -350,6 +350,10 @@
     cursor: pointer;
 }
 
+#lists .list-container .tasks .task-container button i {
+    transform: scale(0.7);
+}
+
 #lists .list-container .tasks .task-container button:hover {
     background-color: var(--general-lighter-blue-color);
 }
