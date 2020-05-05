@@ -183,7 +183,7 @@ app.post('/main/store/task/:id', async (req, res) => {
             startTime: req.body.starttime,
             endTime: req.body.endtime,
             title: req.body.title,
-            description: req.body.description,
+            description: req.body.description
         });
 
         await List.updateOne(list, { $push: { taskIds: task._id } });
