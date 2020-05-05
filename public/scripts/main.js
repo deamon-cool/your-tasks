@@ -151,3 +151,40 @@ async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
 
     await fetch(url, init);
 }
+
+// Setting Window for updating Task
+function setUpdateTaskWindow(task, actionForm) {
+    let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
+    let taskTitle = task.querySelector('.content .title p').textContent;
+    let taskDescr = task.querySelector('.content .description p').textContent;
+
+    let windowContainer = listsDiv.querySelector('.window-container');
+    let windowTitle = windowContainer.querySelector('.window-create-new>p');
+    let form = windowContainer.querySelector('.window-create-new form');
+    let timeInputs = form.querySelectorAll('input[type=time]');
+    let titleInput = form.querySelector('input[name=title]');
+    let descrInput = form.querySelector('input[name=description]');
+
+    windowTitle.textContent = 'Update Task:';
+
+    form.setAttribute('action', actionForm);
+
+    timeInputs[0].value = taskTime[0];
+    timeInputs[1].value = taskTime[1];
+    titleInput.value = taskTitle;
+    descrInput.value = taskDescr;
+
+    let cancelButton = form.querySelector('.row input[type=button]');
+
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
+    });
+
+    return windowContainer;
+}
