@@ -165,7 +165,7 @@ function setUpdateTaskWindow(task, actionForm) {
     let titleInput = form.querySelector('input[name=title]');
     let descrInput = form.querySelector('input[name=description]');
 
-    windowTitle.textContent = 'Update Task:';
+    windowTitle.textContent = 'Edit Task:';
 
     form.setAttribute('action', actionForm);
 
