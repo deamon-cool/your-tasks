@@ -121,6 +121,16 @@ function setListeners(task) {
 
         updateTaskInDb(url, undefined, status, undefined, undefined, undefined, undefined);
     });
+
+    let edit = task.querySelector('button');
+
+    edit.addEventListener('click', () => {
+        let url = '/main/update/task/:' + task.id;
+
+        let updateTaskWindow = setUpdateTaskWindow(task, url);
+        showWindow(updateTaskWindow);
+    });
+
 }
 
 // Update task in Database
