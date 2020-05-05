@@ -63,8 +63,8 @@ groupsLi.forEach(group => {
 
 let listsDiv = document.querySelector('#lists');
 
-// Setting Window for creating new Task
-function setNewTaskWindow(actionForm) {
+// Setting Window for creating/updating Task
+function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
     let windowContainer = listsDiv.querySelector('.window-container');
     let windowTitle = windowContainer.querySelector('.window-create-new>p');
     let form = windowContainer.querySelector('.window-create-new form');
@@ -72,16 +72,14 @@ function setNewTaskWindow(actionForm) {
     let titleInput = form.querySelector('input[name=title]');
     let descrInput = form.querySelector('input[name=description]');
 
-    windowTitle.textContent = 'New Task:';
+    windowTitle.textContent = title;
 
     form.setAttribute('action', actionForm);
 
-    timeInputs.forEach(input => {
-        input.value = '00:00';
-    });
-
-    titleInput.value = '';
-    descrInput.value = '';
+    timeInputs[0].value = taskTime[0];
+    timeInputs[1].value = taskTime[1];
+    titleInput.value = taskTitle;
+    descrInput.value = taskDescr;
 
     let cancelButton = form.querySelector('.row input[type=button]');
 
@@ -106,7 +104,9 @@ listContainers.forEach(list => {
     let newTaskButton = list.querySelector('.header button:first-of-type');
 
     newTaskButton.addEventListener('click', () => {
-        let taskWindow = setNewTaskWindow('/main/store/task/:' + list.id);
+        let url = '/main/store/task/:' + list.id;
+        
+        let taskWindow = setTaskWindow(['00:00', '00:00'], '', '', 'New Task:', url);
         showWindow(taskWindow);
     });
 
@@ -132,8 +132,11 @@ function setListeners(task) {
 
     edit.addEventListener('click', () => {
         let url = '/main/update/task/:' + task.id;
+        let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
+        let taskTitle = task.querySelector('.content .title p').textContent;
+        let taskDescr = task.querySelector('.content .description p').textContent;
 
-        let updateTaskWindow = setUpdateTaskWindow(task, url);
+        let updateTaskWindow = setTaskWindow(taskTime, taskTitle, taskDescr, 'Edit Task:', url);
         showWindow(updateTaskWindow);
     });
 
@@ -156,41 +159,4 @@ async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     };
 
     await fetch(url, init);
-}
-
-// Setting Window for updating Task
-function setUpdateTaskWindow(task, actionForm) {
-    let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
-    let taskTitle = task.querySelector('.content .title p').textContent;
-    let taskDescr = task.querySelector('.content .description p').textContent;
-
-    let windowContainer = listsDiv.querySelector('.window-container');
-    let windowTitle = windowContainer.querySelector('.window-create-new>p');
-    let form = windowContainer.querySelector('.window-create-new form');
-    let timeInputs = form.querySelectorAll('input[type=time]');
-    let titleInput = form.querySelector('input[name=title]');
-    let descrInput = form.querySelector('input[name=description]');
-
-    windowTitle.textContent = 'Edit Task:';
-
-    form.setAttribute('action', actionForm);
-
-    timeInputs[0].value = taskTime[0];
-    timeInputs[1].value = taskTime[1];
-    titleInput.value = taskTitle;
-    descrInput.value = taskDescr;
-
-    let cancelButton = form.querySelector('.row input[type=button]');
-
-    cancelButton.addEventListener('click', () => {
-        windowContainer.style.display = 'none';
-    });
-
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
-        }
-    });
-
-    return windowContainer;
 }
