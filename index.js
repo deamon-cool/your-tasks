@@ -196,6 +196,29 @@ app.post('/main/store/task/:id', async (req, res) => {
     }
 });
 
+// Upadate task in Db
+app.post('/main/update/task/:id', async (req, res) => {
+    const taskId = req.url.slice(req.url.search(':') + 1);
+
+    try {
+        const task = await Task.findOne({ _id: taskId });
+
+        await Task.updateOne(task, {
+            startTime: req.body.starttime,
+            endTime: req.body.endtime,
+            title: req.body.title,
+            description: req.body.description
+        });
+
+        return res.redirect(302, '/main');
+    } catch (e) {
+        console.log('Err for: /main/update/task/:id ----------------------------------------------------->\n' + e);
+
+        return res.redirect(500, '/error');
+    }
+
+});
+
 // Update task status in Db
 app.post('/main/update/task/status/:id', async (req, res) => {
     const taskId = req.url.slice(req.url.search(':') + 1);
