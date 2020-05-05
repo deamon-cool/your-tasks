@@ -66,16 +66,22 @@ let listsDiv = document.querySelector('#lists');
 // Setting Window for creating new Task
 function setNewTaskWindow(actionForm) {
     let windowContainer = listsDiv.querySelector('.window-container');
+    let windowTitle = windowContainer.querySelector('.window-create-new>p');
     let form = windowContainer.querySelector('.window-create-new form');
     let timeInputs = form.querySelectorAll('input[type=time]');
+    let titleInput = form.querySelector('input[name=title]');
+    let descrInput = form.querySelector('input[name=description]');
+
+    windowTitle.textContent = 'New Task:';
 
     form.setAttribute('action', actionForm);
 
     timeInputs.forEach(input => {
-        if (input.value === '') {
-            input.value = '00:00';
-        }
+        input.value = '00:00';
     });
+
+    titleInput.value = '';
+    descrInput.value = '';
 
     let cancelButton = form.querySelector('.row input[type=button]');
 
