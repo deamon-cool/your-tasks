@@ -123,8 +123,10 @@ listContainers.forEach(list => {
     });
 
     // Get all tasks from list
-    let taskContainers = list.querySelectorAll('.tasks .task-container');
-    taskContainers.forEach(task => {
+    let tasks = tasksContainer.querySelectorAll('.task-container');
+    tasks.forEach(task => {
+        task.setAttribute('draggable', true);
+
         setListeners(task);
     });
 });
