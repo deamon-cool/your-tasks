@@ -62,6 +62,8 @@ groupsLi.forEach(group => {
 //-------------------- Setting right window side
 
 let listsDiv = document.querySelector('#lists');
+let listOfDraggedTask;
+let draggedTask;
 
 // Setting Window for creating/updating Task
 function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
