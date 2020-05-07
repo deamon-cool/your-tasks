@@ -199,12 +199,7 @@ function updatePosition(container, targetItem, draggedItem) {
     if (state) {
         try {
             container.insertBefore(draggedItem, targetItem);
-        } catch (e) {
-            // console.log(e);
-            // console.log('draggedItem ---------->' + draggedItem);
-            // console.log('targetItem ---------->' + targetItem);
-        }
-
+        } catch (e) {}
     } else {
         container.appendChild(draggedItem);
     }
