@@ -154,6 +154,17 @@ function setListeners(task) {
         showWindow(updateTaskWindow);
     });
 
+    task.addEventListener('dragstart', e => {
+        draggedTask = e.target;
+        listOfDraggedTask = e.path[2];
+
+        draggedTask.style.opacity = '0.01';
+    });
+
+    task.addEventListener('dragend', e => {
+        draggedTask.style.opacity = '';
+    });
+
 }
 
 // Update task in Database
