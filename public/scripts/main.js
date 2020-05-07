@@ -185,3 +185,28 @@ async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
 
     await fetch(url, init);
 }
+
+// Update tasks positions
+function updatePosition(container, targetItem, draggedItem) {
+    let name = targetItem.className;
+    let state = name === 'task-container'
+        || name === 'content'
+        || name === 'row-1'
+        || name === 'hours'
+        || name === 'title'
+        || name === 'description'
+        || name === '';
+    if (state) {
+        try {
+            container.insertBefore(draggedItem, targetItem);
+        } catch (e) {
+            // console.log(e);
+            // console.log('draggedItem ---------->' + draggedItem);
+            // console.log('targetItem ---------->' + targetItem);
+        }
+
+    } else {
+        container.appendChild(draggedItem);
+    }
+}
+
