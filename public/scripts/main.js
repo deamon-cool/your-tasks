@@ -107,7 +107,7 @@ listContainers.forEach(list => {
 
     newTaskButton.addEventListener('click', () => {
         let url = '/main/store/task/:' + list.id;
-        
+
         let taskWindow = setTaskWindow(['00:00', '00:00'], '', '', 'New Task:', url);
         showWindow(taskWindow);
     });
