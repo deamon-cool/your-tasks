@@ -103,7 +103,7 @@ let listContainers = listsDiv.querySelectorAll('.list-container');
 listContainers.forEach(list => {
 
     // Creating new Task -> Window Functionality
-    let newTaskButton = list.querySelector('.header button:first-of-type');
+    let newTaskButton = list.querySelector('.header button.new');
 
     newTaskButton.addEventListener('click', () => {
         let url = '/main/store/task/:' + list.id;
