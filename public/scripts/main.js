@@ -112,6 +112,16 @@ listContainers.forEach(list => {
         showWindow(taskWindow);
     });
 
+    // Dragover functionality container
+    let tasksContainer = list.querySelector('.tasks');
+    tasksContainer.addEventListener('dragover', (e) => {
+        e.preventDefault();
+
+        if (list === listOfDraggedTask) {
+            updatePosition(tasksContainer, e.target, draggedTask);
+        }
+    });
+
     // Get all tasks from list
     let taskContainers = list.querySelectorAll('.tasks .task-container');
     taskContainers.forEach(task => {
