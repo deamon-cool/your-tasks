@@ -42,7 +42,7 @@ async function createDb() {
         for (let j = 3; j >= 0; j--) {
             let list = await List.create({
                 position: j,
-                name: `List ${j}`
+                name: `List ${j} (g${i})`
             });
 
             group = await Group.findOne({ _id: group._id });
@@ -56,7 +56,7 @@ async function createDb() {
                     startTime: `0${k}:00`,
                     endTime: `0${k + 1}:00`,
                     title: `Task title ${k}`,
-                    description: `description description description description ${k}`
+                    description: `description description description description ${k} List ${j}`
                 });
 
                 list = await List.findOne({ _id: list._id });
