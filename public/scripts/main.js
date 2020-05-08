@@ -1,3 +1,18 @@
+//-------------------- Download data from server
+async function downloadData(url) {
+    let res = await fetch(url, {
+        method: 'post'
+    });
+
+    let jsonObj = await res.json();
+
+    return jsonObj;
+}
+
+let data = downloadData('/main/data');
+console.log(data);
+
+
 //-------------------- Setting left window side
 
 let groupsDiv = document.querySelector('#groups');
