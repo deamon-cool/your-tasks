@@ -214,7 +214,7 @@ function updatePosition(container, targetItem, draggedItem) {
     if (state) {
         try {
             container.insertBefore(draggedItem, targetItem);
-        } catch (e) {}
+        } catch (e) { }
     } else {
         container.appendChild(draggedItem);
     }
