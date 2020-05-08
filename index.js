@@ -113,7 +113,7 @@ app.get('/main', async (req, res) => {
 });
 
 // Load other group
-app.get('main/:id', (req, res) => {
+app.get('/main/:id', (req, res) => {
     // unpack group id and load data from it
 });
 
