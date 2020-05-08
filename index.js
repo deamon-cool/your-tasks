@@ -112,6 +112,84 @@ app.get('/main', async (req, res) => {
     }
 });
 
+// Download data Groups/Lists/Tasks
+app.post('/main/download/data', async (req, res) => {
+
+    //TEST -> creating test user
+    const users = await User.find({});
+    if (users === null || users.length === 0) {
+        await User.create({
+            name: 'Damian Hehe',
+            password: '123',
+        });
+    }
+
+    try {
+        let packet = {};
+
+        packet.user = users[0].name;
+
+        // TEST -> For users[0]
+        if (users[0].groupIds === undefined || users[0].groupIds.length === 0) {
+            return res.render('main', { packet: packet });
+        }
+
+        //TEST -> load ids of group from test user
+        const groupIds = users[0].groupIds;
+
+        packet.groups = [];
+        // download all Groups
+        for (let i = 0; i < groupIds.length; i++) {
+            const group = await Group.findOne({ _id: groupIds[i] });
+
+            packet.groups[i] = {};
+            packet.groups[i].id = group._id;
+            packet.groups[i].position = group.position;
+            packet.groups[i].name = group.name;
+            packet.groups[i].lists = [];
+
+            const listIds = group.listIds;
+            // download all Lists in Group
+            for (let j = 0; j < listIds.length; j++) {
+                const list = await List.findOne({ _id: listIds[j] });
+
+                packet.groups[i].lists[j] = {};
+                packet.groups[i].lists[j].id = list._id;
+                packet.groups[i].lists[j].position = list.position;
+                packet.groups[i].lists[j].name = list.name;
+                packet.groups[i].lists[j].tasks = [];
+
+                const taskIds = list.taskIds;
+                // download only Tasks belongs to Group[0]
+                if (i === 0) {
+                    // download all Tasks in List
+                    for (let k = 0; k < taskIds.length; k++) {
+                        const task = await Task.findOne({ _id: taskIds[k] });
+
+                        packet.groups[i].lists[j].tasks[k] = {};
+                        packet.groups[i].lists[j].tasks[k].id = task._id;
+                        packet.groups[i].lists[j].tasks[k].position = task.position;
+                        packet.groups[i].lists[j].tasks[k].status = task.status;
+                        packet.groups[i].lists[j].tasks[k].startTime = task.startTime;
+                        packet.groups[i].lists[j].tasks[k].endTime = task.endTime;
+                        packet.groups[i].lists[j].tasks[k].title = task.title;
+                        packet.groups[i].lists[j].tasks[k].description = task.description;
+                    }
+                }
+            }
+        }
+
+        // Flag for rendering only first group
+        packet.renderedId = packet.groups[0].id;
+
+        return res.json(packet);
+    } catch (e) {
+        console.log('Err for: /main ----------------------------------------------------->\n' + e);
+
+        return res.redirect(500, '/error');
+    }
+});
+
 // Load other group
 app.get('/main/:id', (req, res) => {
     // unpack group id and load data from it
