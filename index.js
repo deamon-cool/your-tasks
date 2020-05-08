@@ -232,6 +232,14 @@ app.post('/main/update/task/status/:id', async (req, res) => {
     }
 });
 
+// Update tasks position in Db
+app.post('/main/update/tasks/position/:id', async (req, res) => {
+    // list id
+    // req.body <- all tasks
+
+
+});
+
 
 app.get('/progress', (req, res) => {
     res.render('progress');
