@@ -9,8 +9,17 @@ async function downloadData(url) {
     return jsonObj;
 }
 
-let data = downloadData('/main/data');
-console.log(data);
+downloadData('/main/download/data')
+    .then(data => dataHandler(data));
+
+
+// Handle data
+function dataHandler(data) {
+    console.log(data);
+
+
+}
+
 
 
 //-------------------- Setting left window side
