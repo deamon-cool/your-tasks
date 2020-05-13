@@ -9,6 +9,7 @@ async function downloadData(url) {
     return jsonObj;
 }
 
+// Invokes Download data first time
 downloadData('/main/data/0')
     .then(data => dataHandler(data));
 
