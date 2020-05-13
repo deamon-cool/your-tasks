@@ -76,6 +76,9 @@ app.get('/main/data/:position', async (req, res) => {
         for (let i = 0; i < groupIds.length; i++) {
             const group = await Group.findOne({ _id: groupIds[i] });
 
+            // Flag id for rendering group
+            if (group.position === position) packet.renderedId = group._id;
+
             packet.groups[i] = {};
             packet.groups[i].id = group._id;
             packet.groups[i].position = group.position;
@@ -96,9 +99,6 @@ app.get('/main/data/:position', async (req, res) => {
                 const taskIds = list.taskIds;
                 // download only Tasks belongs to Group[0]
                 if (group.position === position) {
-
-                    // Flag id for rendering group
-                    packet.renderedId = group._id;
 
                     // download all Tasks in List
                     for (let k = 0; k < taskIds.length; k++) {
