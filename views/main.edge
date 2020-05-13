@@ -11,7 +11,7 @@
 
 {{--  Groups and lists inside created by user --}}
 
-@section('groups-layout')
+@section('leftside-layout')
 
 <div id="groups">
     <ul class="groups-ul">
@@ -23,7 +23,7 @@
                 <i class="fa fa-angle-right"></i>{{group.name}}
             </a>
             <ul class="lists-ul">
-                {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in lists-layout --}}
+                {{--  !!! TODO !!! : Consider to use markers for scroll to choosen list name in rightside-layout --}}
 
                 @each(list in group.lists)
 
@@ -65,7 +65,7 @@
 
 {{--  Created by user lists in specify group  --}}
 
-@section('lists-layout')
+@section('rightside-layout')
 
 <div id="lists">
 

@@ -120,14 +120,14 @@ body {
     height: 90vh;
 }
 
-#section-layout #groups-layout {
+#section-layout #leftside-layout {
     width: 30%;
     height: inherit;
     overflow: auto;
     border-right: 1px solid var(--general-lighter-blue-color);
 }
 
-#section-layout #lists-layout {
+#section-layout #rightside-layout {
     width: 70%;
     height: inherit;
     overflow: auto;
@@ -135,11 +135,11 @@ body {
 }
 
 /* @media (max-width: 1100px) {
-    #section-layout #groups-layout {
+    #section-layout #leftside-layout {
         width: 30%;
     }
 
-    #section-layout #lists-layout {
+    #section-layout #rightside-layout {
         width: 70%;
     }
 } */
