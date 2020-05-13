@@ -24,23 +24,24 @@ function dataHandler(data) {
     renderData(sortedData);
 }
 
+// Sorts all groups/lists/tasks
+function getSortedItems(items) {
+    let groups = sort(items);
 
-function renderData(sortedData) {
+    for (let i = 0; i < groups.length; i++) {
+        let sortedLists = sort(groups[i].lists);
 
+        groups[i].lists = sortedLists;
+
+        for (let j = 0; j < sortedLists.length; j++) {
+            sortedTasks = sort(sortedLists[j].tasks);
+
+            groups[i].lists[j].tasks = sortedTasks;
+        }
+    }
+
+    return groups;
 }
-
-
-
-//-------------------- Setting left window side
-
-let groupsDiv = document.querySelector('#groups');
-
-// Setting Window for creating new Group/List
-function setWindow(actionForm, title, inputHint) {
-    let windowContainer = groupsDiv.querySelector('.window-container');
-    let form = windowContainer.querySelector('.window-create-new form');
-    let label = form.querySelector('label');
-    let input = form.querySelector('input[type=text]');
 
     form.setAttribute('action', actionForm);
     label.textContent = title;
