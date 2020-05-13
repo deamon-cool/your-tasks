@@ -60,12 +60,9 @@ function sort(objectsArray) {
     return sortedObjectsArray;
 }
 
-// Showing set window
-function showWindow(window) {
-    window.style.display = 'block';
+// Render HTML DOM
+function renderData(sortedData) {
 
-    let firstInput = window.querySelectorAll('input')[0];
-    firstInput.focus();
 }
 
 
