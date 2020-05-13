@@ -16,16 +16,12 @@ downloadData('/main/data/0')
 
 // Handle data
 function dataHandler(data) {
-    console.log(data);
-    let sortedData = getSortedData(data);
+    let groups = data.groups;
+    let sortedData = getSortedItems(groups);
 
-}
+    console.log(sortedData);
 
-
-function getSortedData(data) {
-    let sortedData;
-
-    return sortedData;
+    renderData(sortedData);
 }
 
 
