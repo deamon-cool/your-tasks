@@ -95,7 +95,7 @@ app.get('/main/data/:position', async (req, res) => {
 
                 const taskIds = list.taskIds;
                 // download only Tasks belongs to Group[0]
-                if (group.position === 0) {
+                if (group.position === position) {
                     // download all Tasks in List
                     for (let k = 0; k < taskIds.length; k++) {
                         const task = await Task.findOne({ _id: taskIds[k] });
