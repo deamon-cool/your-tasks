@@ -42,7 +42,7 @@ app.get('/main', async (req, res) => {
 });
 
 // Download data Groups/Lists/Tasks
-app.get('/main/download/data', async (req, res) => {
+app.get('/main/data', async (req, res) => {
 
     //TEST -> creating test user
     const users = await User.find({});

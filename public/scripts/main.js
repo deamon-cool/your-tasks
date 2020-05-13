@@ -9,7 +9,7 @@ async function downloadData(url) {
     return jsonObj;
 }
 
-downloadData('/main/download/data')
+downloadData('/main/data')
     .then(data => dataHandler(data));
 
 
