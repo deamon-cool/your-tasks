@@ -43,23 +43,21 @@ function getSortedItems(items) {
     return groups;
 }
 
-    form.setAttribute('action', actionForm);
-    label.textContent = title;
-    input.setAttribute('placeholder', inputHint);
+// Sorts single objects array
+function sort(objectsArray) {
+    let sortedObjectsArray = [];
 
-    let cancelButton = form.querySelector('.row input[type=button]');
+    for (let i = 0; i < objectsArray.length; i++) {
 
-    cancelButton.addEventListener('click', () => {
-        windowContainer.style.display = 'none';
-    });
+        for (let j = 0; j < objectsArray.length; j++) {
 
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
+            if (i === objectsArray[j].position) {
+                sortedObjectsArray.push(objectsArray[j]);
+            }
         }
-    });
+    }
 
-    return windowContainer;
+    return sortedObjectsArray;
 }
 
 // Showing set window
