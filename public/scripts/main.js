@@ -16,7 +16,19 @@ downloadData('/main/download/data')
 // Handle data
 function dataHandler(data) {
     console.log(data);
+    let sortedData = getSortedData(data);
 
+}
+
+
+function getSortedData(data) {
+    let sortedData;
+
+    return sortedData;
+}
+
+
+function renderData(sortedData) {
 
 }
 
