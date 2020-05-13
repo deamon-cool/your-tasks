@@ -38,7 +38,7 @@ app.get('/register', (req, res) => {
 
 // Load first group, its lists and its tasks
 app.get('/main', async (req, res) => {
-    res.sendFile('index.html', {root: `${__dirname}/public`});
+    res.sendFile('index.html', { root: `${__dirname}/public` });
 });
 
 // Download data Groups/Lists/Tasks
