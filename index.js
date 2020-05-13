@@ -33,7 +33,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-    res.render('register');
+    res.sendFile('register.html', { root: `${__dirname}/public` });
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile('login.html', { root: `${__dirname}/public` });
 });
 
 // Load first group, its lists and its tasks
