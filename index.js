@@ -57,6 +57,8 @@ app.get('/main/data/:position', async (req, res) => {
     }
 
     try {
+        const position = Number(req.params.position);
+
         let packet = {};
 
         packet.user = users[0].name;
