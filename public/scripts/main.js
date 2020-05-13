@@ -1,7 +1,7 @@
 // Download data from server
 async function downloadData(url) {
     let res = await fetch(url, {
-        method: 'post'
+        method: 'get'
     });
 
     let jsonObj = await res.json();
