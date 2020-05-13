@@ -1,4 +1,4 @@
-// Download data from server
+// Downloads data from server
 async function downloadData(url) {
     let res = await fetch(url, {
         method: 'get'
