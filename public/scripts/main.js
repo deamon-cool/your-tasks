@@ -73,178 +73,134 @@ let leftSidelayout = document.querySelector('#leftside-layout');
 let rightSidelayout = document.querySelector('#rightside-layout');
 
 // Render HTML DOM
-function renderData(sortedData) {
+function renderData(sortedData, renderedGroupId) {
+    sortedData.forEach(group => {
 
+        group.lists.forEach(list => {
+
+            leftSidelayout.innerHTML += `
+            <div id="groups">
+                <ul class="groups-ul">
+
+                    <li id="${group.id}">
+                        <a href="###">
+                            <i class="fa fa-angle-right"></i>${group.name}
+                        </a>
+                        <ul class="lists-ul">
+
+                            <li><a href="#scroll-to-id-element">${list.name}</a></li>
+
+                        </ul>
+
+                        <button class="new-list-button">New...</button>
+                    </li>
+                </ul>
+
+                <button class="new-group-button">New...</button>
+
+                <!--  Creating new group/list window  -->
+                <div class="window-container">
+                    <div class="window-create-new">
+                        <form method="POST">
+                            <label>New Group:</label>
+                            <input type="text" name="name" placeholder="Group Name">
+                            <div class="row">
+                                <input type="button" value="X">
+                                <input type="submit" value="✔">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            `;
+
+            // Render right side
+            if (group.id === renderedGroupId) {
+
+                list.tasks.forEach(task => {
+
+                    rightSidelayout.innerHTML += `
+                    <div id="lists">
+
+                        <div id="${list.id}" class="list-container">
+
+                            <div class="header">
+                                <h2>${list.name}</h2>
+                                <button class="new"><i class="fa fa-plus fa-2x"></i></button>
+                                <button class="delete"><i class="fa fa-trash fa-2x"></i></button>
+                            </div>
+
+                            <div class="tasks">
+
+                                <div class="task-container" id="${task.id}">
+
+                                    <input type="checkbox" ${task.status ? 'checked' : ''}>
+
+                                    <div class="content">
+
+                                        <div class="row-1">
+                                            <div class="hours">
+                                                <p>${task.startTime} - ${task.endTime}</p>
+                                            </div>
+
+                                            <div class="title">
+                                                <p>${task.title}</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="description">
+                                            <p>${task.description}</p>
+                                        </div>
+
+                                    </div>
+
+                                    <button><i class="fa fa-edit fa-2x"></i></button>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!--  Creating new / updating task window  -->
+                        <div class="window-container">
+                            <div class="window-create-new">
+                                <p>New Task:</p>
+                                <form method="POST">
+                                    <label>Start Time:</label>
+                                    <input type="time" name="starttime">
+
+                                    <label>End Time:</label>
+                                    <input type="time" name="endtime">
+
+                                    <label>Title:</label>
+                                    <input type="text" name="title" placeholder="Title...">
+
+                                    <label>Description:</label>
+                                    <input type="text" name="description" placeholder="Description...">
+
+                                    <div class="row">
+                                        <input type="button" value="X">
+                                        <input type="submit" value="✔">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    `;
+
+                });
+
+            }
+
+
+        });
+    });
 }
 
 
-// Creating new Group -> Window Functionality
-let newGroupButton = groupsDiv.querySelector('.new-group-button');
-newGroupButton.addEventListener('click', () => {
-    let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
-
-    showWindow(groupWindow);
-});
-
-// Get all groups
-let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
-groupsLi.forEach(group => {
-
-    // Creating new List -> Window Functionality
-    let newListButton = group.querySelector('.new-list-button');
-
-    newListButton.addEventListener('click', () => {
-        let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-        showWindow(listWindow);
-    });
-});
-
-
-//-------------------- Setting right window side
-
-let listsDiv = document.querySelector('#lists');
-let listOfDraggedTask;
-let draggedTask;
-
-// Setting Window for creating/updating Task
-function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
-    let windowContainer = listsDiv.querySelector('.window-container');
-    let windowTitle = windowContainer.querySelector('.window-create-new>p');
-    let form = windowContainer.querySelector('.window-create-new form');
-    let timeInputs = form.querySelectorAll('input[type=time]');
-    let titleInput = form.querySelector('input[name=title]');
-    let descrInput = form.querySelector('input[name=description]');
-
-    windowTitle.textContent = title;
-
-    form.setAttribute('action', actionForm);
-
-    timeInputs[0].value = taskTime[0];
-    timeInputs[1].value = taskTime[1];
-    titleInput.value = taskTitle;
-    descrInput.value = taskDescr;
-
-    let cancelButton = form.querySelector('.row input[type=button]');
-
-    cancelButton.addEventListener('click', () => {
-        windowContainer.style.display = 'none';
-    });
-
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
-        }
-    });
-
-    return windowContainer;
-}
-
-// Get all lists
-let listContainers = listsDiv.querySelectorAll('.list-container');
-listContainers.forEach(list => {
-
-    // Creating new Task -> Window Functionality
-    let newTaskButton = list.querySelector('.header button.new');
-
-    newTaskButton.addEventListener('click', () => {
-        let url = '/main/store/task/:' + list.id;
-
-        let taskWindow = setTaskWindow(['00:00', '00:00'], '', '', 'New Task:', url);
-        showWindow(taskWindow);
-    });
-
-    // Dragover functionality container
-    let tasksContainer = list.querySelector('.tasks');
-    tasksContainer.addEventListener('dragover', (e) => {
-        e.preventDefault();
-
-        if (list === listOfDraggedTask) {
-            updatePosition(tasksContainer, e.target, draggedTask);
-        }
-    });
-
-    // Get all tasks from list
-    let tasks = tasksContainer.querySelectorAll('.task-container');
-    tasks.forEach(task => {
-        task.setAttribute('draggable', true);
-
-        setListeners(task);
-    });
-});
-
-// Set listeners for task
-function setListeners(task) {
-    let checkbox = task.querySelector('input[type=checkbox]');
-
-    checkbox.addEventListener('click', () => {
-        let status = checkbox.checked;
-        let url = '/main/update/task/status/:' + task.id;
-
-        updateTaskInDb(url, undefined, status, undefined, undefined, undefined, undefined);
-    });
-
-    let edit = task.querySelector('button');
-
-    edit.addEventListener('click', () => {
-        let url = '/main/update/task/:' + task.id;
-        let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
-        let taskTitle = task.querySelector('.content .title p').textContent;
-        let taskDescr = task.querySelector('.content .description p').textContent;
-
-        let updateTaskWindow = setTaskWindow(taskTime, taskTitle, taskDescr, 'Edit Task:', url);
-        showWindow(updateTaskWindow);
-    });
-
-    task.addEventListener('dragstart', e => {
-        draggedTask = e.target;
-        listOfDraggedTask = e.path[2];
-
-        draggedTask.style.opacity = '0.01';
-    });
-
-    task.addEventListener('dragend', e => {
-        draggedTask.style.opacity = '';
-    });
-
-}
-
-// Update task in Database
-async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
-    let data = {
-        position: pos,
-        status: sta,
-        starttime: start,
-        endtime: end,
-        title: tit,
-        description: descr
-    };
-    let init = {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    };
-
-    await fetch(url, init);
-}
-
-// Update tasks positions
-function updatePosition(container, targetItem, draggedItem) {
-    let name = targetItem.className;
-    let state = name === 'task-container'
-        || name === 'content'
-        || name === 'row-1'
-        || name === 'hours'
-        || name === 'title'
-        || name === 'description'
-        || name === '';
-    if (state) {
-        try {
-            container.insertBefore(draggedItem, targetItem);
-        } catch (e) { }
-    } else {
-        container.appendChild(draggedItem);
-    }
-}
 
 // //-------------------- Setting left window side
 
