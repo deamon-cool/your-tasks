@@ -19,8 +19,6 @@ function dataHandler(data) {
     let groups = data.groups;
     let sortedData = getSortedItems(groups);
 
-    console.log(sortedData);
-
     renderData(sortedData);
 }
 
