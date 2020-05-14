@@ -68,6 +68,10 @@ function sort(objectsArray) {
     return sortedObjectsArray;
 }
 
+// Takes main DOM
+let leftSidelayout = document.querySelector('#leftside-layout');
+let rightSidelayout = document.querySelector('#rightside-layout');
+
 // Render HTML DOM
 function renderData(sortedData) {
 
