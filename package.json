@@ -11,8 +11,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "serveron": "node ./index.js",
-    "start": "nodemon ./index.js"
+    "start": "node ./index.js",
+    "startdev": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",
