@@ -16,13 +16,14 @@ downloadData('/main/data/0')
 
 // Handle data
 function dataHandler(data) {
+    let renderedGroupId = data.renderedId;
     let user = data.user;
     let groups = data.groups;
     let sortedData = getSortedItems(groups);
 
     renderUser(user);
 
-    renderData(sortedData);
+    renderData(sortedData, renderedGroupId);
 }
 
 // Render welcome user
