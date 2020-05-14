@@ -16,10 +16,19 @@ downloadData('/main/data/0')
 
 // Handle data
 function dataHandler(data) {
+    let user = data.user;
     let groups = data.groups;
     let sortedData = getSortedItems(groups);
 
+    renderUser(user);
+
     renderData(sortedData);
+}
+
+// Render welcome user
+function renderUser(user) {
+    let h1 = document.querySelector('#header-layout h1');
+    h1.textContent += `Welcome ${user}`;
 }
 
 // Sorts all groups/lists/tasks
