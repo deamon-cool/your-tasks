@@ -102,7 +102,7 @@ function renderData(sortedData, renderedGroupId) {
     `;
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
-    setNewListBtnsListener(document.querySelector('#groups .groups-ul>li'));
+    setNewListBtnsListener(document.querySelectorAll('#groups .groups-ul>li'));
 
     // Render right side
     rightSidelayout.innerHTML = `
