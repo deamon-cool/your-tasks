@@ -205,6 +205,41 @@ function generateListsDiv(groups, renderedGroupId) {
 
     return htmlpart;
 }
+
+// Returns tasks <div> HTML String for right side
+function generateTasksDiv(tasks) {
+    let htmlpart = ``;
+
+    tasks.forEach(task => {
+        htmlpart += `
+        <div class="task-container" id="${task.id}">
+
+            <input type="checkbox" ${task.status ? 'checked' : ''}>
+
+            <div class="content">
+
+                <div class="row-1">
+                    <div class="hours">
+                        <p>${task.startTime} - ${task.endTime}</p>
+                    </div>
+
+                    <div class="title">
+                        <p>${task.title}</p>
+                    </div>
+                </div>
+
+                <div class="description">
+                    <p>${task.description}</p>
+                </div>
+
+            </div>
+
+            <button><i class="fa fa-edit fa-2x"></i></button>
+        </div>
+        `;
+    });
+
+    return htmlpart;
 }
 
 
