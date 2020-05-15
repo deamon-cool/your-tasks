@@ -101,6 +101,8 @@ function renderData(sortedData, renderedGroupId) {
     </div>
     `;
 
+    setNewGroupBtnListener(document.querySelector('.new-group-button'));
+
     // Render right side
     rightSidelayout.innerHTML = `
     <div id="lists">
@@ -245,6 +247,15 @@ function generateTasksDiv(tasks) {
 
 // Left Side: Sets window 'Create new Group/List'
 
+
+// Sets New Group Button listener
+function setNewGroupBtnListener(button) {
+    button.addEventListener('click', () => {
+        let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+
+        showWindow(groupWindow);
+    });
+}
 
 
 //-------------------- Setting left window side
