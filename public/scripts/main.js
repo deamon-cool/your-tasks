@@ -171,6 +171,40 @@ function generateListsLi(lists) {
 
     return htmlpart;
 }
+
+// Returns lists <div> HTML String for right side
+function generateListsDiv(groups, renderedGroupId) {
+    let htmlpart = ``;
+    let lists;
+
+    groups.forEach(group => {
+        if (renderedGroupId === group.id) {
+            lists = group.lists;
+        }
+    });
+
+    lists.forEach(list => {
+        htmlpart += `
+        <div id="${list.id}" class="list-container">
+
+            <div class="header">
+                <h2>${list.name}</h2>
+                <button class="new"><i class="fa fa-plus fa-2x"></i></button>
+                <button class="delete"><i class="fa fa-trash fa-2x"></i></button>
+            </div>
+
+            <div class="tasks">
+
+                ${generateTasksDiv(list.tasks)}
+
+            </div>
+
+        </div>
+        `;
+    });
+
+    return htmlpart;
+}
 }
 
 
