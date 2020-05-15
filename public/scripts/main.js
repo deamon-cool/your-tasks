@@ -101,7 +101,7 @@ function renderData(sortedData, renderedGroupId) {
     </div>
     `;
 
-// Returnes groups <li> HTML String for left side
+// Returns groups <li> HTML String for left side
 function generateGroupsLi(groups) {
     let htmlpart = ``;
 
@@ -119,6 +119,19 @@ function generateGroupsLi(groups) {
 
             <button class="new-list-button">New...</button>
         </li>
+        `;
+    });
+
+    return htmlpart;
+}
+
+// Returns lists <li> HTML String for left side
+function generateListsLi(lists) {
+    let htmlpart = ``;
+
+    lists.forEach(list => {
+        htmlpart += `
+        <li><a href="#scroll-to-id-element">${list.name}</a></li>
         `;
     });
 
