@@ -74,6 +74,32 @@ let rightSidelayout = document.querySelector('#rightside-layout');
 
 // Render HTML DOM
 function renderData(sortedData, renderedGroupId) {
+    // Render left side
+    leftSidelayout.innerHTML = `
+    <div id="groups">
+        <ul class="groups-ul">
+
+            ${generateGroupsLi(sortedData)}
+
+        </ul>
+
+        <button class="new-group-button">New...</button>
+
+        <div class="window-container">
+            <div class="window-create-new">
+                <form method="POST">
+                    <label>New Group:</label>
+                    <input type="text" name="name" placeholder="Group Name">
+                    <div class="row">
+                        <input type="button" value="X">
+                        <input type="submit" value="✔">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    `;
 
 }
 
