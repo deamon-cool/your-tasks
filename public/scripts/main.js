@@ -298,12 +298,12 @@ function showWindow(window) {
 
 
 // Creating new Group -> Window Functionality
-let newGroupButton = groupsDiv.querySelector('.new-group-button');
-newGroupButton.addEventListener('click', () => {
-    let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+// let newGroupButton = groupsDiv.querySelector('.new-group-button');
+// newGroupButton.addEventListener('click', () => {
+//     let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
 
-    showWindow(groupWindow);
-});
+//     showWindow(groupWindow);
+// });
 
 // Get all groups
 let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
