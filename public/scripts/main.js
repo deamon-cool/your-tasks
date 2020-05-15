@@ -320,17 +320,17 @@ function showWindow(window) {
 // });
 
 // Get all groups
-let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
-groupsLi.forEach(group => {
+// let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
+// groupsLi.forEach(group => {
 
-    // Creating new List -> Window Functionality
-    let newListButton = group.querySelector('.new-list-button');
+//     // Creating new List -> Window Functionality
+//     let newListButton = group.querySelector('.new-list-button');
 
-    newListButton.addEventListener('click', () => {
-        let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-        showWindow(listWindow);
-    });
-});
+//     newListButton.addEventListener('click', () => {
+//         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+//         showWindow(listWindow);
+//     });
+// });
 
 
 
