@@ -101,6 +101,29 @@ function renderData(sortedData, renderedGroupId) {
     </div>
     `;
 
+// Returnes groups <li> HTML String for left side
+function generateGroupsLi(groups) {
+    let htmlpart = ``;
+
+    groups.forEach(group => {
+        htmlpart += `
+        <li id="${group.id}">
+            <a href="###">
+                <i class="fa fa-angle-right"></i>${group.name}
+            </a>
+            <ul class="lists-ul">
+
+                ${generateListsLi(group.lists)}
+
+            </ul>
+
+            <button class="new-list-button">New...</button>
+        </li>
+        `;
+    });
+
+    return htmlpart;
+}
 }
 
 
