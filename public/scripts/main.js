@@ -283,7 +283,6 @@ function setNewGroupBtnListener(button) {
 // Left Side: Sets New List Button listener
 function setNewListBtnsListener(groupsLi) {
     groupsLi.forEach(group => {
-
         let newListButton = group.querySelector('.new-list-button');
 
         newListButton.addEventListener('click', () => {
