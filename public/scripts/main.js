@@ -244,65 +244,68 @@ function generateTasksDiv(tasks) {
 
 
 
-// //-------------------- Setting left window side
 
-// let groupsDiv = document.querySelector('#groups');
+//-------------------- Setting left window side
 
-// // Setting Window for creating new Group/List
-// function setWindow(actionForm, title, inputHint) {
-//     let windowContainer = groupsDiv.querySelector('.window-container');
-//     let form = windowContainer.querySelector('.window-create-new form');
-//     let label = form.querySelector('label');
-//     let input = form.querySelector('input[type=text]');
+let groupsDiv = document.querySelector('#groups');
 
-//     form.setAttribute('action', actionForm);
-//     label.textContent = title;
-//     input.setAttribute('placeholder', inputHint);
+// Setting Window for creating new Group/List
+function setWindow(actionForm, title, inputHint) {
+    let windowContainer = groupsDiv.querySelector('.window-container');
+    let form = windowContainer.querySelector('.window-create-new form');
+    let label = form.querySelector('label');
+    let input = form.querySelector('input[type=text]');
 
-//     let cancelButton = form.querySelector('.row input[type=button]');
+    form.setAttribute('action', actionForm);
+    label.textContent = title;
+    input.setAttribute('placeholder', inputHint);
 
-//     cancelButton.addEventListener('click', () => {
-//         windowContainer.style.display = 'none';
-//     });
+    let cancelButton = form.querySelector('.row input[type=button]');
 
-//     windowContainer.addEventListener('click', e => {
-//         if (e.target === windowContainer) {
-//             windowContainer.style.display = 'none';
-//         }
-//     });
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
 
-//     return windowContainer;
-// }
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
+    });
 
-// // Showing set window
-// function showWindow(window) {
-//     window.style.display = 'block';
+    return windowContainer;
+}
 
-//     let firstInput = window.querySelectorAll('input')[0];
-//     firstInput.focus();
-// }
+// Showing set window
+function showWindow(window) {
+    window.style.display = 'block';
+
+    let firstInput = window.querySelectorAll('input')[0];
+    firstInput.focus();
+}
 
 
-// // Creating new Group -> Window Functionality
-// let newGroupButton = groupsDiv.querySelector('.new-group-button');
-// newGroupButton.addEventListener('click', () => {
-//     let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+// Creating new Group -> Window Functionality
+let newGroupButton = groupsDiv.querySelector('.new-group-button');
+newGroupButton.addEventListener('click', () => {
+    let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
 
-//     showWindow(groupWindow);
-// });
+    showWindow(groupWindow);
+});
 
-// // Get all groups
-// let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
-// groupsLi.forEach(group => {
+// Get all groups
+let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
+groupsLi.forEach(group => {
 
-//     // Creating new List -> Window Functionality
-//     let newListButton = group.querySelector('.new-list-button');
+    // Creating new List -> Window Functionality
+    let newListButton = group.querySelector('.new-list-button');
 
-//     newListButton.addEventListener('click', () => {
-//         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-//         showWindow(listWindow);
-//     });
-// });
+    newListButton.addEventListener('click', () => {
+        let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+        showWindow(listWindow);
+    });
+});
+
+
 
 
 // //-------------------- Setting right window side
