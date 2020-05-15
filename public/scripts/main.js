@@ -102,6 +102,7 @@ function renderData(sortedData, renderedGroupId) {
     `;
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
+    setNewListBtnsListener(document.querySelector('#groups .groups-ul>li'));
 
     // Render right side
     rightSidelayout.innerHTML = `
@@ -254,6 +255,19 @@ function setNewGroupBtnListener(button) {
         let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
 
         showWindow(groupWindow);
+    });
+}
+
+// Left Side: Sets New List Button listener
+function setNewListBtnsListener(groupsLi) {
+    groupsLi.forEach(group => {
+
+        let newListButton = group.querySelector('.new-list-button');
+
+        newListButton.addEventListener('click', () => {
+            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+            showWindow(listWindow);
+        });
     });
 }
 
