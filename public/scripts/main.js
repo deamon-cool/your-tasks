@@ -245,40 +245,9 @@ function generateTasksDiv(tasks) {
     return htmlpart;
 }
 
-
 // Left Side: Sets window 'Create new Group/List'
-
-
-// Left Side: Sets New Group Button listener
-function setNewGroupBtnListener(button) {
-    button.addEventListener('click', () => {
-        let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
-
-        showWindow(groupWindow);
-    });
-}
-
-// Left Side: Sets New List Button listener
-function setNewListBtnsListener(groupsLi) {
-    groupsLi.forEach(group => {
-
-        let newListButton = group.querySelector('.new-list-button');
-
-        newListButton.addEventListener('click', () => {
-            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-            showWindow(listWindow);
-        });
-    });
-}
-
-
-//-------------------- Setting left window side
-
-let groupsDiv = document.querySelector('#groups');
-
-// Setting Window for creating new Group/List
 function setWindow(actionForm, title, inputHint) {
-    let windowContainer = groupsDiv.querySelector('.window-container');
+    let windowContainer = document.querySelector('#groups .window-container');
     let form = windowContainer.querySelector('.window-create-new form');
     let label = form.querySelector('label');
     let input = form.querySelector('input[type=text]');
@@ -302,6 +271,28 @@ function setWindow(actionForm, title, inputHint) {
     return windowContainer;
 }
 
+// Left Side: Sets New Group Button listener
+function setNewGroupBtnListener(button) {
+    button.addEventListener('click', () => {
+        let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+
+        showWindow(groupWindow);
+    });
+}
+
+// Left Side: Sets New List Button listener
+function setNewListBtnsListener(groupsLi) {
+    groupsLi.forEach(group => {
+
+        let newListButton = group.querySelector('.new-list-button');
+
+        newListButton.addEventListener('click', () => {
+            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+            showWindow(listWindow);
+        });
+    });
+}
+
 // Showing set window
 function showWindow(window) {
     window.style.display = 'block';
@@ -309,6 +300,8 @@ function showWindow(window) {
     let firstInput = window.querySelectorAll('input')[0];
     firstInput.focus();
 }
+
+
 
 
 // Creating new Group -> Window Functionality
