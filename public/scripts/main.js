@@ -135,7 +135,7 @@ function renderData(sortedData, renderedGroupId) {
     `;
 }
 
-// Returns groups <li> HTML String for left side
+// Left Side: Returns groups <li> HTML String
 function generateGroupsLi(groups) {
     let htmlpart = ``;
 
@@ -159,7 +159,7 @@ function generateGroupsLi(groups) {
     return htmlpart;
 }
 
-// Returns lists <li> HTML String for left side
+// Left Side: Returns lists <li> HTML String
 function generateListsLi(lists) {
     let htmlpart = ``;
 
@@ -172,7 +172,7 @@ function generateListsLi(lists) {
     return htmlpart;
 }
 
-// Returns lists <div> HTML String for right side
+// Right Side: Returns lists <div> HTML String
 function generateListsDiv(groups, renderedGroupId) {
     let htmlpart = ``;
     let lists;
@@ -206,7 +206,7 @@ function generateListsDiv(groups, renderedGroupId) {
     return htmlpart;
 }
 
-// Returns tasks <div> HTML String for right side
+// Right Side: Returns tasks <div> HTML String
 function generateTasksDiv(tasks) {
     let htmlpart = ``;
 
@@ -242,6 +242,8 @@ function generateTasksDiv(tasks) {
     return htmlpart;
 }
 
+
+// Left Side: Sets window 'Create new Group/List'
 
 
 
