@@ -73,6 +73,7 @@ function sort(objectsArray) {
     return sortedObjectsArray;
 }
 
+
 // Renders left side
 function renderLeftSide(sortedData) {
     leftSidelayout.innerHTML = `
@@ -103,41 +104,6 @@ function renderLeftSide(sortedData) {
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
     setNewListBtnsListener(document.querySelectorAll('#groups .groups-ul>li'));
-}
-
-// Renders right side
-function renderRightSide(sortedData, renderedGroupId) {
-    rightSidelayout.innerHTML = `
-    <div id="lists">
-
-        ${generateListsDiv(sortedData, renderedGroupId)}
-
-        <div class="window-container">
-            <div class="window-create-new">
-                <p>New Task:</p>
-                <form method="POST">
-                    <label>Start Time:</label>
-                    <input type="time" name="starttime">
-
-                    <label>End Time:</label>
-                    <input type="time" name="endtime">
-
-                    <label>Title:</label>
-                    <input type="text" name="title" placeholder="Title...">
-
-                    <label>Description:</label>
-                    <input type="text" name="description" placeholder="Description...">
-
-                    <div class="row">
-                        <input type="button" value="X">
-                        <input type="submit" value="✔">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-    </div>
-    `;
 }
 
 // Left Side: Returns groups <li> HTML String
@@ -175,6 +141,89 @@ function generateListsLi(lists) {
     });
 
     return htmlpart;
+}
+
+// Left Side: Sets window 'Create new Group/List'
+function setWindow(actionForm, title, inputHint) {
+    let windowContainer = document.querySelector('#groups .window-container');
+    let form = windowContainer.querySelector('.window-create-new form');
+    let label = form.querySelector('label');
+    let input = form.querySelector('input[type=text]');
+
+    form.setAttribute('action', actionForm);
+    label.textContent = title;
+    input.setAttribute('placeholder', inputHint);
+
+    let cancelButton = form.querySelector('.row input[type=button]');
+
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
+    });
+
+    return windowContainer;
+}
+
+// Left Side: Sets New Group Button listener
+function setNewGroupBtnListener(button) {
+    button.addEventListener('click', () => {
+        let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
+
+        showWindow(groupWindow);
+    });
+}
+
+// Left Side: Sets New List Button listener
+function setNewListBtnsListener(groupsLi) {
+    groupsLi.forEach(group => {
+        let newListButton = group.querySelector('.new-list-button');
+
+        newListButton.addEventListener('click', () => {
+            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+            showWindow(listWindow);
+        });
+    });
+}
+
+
+// Renders right side
+function renderRightSide(sortedData, renderedGroupId) {
+    rightSidelayout.innerHTML = `
+    <div id="lists">
+
+        ${generateListsDiv(sortedData, renderedGroupId)}
+
+        <div class="window-container">
+            <div class="window-create-new">
+                <p>New Task:</p>
+                <form method="POST">
+                    <label>Start Time:</label>
+                    <input type="time" name="starttime">
+
+                    <label>End Time:</label>
+                    <input type="time" name="endtime">
+
+                    <label>Title:</label>
+                    <input type="text" name="title" placeholder="Title...">
+
+                    <label>Description:</label>
+                    <input type="text" name="description" placeholder="Description...">
+
+                    <div class="row">
+                        <input type="button" value="X">
+                        <input type="submit" value="✔">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    `;
 }
 
 // Right Side: Returns lists <div> HTML String
@@ -245,53 +294,6 @@ function generateTasksDiv(tasks) {
     });
 
     return htmlpart;
-}
-
-// Left Side: Sets window 'Create new Group/List'
-function setWindow(actionForm, title, inputHint) {
-    let windowContainer = document.querySelector('#groups .window-container');
-    let form = windowContainer.querySelector('.window-create-new form');
-    let label = form.querySelector('label');
-    let input = form.querySelector('input[type=text]');
-
-    form.setAttribute('action', actionForm);
-    label.textContent = title;
-    input.setAttribute('placeholder', inputHint);
-
-    let cancelButton = form.querySelector('.row input[type=button]');
-
-    cancelButton.addEventListener('click', () => {
-        windowContainer.style.display = 'none';
-    });
-
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
-        }
-    });
-
-    return windowContainer;
-}
-
-// Left Side: Sets New Group Button listener
-function setNewGroupBtnListener(button) {
-    button.addEventListener('click', () => {
-        let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
-
-        showWindow(groupWindow);
-    });
-}
-
-// Left Side: Sets New List Button listener
-function setNewListBtnsListener(groupsLi) {
-    groupsLi.forEach(group => {
-        let newListButton = group.querySelector('.new-list-button');
-
-        newListButton.addEventListener('click', () => {
-            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-            showWindow(listWindow);
-        });
-    });
 }
 
 // Showing set window
