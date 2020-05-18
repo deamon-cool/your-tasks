@@ -27,7 +27,8 @@ function dataHandler(data) {
 
     renderUser(user);
 
-    renderData(sortedData, renderedGroupId);
+    renderLeftSide(sortedData);
+    renderRightSide(sortedData, renderedGroupId);
 }
 
 // Renders welcome user
@@ -72,9 +73,8 @@ function sort(objectsArray) {
     return sortedObjectsArray;
 }
 
-// Render HTML DOM
-function renderData(sortedData, renderedGroupId) {
-    // Render left side
+// Renders left side
+function renderLeftSide(sortedData) {
     leftSidelayout.innerHTML = `
     <div id="groups">
         <ul class="groups-ul">
@@ -103,8 +103,10 @@ function renderData(sortedData, renderedGroupId) {
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
     setNewListBtnsListener(document.querySelectorAll('#groups .groups-ul>li'));
+}
 
-    // Render right side
+// Renders right side
+function renderRightSide(sortedData, renderedGroupId) {
     rightSidelayout.innerHTML = `
     <div id="lists">
 
