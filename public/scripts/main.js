@@ -195,6 +195,10 @@ function setNewListBtnsListener(groupsLi) {
 
 //---------------------------------------- Right side view
 
+let listOfDraggedTask;
+let draggedTask;
+
+
 // Renders right side
 function renderRightSide(sortedData, renderedGroupId) {
     rightSidelayout.innerHTML = `
