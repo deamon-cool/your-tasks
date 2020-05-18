@@ -296,6 +296,7 @@ function generateTasksDiv(tasks) {
     return htmlpart;
 }
 
+
 // Showing set window
 function showWindow(window) {
     window.style.display = 'block';
