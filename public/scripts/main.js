@@ -18,8 +18,7 @@ async function downloadData(url) {
 downloadData('/main/data/0')
     .then(data => dataHandler(data));
 
-
-// Handle data
+// Handles data
 function dataHandler(data) {
     let renderedGroupId = data.renderedId;
     let user = data.user;
