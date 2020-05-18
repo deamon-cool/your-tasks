@@ -30,7 +30,7 @@ function dataHandler(data) {
     renderData(sortedData, renderedGroupId);
 }
 
-// Render welcome user
+// Renders welcome user
 function renderUser(user) {
     let h1 = document.querySelector('#header-layout h1');
     h1.textContent += `Welcome ${user}`;
