@@ -108,7 +108,7 @@ function renderLeftSide(sortedData) {
     setNewListBtnsListener(document.querySelectorAll('#groups .groups-ul>li'));
 }
 
-// Left Side: Returns groups <li> HTML String
+// Returns groups <li> HTML String
 function generateGroupsLi(groups) {
     let htmlpart = ``;
 
@@ -132,7 +132,7 @@ function generateGroupsLi(groups) {
     return htmlpart;
 }
 
-// Left Side: Returns lists <li> HTML String
+// Returns lists <li> HTML String
 function generateListsLi(lists) {
     let htmlpart = ``;
 
@@ -145,7 +145,7 @@ function generateListsLi(lists) {
     return htmlpart;
 }
 
-// Left Side: Sets window 'Create new Group/List'
+// Sets window 'Create new Group/List'
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = document.querySelector('#groups .window-container');
     let form = windowContainer.querySelector('.window-create-new form');
@@ -171,7 +171,7 @@ function setWindow(actionForm, title, inputHint) {
     return windowContainer;
 }
 
-// Left Side: Sets New Group Button listener
+// Sets New Group Button listener
 function setNewGroupBtnListener(button) {
     button.addEventListener('click', () => {
         let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
@@ -180,7 +180,7 @@ function setNewGroupBtnListener(button) {
     });
 }
 
-// Left Side: Sets New List Button listener
+// Sets New List Button listener
 function setNewListBtnsListener(groupsLi) {
     groupsLi.forEach(group => {
         let newListButton = group.querySelector('.new-list-button');
@@ -232,7 +232,7 @@ function renderRightSide(sortedData, renderedGroupId) {
 
 }
 
-// Right Side: Returns lists <div> HTML String
+// Returns lists <div> HTML String
 function generateListsDiv(groups, renderedGroupId) {
     let htmlpart = ``;
     let lists;
@@ -266,7 +266,7 @@ function generateListsDiv(groups, renderedGroupId) {
     return htmlpart;
 }
 
-// Right Side: Returns tasks <div> HTML String
+// Returns tasks <div> HTML String
 function generateTasksDiv(tasks) {
     let htmlpart = ``;
 
