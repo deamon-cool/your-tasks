@@ -350,143 +350,110 @@ function setListsListeners(listsContainers) {
     });
 }
 
-// // Setting Window for creating/updating Task
-// function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
-//     let windowContainer = listsDiv.querySelector('.window-container');
-//     let windowTitle = windowContainer.querySelector('.window-create-new>p');
-//     let form = windowContainer.querySelector('.window-create-new form');
-//     let timeInputs = form.querySelectorAll('input[type=time]');
-//     let titleInput = form.querySelector('input[name=title]');
-//     let descrInput = form.querySelector('input[name=description]');
+// Sets listeners for task
+function setTaskListeners(task) {
+    let checkbox = task.querySelector('input[type=checkbox]');
 
-//     windowTitle.textContent = title;
+    checkbox.addEventListener('click', () => {
+        let status = checkbox.checked;
+        let url = '/main/update/task/status/:' + task.id;
 
-//     form.setAttribute('action', actionForm);
+        updateTaskInDb(url, undefined, status, undefined, undefined, undefined, undefined);
+    });
 
-//     timeInputs[0].value = taskTime[0];
-//     timeInputs[1].value = taskTime[1];
-//     titleInput.value = taskTitle;
-//     descrInput.value = taskDescr;
+    let edit = task.querySelector('button');
 
-//     let cancelButton = form.querySelector('.row input[type=button]');
+    edit.addEventListener('click', () => {
+        let url = '/main/update/task/:' + task.id;
+        let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
+        let taskTitle = task.querySelector('.content .title p').textContent;
+        let taskDescr = task.querySelector('.content .description p').textContent;
 
-//     cancelButton.addEventListener('click', () => {
-//         windowContainer.style.display = 'none';
-//     });
+        let updateTaskWindow = setTaskWindow(taskTime, taskTitle, taskDescr, 'Edit Task:', url);
+        showWindow(updateTaskWindow);
+    });
 
-//     windowContainer.addEventListener('click', e => {
-//         if (e.target === windowContainer) {
-//             windowContainer.style.display = 'none';
-//         }
-//     });
+    task.addEventListener('dragstart', e => {
+        draggedTask = e.target;
+        listOfDraggedTask = e.path[2];
 
-//     return windowContainer;
-// }
+        draggedTask.style.opacity = '0.01';
+    });
 
-// // Get all lists
-// let listContainers = listsDiv.querySelectorAll('.list-container');
-// listContainers.forEach(list => {
+    task.addEventListener('dragend', e => {
+        draggedTask.style.opacity = '';
+    });
+}
 
-//     // Creating new Task -> Window Functionality
-//     let newTaskButton = list.querySelector('.header button.new');
 
-//     newTaskButton.addEventListener('click', () => {
-//         let url = '/main/store/task/:' + list.id;
+// Sets Window for creating/updating Task
+function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
+    let windowContainer = document.querySelector('#lists .window-container');
+    let windowTitle = windowContainer.querySelector('.window-create-new>p');
+    let form = windowContainer.querySelector('.window-create-new form');
+    let timeInputs = form.querySelectorAll('input[type=time]');
+    let titleInput = form.querySelector('input[name=title]');
+    let descrInput = form.querySelector('input[name=description]');
 
-//         let taskWindow = setTaskWindow(['00:00', '00:00'], '', '', 'New Task:', url);
-//         showWindow(taskWindow);
-//     });
+    windowTitle.textContent = title;
 
-//     // Dragover functionality container
-//     let tasksContainer = list.querySelector('.tasks');
-//     tasksContainer.addEventListener('dragover', (e) => {
-//         e.preventDefault();
+    form.setAttribute('action', actionForm);
 
-//         if (list === listOfDraggedTask) {
-//             updatePosition(tasksContainer, e.target, draggedTask);
-//         }
-//     });
+    timeInputs[0].value = taskTime[0];
+    timeInputs[1].value = taskTime[1];
+    titleInput.value = taskTitle;
+    descrInput.value = taskDescr;
 
-//     // Get all tasks from list
-//     let tasks = tasksContainer.querySelectorAll('.task-container');
-//     tasks.forEach(task => {
-//         task.setAttribute('draggable', true);
+    let cancelButton = form.querySelector('.row input[type=button]');
 
-//         setListeners(task);
-//     });
-// });
+    cancelButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
 
-// // Set listeners for task
-// function setListeners(task) {
-//     let checkbox = task.querySelector('input[type=checkbox]');
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
+    });
 
-//     checkbox.addEventListener('click', () => {
-//         let status = checkbox.checked;
-//         let url = '/main/update/task/status/:' + task.id;
+    return windowContainer;
+}
 
-//         updateTaskInDb(url, undefined, status, undefined, undefined, undefined, undefined);
-//     });
 
-//     let edit = task.querySelector('button');
+// Update task in Database
+async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
+    let data = {
+        position: pos,
+        status: sta,
+        starttime: start,
+        endtime: end,
+        title: tit,
+        description: descr
+    };
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    };
 
-//     edit.addEventListener('click', () => {
-//         let url = '/main/update/task/:' + task.id;
-//         let taskTime = task.querySelector('.content .hours p').textContent.split(' - ');
-//         let taskTitle = task.querySelector('.content .title p').textContent;
-//         let taskDescr = task.querySelector('.content .description p').textContent;
+    await fetch(url, init);
+}
 
-//         let updateTaskWindow = setTaskWindow(taskTime, taskTitle, taskDescr, 'Edit Task:', url);
-//         showWindow(updateTaskWindow);
-//     });
-
-//     task.addEventListener('dragstart', e => {
-//         draggedTask = e.target;
-//         listOfDraggedTask = e.path[2];
-
-//         draggedTask.style.opacity = '0.01';
-//     });
-
-//     task.addEventListener('dragend', e => {
-//         draggedTask.style.opacity = '';
-//     });
-
-// }
-
-// // Update task in Database
-// async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
-//     let data = {
-//         position: pos,
-//         status: sta,
-//         starttime: start,
-//         endtime: end,
-//         title: tit,
-//         description: descr
-//     };
-//     let init = {
-//         method: 'POST',
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(data),
-//     };
-
-//     await fetch(url, init);
-// }
-
-// // Update tasks positions
-// function updatePosition(container, targetItem, draggedItem) {
-//     let name = targetItem.className;
-//     let state = name === 'task-container'
-//         || name === 'content'
-//         || name === 'row-1'
-//         || name === 'hours'
-//         || name === 'title'
-//         || name === 'description'
-//         || name === '';
-//     if (state) {
-//         try {
-//             container.insertBefore(draggedItem, targetItem);
-//         } catch (e) { }
-//     } else {
-//         container.appendChild(draggedItem);
-//     }
-// }
-
+// Update tasks positions
+function updatePosition(container, targetItem, draggedItem) {
+    let name = targetItem.className;
+    let state = name === 'task-container'
+        || name === 'content'
+        || name === 'row-1'
+        || name === 'hours'
+        || name === 'title'
+        || name === 'description'
+        || name === '';
+    if (state) {
+        try {
+            container.insertBefore(draggedItem, targetItem);
+        } catch (e) { }
+    } else {
+        container.appendChild(draggedItem);
+    }
+}
