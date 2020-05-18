@@ -42,7 +42,7 @@ app.get('/main', async (req, res) => {
     res.sendFile('index.html', { root: `${__dirname}/public` });
 });
 
-// Download data Groups/Lists/Tasks
+// Download data groups, lists, tasks
 app.get('/main/data/:position', async (req, res) => {
     //TEST -> creating test user
     const users = await User.find({});
