@@ -233,7 +233,7 @@ function renderRightSide(sortedData, renderedGroupId) {
     </div>
     `;
 
-
+    setListsListeners(document.querySelectorAll('#lists .list-container'));
 }
 
 // Returns lists <div> HTML String
@@ -316,13 +316,39 @@ function showWindow(window) {
 }
 
 
+// Sets for each lists listeners
+function setListsListeners(listsContainers) {
+    listsContainers.forEach(list => {
 
+        // Creating new Task -> Window Functionality
+        let newTaskButton = list.querySelector('.header button.new');
 
-// //-------------------- Setting right window side
+        newTaskButton.addEventListener('click', () => {
+            let url = '/main/store/task/:' + list.id;
 
-// let listsDiv = document.querySelector('#lists');
-// let listOfDraggedTask;
-// let draggedTask;
+            let taskWindow = setTaskWindow(['00:00', '00:00'], '', '', 'New Task:', url);
+            showWindow(taskWindow);
+        });
+
+        // Dragover functionality container
+        let tasksContainer = list.querySelector('.tasks');
+        tasksContainer.addEventListener('dragover', (e) => {
+            e.preventDefault();
+
+            if (list === listOfDraggedTask) {
+                updatePosition(tasksContainer, e.target, draggedTask);
+            }
+        });
+
+        // Get all tasks from list
+        let tasks = tasksContainer.querySelectorAll('.task-container');
+        tasks.forEach(task => {
+            task.setAttribute('draggable', true);
+
+            setTaskListeners(task);
+        });
+    });
+}
 
 // // Setting Window for creating/updating Task
 // function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
