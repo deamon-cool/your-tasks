@@ -1,3 +1,8 @@
+// Takes main DOM
+let leftSidelayout = document.querySelector('#leftside-layout');
+let rightSidelayout = document.querySelector('#rightside-layout');
+
+
 // Downloads data from server
 async function downloadData(url) {
     let res = await fetch(url, {
@@ -67,10 +72,6 @@ function sort(objectsArray) {
 
     return sortedObjectsArray;
 }
-
-// Takes main DOM
-let leftSidelayout = document.querySelector('#leftside-layout');
-let rightSidelayout = document.querySelector('#rightside-layout');
 
 // Render HTML DOM
 function renderData(sortedData, renderedGroupId) {
