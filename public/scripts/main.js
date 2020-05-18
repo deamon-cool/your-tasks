@@ -303,30 +303,6 @@ function showWindow(window) {
 
 
 
-// Creating new Group -> Window Functionality
-// let newGroupButton = groupsDiv.querySelector('.new-group-button');
-// newGroupButton.addEventListener('click', () => {
-//     let groupWindow = setWindow('/main/store/group', 'New Group:', 'Group Name');
-
-//     showWindow(groupWindow);
-// });
-
-// Get all groups
-// let groupsLi = groupsDiv.querySelectorAll('.groups-ul>li');
-// groupsLi.forEach(group => {
-
-//     // Creating new List -> Window Functionality
-//     let newListButton = group.querySelector('.new-list-button');
-
-//     newListButton.addEventListener('click', () => {
-//         let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
-//         showWindow(listWindow);
-//     });
-// });
-
-
-
-
 // //-------------------- Setting right window side
 
 // let listsDiv = document.querySelector('#lists');
