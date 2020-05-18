@@ -74,6 +74,8 @@ function sort(objectsArray) {
 }
 
 
+//---------------------------------------- Left side view
+
 // Renders left side
 function renderLeftSide(sortedData) {
     leftSidelayout.innerHTML = `
@@ -191,6 +193,8 @@ function setNewListBtnsListener(groupsLi) {
 }
 
 
+//---------------------------------------- Right side view
+
 // Renders right side
 function renderRightSide(sortedData, renderedGroupId) {
     rightSidelayout.innerHTML = `
@@ -224,6 +228,8 @@ function renderRightSide(sortedData, renderedGroupId) {
 
     </div>
     `;
+
+
 }
 
 // Right Side: Returns lists <div> HTML String
