@@ -1,5 +1,4 @@
 const express = require('express');
-// const { engine } = require('express-edge');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -22,8 +21,6 @@ app.use(bodyParser.json());
 
 app.use(express.static('public'));
 
-// app.use(engine);
-// app.set('views', `${__dirname}/views`);
 
 
 // Request handlers (controllers)
