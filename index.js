@@ -22,12 +22,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
-
 // Request handlers (controllers)
-
-app.get('/', (req, res) => {
-    res.render('login');
-});
 
 app.get('/register', (req, res) => {
     res.sendFile('register.html', { root: `${__dirname}/public` });
