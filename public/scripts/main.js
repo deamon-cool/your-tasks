@@ -514,6 +514,26 @@ function setTasksPositionsWindow(list) {
 }
 
 // Update tasks positions in Db
-async function updateTasksPositionsInDb(listId) {
+async function updateTasksPositionsInDb(list) {
+    let url = `/main/update/tasks/position/:${list.id}`;
+    let data = [];
 
+    let tasks = list.querySelectorAll('.tasks .task-container');
+
+    for (let i = 0; i < tasks.length; i++) {
+        data.push({
+            id: tasks[i].id,
+            position: i
+        });
+    }
+
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    };
+
+    console.log('haha');
+
+    await fetch(url, init);
 }
