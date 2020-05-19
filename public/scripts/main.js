@@ -458,3 +458,9 @@ function updatePosition(container, targetItem, draggedItem) {
         container.appendChild(draggedItem);
     }
 }
+
+// Displays Save button
+function displaySaveButton() {
+    let saveButton = listOfDraggedTask.querySelector('.header .save');
+    saveButton.style.display = 'block';
+}
