@@ -393,6 +393,8 @@ function setTaskListeners(task) {
 
     task.addEventListener('dragend', e => {
         draggedTask.style.opacity = '';
+        
+        displaySaveButton();
     });
 }
 
@@ -463,11 +465,9 @@ function updatePosition(container, targetItem, draggedItem) {
     if (state) {
         try {
             container.insertBefore(draggedItem, targetItem);
-            displaySaveButton();
         } catch (e) { }
     } else {
         container.appendChild(draggedItem);
-        displaySaveButton();
     }
 }
 
