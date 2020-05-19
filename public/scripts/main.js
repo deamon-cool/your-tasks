@@ -235,7 +235,7 @@ function renderRightSide(sortedData, renderedGroupId) {
                 <p>Do you want save all tasks postions in this List ?</p>
                 <div class="row">
                     <input class="no" type="button" value="X">
-                    <input class="yes" value="✔">
+                    <input class="yes" type="button" value="✔">
                 </div>
             </div>
         </div>
