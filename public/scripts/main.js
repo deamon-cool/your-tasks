@@ -393,7 +393,7 @@ function setTaskListeners(task) {
 
     task.addEventListener('dragend', e => {
         draggedTask.style.opacity = '';
-        
+
         displaySaveButton();
     });
 }
@@ -493,12 +493,18 @@ function setTasksPositionsWindow() {
 
     windowTitle.textContent = `Save tasks positions in ${listTitle} ?`;
 
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
+    });
+
     noButton.addEventListener('click', () => {
-        console.log('no');
+        windowContainer.style.display = 'none';
     });
 
     yesButton.addEventListener('click', () => {
-        console.log('yes');
+        
     });
 
     return windowContainer;
