@@ -389,9 +389,9 @@ function setTaskListeners(task) {
 
 // Sets Window for creating/updating Task
 function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
-    let windowContainer = document.querySelector('#lists .window-container');
-    let windowTitle = windowContainer.querySelector('.window-create-new>p');
-    let form = windowContainer.querySelector('.window-create-new form');
+    let windowContainer = document.querySelector('#lists #create-update-task');
+    let windowTitle = windowContainer.querySelector('.window>p');
+    let form = windowContainer.querySelector('.window form');
     let timeInputs = form.querySelectorAll('input[type=time]');
     let titleInput = form.querySelector('input[name=title]');
     let descrInput = form.querySelector('input[name=description]');
