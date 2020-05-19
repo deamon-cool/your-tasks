@@ -453,9 +453,11 @@ function updatePosition(container, targetItem, draggedItem) {
     if (state) {
         try {
             container.insertBefore(draggedItem, targetItem);
+            displaySaveButton();
         } catch (e) { }
     } else {
         container.appendChild(draggedItem);
+        displaySaveButton();
     }
 }
 
