@@ -476,15 +476,17 @@ function displaySaveButton() {
     let saveButton = listOfDraggedTask.querySelector('.header .save');
     saveButton.style.display = 'block';
 
+    let listId = listOfDraggedTask.id;
+
     saveButton.addEventListener('click', () => {
-        let windowContainer = setTasksPositionsWindow();
+        let windowContainer = setTasksPositionsWindow(listId);
 
         showWindow(windowContainer);
     });
 }
 
 // Sets window
-function setTasksPositionsWindow() {
+function setTasksPositionsWindow(listId) {
     let windowContainer = document.querySelector('#lists #save-positions');
     let windowTitle = windowContainer.querySelector('.window>p');
     let noButton = windowContainer.querySelector('.row .no');
@@ -505,9 +507,13 @@ function setTasksPositionsWindow() {
     });
 
     yesButton.addEventListener('click', () => {
-        
+        updateTasksPositionsInDb(listId);
     });
 
     return windowContainer;
 }
 
+// Update tasks positions in Db
+async function updateTasksPositionsInDb(listId) {
+
+}
