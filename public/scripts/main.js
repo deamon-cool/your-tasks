@@ -483,6 +483,7 @@ function displaySaveButton() {
     });
 }
 
+// Sets window
 function setTasksPositionsWindow() {
     let windowContainer = document.querySelector('#lists #save-positions');
     let windowTitle = windowContainer.querySelector('.window>p');
