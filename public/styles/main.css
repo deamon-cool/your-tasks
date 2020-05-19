@@ -232,10 +232,6 @@
     margin: 0 auto 0 0;
 }
 
-#lists .list-container .header button:first-of-type {
-    margin-right: 10px;
-}
-
 #lists .list-container .header button {
     background-color: white;
     color: inherit;
@@ -259,6 +255,15 @@
 
 #lists .list-container .header button:active i {
     color: var(--general-lighter-blue-color);
+}
+
+#lists .list-container .header button.new {
+    margin-right: 10px;
+}
+
+#lists .list-container .header button.save {
+    display: none;
+    margin-right: 10px;
 }
 
 /* Style for tasks in list */
