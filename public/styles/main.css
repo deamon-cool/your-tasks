@@ -403,17 +403,17 @@
     margin: 0 0 10px 0;
 }
 
-#lists .window-container .window {
+#lists .window-container .window form {
     display: flex;
     flex-direction: column;
 }
 
-#lists .window-container .window label {
+#lists .window-container .window form label {
     font-size: 20px;
     margin-bottom: 5px;
 }
 
-#lists .window-container .window input {
+#lists .window-container .window form input {
     font-family: inherit;
     font-size: 20px;
     color: var(--general-blue-color);
@@ -423,63 +423,63 @@
     margin-bottom: 15px;
 }
 
-#lists .window-container .window input:last-of-type {
+#lists .window-container .window form>input:last-of-type {
     margin-bottom: 40px;
 }
 
-#lists .window-container .window input:focus {
+#lists .window-container .window form input:focus {
     outline: none;
 }
 
-#lists .window-container .window input::placeholder {
+#lists .window-container .window form>input::placeholder {
     color: var(--general-light-blue-color);
 }
 
-#lists .window-container .window input:hover {
+#lists .window-container .window form>input:hover {
     background-color: var(--general-lighter-blue-color);
 }
 
-#lists .window-container .window input[type=time]:focus,
-#lists .window-container .window input[type=text]:focus {
+#lists .window-container .window form>input[type=time]:focus,
+#lists .window-container .window form>input[type=text]:focus {
     background-color: var(--general-lighter-blue-color);
 }
 
-#lists .window-container .window input[type=time] {
+#lists .window-container .window form>input[type=time] {
     width: 50%;
 }
 
-#lists .window-container .window input[type=time]::-webkit-inner-spin-button,
-#lists .window-container .window input[type=time]::-webkit-outer-spin-button {
+#lists .window-container .window form>input[type=time]::-webkit-inner-spin-button,
+#lists .window-container .window form>input[type=time]::-webkit-outer-spin-button {
     display: none;
     margin: 0;
 }
 
-#lists .window-container .window input[type=time]::-webkit-clear-button {
+#lists .window-container .window form>input[type=time]::-webkit-clear-button {
     display: none;
 }
 
-#lists .window-container .window .row {
+#lists .window-container .window form .row {
     flex-direction: row;
     width: 100%;
 }
 
-#lists .window-container .window input[type=button] {
+#lists .window-container .window form input[type=button] {
     background-color: white;
     padding: 5px 25px;
     cursor: pointer;
 }
 
-#lists .window-container .window input[type=button]:hover {
+#lists .window-container .window form input[type=button]:hover {
     background-color: var(--general-lighter-blue-color);
 }
 
-#lists .window-container .window input[type=submit] {
+#lists .window-container .window form input[type=submit] {
     float: right;
     background-color: white;
     padding: 5px 25px;
     cursor: pointer;
 }
 
-#lists .window-container .window input[type=submit]:hover {
+#lists .window-container .window form input[type=submit]:hover {
     background-color: var(--general-lighter-blue-color);
 }
