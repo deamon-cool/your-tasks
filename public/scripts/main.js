@@ -253,6 +253,7 @@ function generateListsDiv(groups, renderedGroupId) {
 
             <div class="header">
                 <h2>${list.name}</h2>
+                <button class="save"><i class="fa fa-save fa-2x"></i></button>
                 <button class="new"><i class="fa fa-plus fa-2x"></i></button>
                 <button class="delete"><i class="fa fa-trash fa-2x"></i></button>
             </div>
