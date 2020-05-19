@@ -465,4 +465,9 @@ function updatePosition(container, targetItem, draggedItem) {
 function displaySaveButton() {
     let saveButton = listOfDraggedTask.querySelector('.header .save');
     saveButton.style.display = 'block';
+
+    saveButton.addEventListener('click', () => {
+
+    });
 }
+
