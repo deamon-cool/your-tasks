@@ -207,7 +207,7 @@ function renderRightSide(sortedData, renderedGroupId) {
         ${generateListsDiv(sortedData, renderedGroupId)}
 
         <div id="create-update-task" class="window-container">
-            <div class="window-create-new">
+            <div class="window">
                 <p>New Task:</p>
                 <form method="POST">
                     <label>Start Time:</label>
