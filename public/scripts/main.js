@@ -477,7 +477,30 @@ function displaySaveButton() {
     saveButton.style.display = 'block';
 
     saveButton.addEventListener('click', () => {
+        let windowContainer = setTasksPositionsWindow();
 
+        showWindow(windowContainer);
     });
+}
+
+function setTasksPositionsWindow() {
+    let windowContainer = document.querySelector('#lists #save-positions');
+    let windowTitle = windowContainer.querySelector('.window>p');
+    let noButton = windowContainer.querySelector('.row .no');
+    let yesButton = windowContainer.querySelector('.row .yes');
+
+    let listTitle = listOfDraggedTask.querySelector('.header h2').textContent;
+
+    windowTitle.textContent = `Save tasks positions in ${listTitle} ?`;
+
+    noButton.addEventListener('click', () => {
+        console.log('no');
+    });
+
+    yesButton.addEventListener('click', () => {
+        console.log('yes');
+    });
+
+    return windowContainer;
 }
 
