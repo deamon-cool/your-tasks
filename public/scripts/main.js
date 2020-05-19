@@ -230,6 +230,16 @@ function renderRightSide(sortedData, renderedGroupId) {
             </div>
         </div>
 
+        <div id="save-positions" class="window-container">
+            <div class="window">
+                <p>Do you want save all tasks postions in this List ?</p>
+                <div class="row">
+                    <input class="no" type="button" value="X">
+                    <input class="yes" value="✔">
+                </div>
+            </div>
+        </div>
+
     </div>
     `;
 
