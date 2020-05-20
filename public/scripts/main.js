@@ -374,22 +374,32 @@ function setTaskListeners(task) {
 // Sets Window for creating/updating Task
 function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
     let windowContainer = document.querySelector('#lists #create-update-task');
-    let windowTitle = windowContainer.querySelector('.window>p');
-    let form = windowContainer.querySelector('.window form');
-    let timeInputs = form.querySelectorAll('input[type=time]');
-    let titleInput = form.querySelector('input[name=title]');
-    let descrInput = form.querySelector('input[name=description]');
 
-    windowTitle.textContent = title;
+    windowContainer.innerHTML = `
+    <div class="window">
+        <p>${title}</p>
+        <form method="POST" action="${actionForm}">
+            <label>Start Time:</label>
+            <input type="time" name="starttime" value="${taskTime[0]}">
 
-    form.setAttribute('action', actionForm);
+            <label>End Time:</label>
+            <input type="time" name="endtime" value="${taskTime[1]}>
 
-    timeInputs[0].value = taskTime[0];
-    timeInputs[1].value = taskTime[1];
-    titleInput.value = taskTitle;
-    descrInput.value = taskDescr;
+            <label>Title:</label>
+            <input type="text" name="title" placeholder="Title..." value="${taskTitle}">
 
-    let cancelButton = form.querySelector('.row input[type=button]');
+            <label>Description:</label>
+            <input type="text" name="description" placeholder="Description..." value="${taskDescr}>
+
+            <div class="row">
+                <input type="button" value="X">
+                <input type="submit" value="✔">
+            </div>
+        </form>
+    </div>
+    `;
+
+    let cancelButton = windowContainer.querySelector('.window form .row input[type=button]');
 
     cancelButton.addEventListener('click', () => {
         windowContainer.style.display = 'none';
