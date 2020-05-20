@@ -459,7 +459,7 @@ function displaySaveButton() {
 
     saveButton.addEventListener('click', () => {
         let windowContainer = setSaveTasksPositionsWindow(list, saveButton);
-        console.log('save')
+
         showWindow(windowContainer);
     });
 }
