@@ -88,18 +88,7 @@ function renderLeftSide(sortedData) {
 
         <button class="new-group-button">New...</button>
 
-        <div class="window-container">
-            <div class="window-create-new">
-                <form method="POST">
-                    <label>New Group:</label>
-                    <input type="text" name="name" placeholder="Group Name">
-                    <div class="row">
-                        <input type="button" value="X">
-                        <input type="submit" value="✔">
-                    </div>
-                </form>
-            </div>
-        </div>
+        <div class="window-container"></div>
 
     </div>
     `;
