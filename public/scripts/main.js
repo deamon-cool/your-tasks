@@ -200,29 +200,7 @@ function renderRightSide(sortedData, renderedGroupId) {
 
         ${generateListsDiv(sortedData, renderedGroupId)}
 
-        <div id="create-update-task" class="window-container">
-            <div class="window">
-                <p>New Task:</p>
-                <form method="POST">
-                    <label>Start Time:</label>
-                    <input type="time" name="starttime">
-
-                    <label>End Time:</label>
-                    <input type="time" name="endtime">
-
-                    <label>Title:</label>
-                    <input type="text" name="title" placeholder="Title...">
-
-                    <label>Description:</label>
-                    <input type="text" name="description" placeholder="Description...">
-
-                    <div class="row">
-                        <input type="button" value="X">
-                        <input type="submit" value="✔">
-                    </div>
-                </form>
-            </div>
-        </div>
+        <div id="create-update-task" class="window-container"></div>
 
         <div id="save-positions" class="window-container">
             <div class="window">
