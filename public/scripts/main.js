@@ -383,13 +383,13 @@ function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
             <input type="time" name="starttime" value="${taskTime[0]}">
 
             <label>End Time:</label>
-            <input type="time" name="endtime" value="${taskTime[1]}>
+            <input type="time" name="endtime" value="${taskTime[1]}">
 
             <label>Title:</label>
             <input type="text" name="title" placeholder="Title..." value="${taskTitle}">
 
             <label>Description:</label>
-            <input type="text" name="description" placeholder="Description..." value="${taskDescr}>
+            <input type="text" name="description" placeholder="Description..." value="${taskDescr}">
 
             <div class="row">
                 <input type="button" value="X">
