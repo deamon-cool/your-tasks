@@ -137,15 +137,20 @@ function generateListsLi(lists) {
 // Sets window 'Create new Group/List'
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = document.querySelector('#groups .window-container');
-    let form = windowContainer.querySelector('.window-create-new form');
-    let label = form.querySelector('label');
-    let input = form.querySelector('input[type=text]');
+    windowContainer.innerHTML = `
+    <div class="window-create-new">
+        <form method="POST" action="${actionForm}">
+            <label>${title}</label>
+            <input type="text" name="name" placeholder="${inputHint}">
+            <div class="row">
+                <input type="button" value="X">
+                <input type="submit" value="✔">
+            </div>
+        </form>
+    </div>
+    `;
 
-    form.setAttribute('action', actionForm);
-    label.textContent = title;
-    input.setAttribute('placeholder', inputHint);
-
-    let cancelButton = form.querySelector('.row input[type=button]');
+    let cancelButton = windowContainer.querySelector('.window-create-new form .row input[type=button]');
 
     cancelButton.addEventListener('click', () => {
         windowContainer.style.display = 'none';
