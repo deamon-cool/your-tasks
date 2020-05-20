@@ -458,14 +458,14 @@ function displaySaveButton() {
     let list = listOfDraggedTask;
 
     saveButton.addEventListener('click', () => {
-        let windowContainer = setTasksPositionsWindow(list);
-
+        let windowContainer = setSaveTasksPositionsWindow(list, saveButton);
+        console.log('save')
         showWindow(windowContainer);
     });
 }
 
 // Sets window
-function setTasksPositionsWindow(list) {
+function setSaveTasksPositionsWindow(list, saveButton) {
     let windowContainer = document.querySelector('#lists #save-positions');
     let windowTitle = windowContainer.querySelector('.window>p');
     let noButton = windowContainer.querySelector('.row .no');
