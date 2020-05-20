@@ -154,7 +154,6 @@ function setWindow(actionForm, title, inputHint) {
 
     cancelButton.addEventListener('click', () => {
         windowContainer.style.display = 'none';
-        console.log('cancel');
     });
 
     windowContainer.addEventListener('click', e => {
