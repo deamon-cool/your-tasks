@@ -533,7 +533,5 @@ async function updateTasksPositionsInDb(list) {
         body: JSON.stringify(data),
     };
 
-    console.log('haha');
-
     await fetch(url, init);
 }
