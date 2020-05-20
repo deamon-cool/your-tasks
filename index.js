@@ -240,6 +240,18 @@ app.post('/main/update/task/status/:id', async (req, res) => {
 // Update tasks position in Db
 app.post('/main/update/tasks/position/:id', async (req, res) => {
     const listId = req.url.slice(req.url.search(':') + 1);
+
+    try {
+
+        // FINISH !
+
+    } catch (e) {
+        console.log('Err for: /main/update/tasks/position/:id ----------------------------------------------------->\n' + e);
+
+        return res.redirect(500, '/error');
+    }
+
+    console.log(req.body)
     // list id
     // req.body <- all tasks
 
