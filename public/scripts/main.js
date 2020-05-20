@@ -488,6 +488,16 @@ function setSaveTasksPositionsWindow(list, saveButton) {
 
     yesButton.addEventListener('click', () => {
         updateTasksPositionsInDb(list);
+
+        windowContainer.style.display = 'none';
+
+        saveButton.style.display = 'none';
+    });
+
+    windowContainer.addEventListener('click', e => {
+        if (e.target === windowContainer) {
+            windowContainer.style.display = 'none';
+        }
     });
 
     return windowContainer;
