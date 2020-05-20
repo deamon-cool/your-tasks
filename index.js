@@ -239,6 +239,7 @@ app.post('/main/update/task/status/:id', async (req, res) => {
 
 // Update tasks position in Db
 app.post('/main/update/tasks/position/:id', async (req, res) => {
+    const listId = req.url.slice(req.url.search(':') + 1);
     // list id
     // req.body <- all tasks
 
