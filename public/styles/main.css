@@ -490,13 +490,15 @@
     background-color: var(--general-lighter-blue-color);
 }
 
-/* Some part of style for save tasks position window */
+/* Some part of style for save/delete tasks position window */
 
-#lists #save-positions .window p {
+#lists #save-positions .window p,
+#lists #delete-tasks .window p {
     margin-bottom: 25px;
 }
 
-#lists #save-positions .window input {
+#lists #save-positions .window input,
+#lists #delete-tasks .window input {
     font-family: inherit;
     font-size: 20px;
     color: var(--general-blue-color);
@@ -506,24 +508,29 @@
     /* margin-bottom: 15px; */
 }
 
-#lists #save-positions .window .row input[type=button] {
+#lists #save-positions .window .row input[type=button],
+#lists #delete-tasks .window .row input[type=button] {
     background-color: white;
     padding: 5px 25px;
     cursor: pointer;
 }
 
-#lists #save-positions .window .row input[type=button]:hover {
+#lists #save-positions .window .row input[type=button]:hover,
+#lists #delete-tasks .window .row input[type=button]:hover {
     background-color: var(--general-lighter-blue-color);
 }
 
-#lists #save-positions .window .row .yes {
+#lists #save-positions .window .row .yes,
+#lists #delete-tasks .window .row .yes {
     float: right;
 }
 
-#lists #save-positions .window input:focus {
+#lists #save-positions .window input:focus,
+#lists #delete-tasks .window input:focus {
     outline: none;
 }
 
-#lists #save-positions .window input::placeholder {
+#lists #save-positions .window input::placeholder,
+#lists #delete-tasks .window input::placeholder {
     color: var(--general-light-blue-color);
 }
