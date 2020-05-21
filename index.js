@@ -249,8 +249,11 @@ app.post('/main/update/tasks/position', async (req, res) => {
 });
 
 
-app.get('/progress', (req, res) => {
-    res.render('progress');
+// app.get('/progress', (req, res) => {
+//     res.render('progress');
+// });
+
+
 });
 
 // Run server
