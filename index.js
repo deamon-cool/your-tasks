@@ -254,7 +254,11 @@ app.post('/main/update/tasks/position', async (req, res) => {
 // });
 
 
+// If none reponsed then this is a difault endpoint
+app.get('/*', (req, res) => {
+    res.sendFile('login.html', { root: `${__dirname}/public` });
 });
+
 
 // Run server
 app.listen(8000, () => {
