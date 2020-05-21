@@ -209,7 +209,7 @@
     padding: 20px;
 }
 
-/* style for list container */
+/* Style for list container */
 
 #lists .list-container {
     border: 1px solid var(--general-lighter-blue-color);
@@ -374,6 +374,8 @@
 #lists .list-container .tasks .task-container button:active i {
     color: var(--general-lighter-blue-color);
 }
+
+/* Style for creating/updating tasks window */
 
 #lists .window-container {
     display: none;
