@@ -94,7 +94,7 @@ function renderLeftSide(sortedData) {
     `;
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
-    setNewListBtnsListener(document.querySelectorAll('#groups .groups-ul>li'));
+    setGroupsListeners(document.querySelectorAll('#groups .groups-ul>li'));
 }
 
 // Returns groups <li> HTML String
@@ -175,7 +175,7 @@ function setNewGroupBtnListener(button) {
 }
 
 // Sets New List Button listener
-function setNewListBtnsListener(groupsLi) {
+function setGroupsListeners(groupsLi) {
     groupsLi.forEach(group => {
         let newListButton = group.querySelector('.new-list-button');
 
