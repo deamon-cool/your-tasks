@@ -176,14 +176,21 @@ function setNewGroupBtnListener(button) {
 
 // Sets New List Button listener
 function setGroupsListeners(groupsLi) {
-    groupsLi.forEach(group => {
-        let newListButton = group.querySelector('.new-list-button');
+    for (let i = 0; i < groupsLi.length; i++) {
+        let a = groupsLi[i].querySelector('a');
+
+        a.addEventListener('click', () => {
+            downloadData(`/main/data/${i}`)
+                .then(data => dataHandler(data));
+        });
+
+        let newListButton = groupsLi[i].querySelector('.new-list-button');
 
         newListButton.addEventListener('click', () => {
-            let listWindow = setWindow('/main/store/list/:' + group.id, 'New List:', 'List Name');
+            let listWindow = setWindow('/main/store/list/:' + groupsLi[i].id, 'New List:', 'List Name');
             showWindow(listWindow);
         });
-    });
+    }
 }
 
 
