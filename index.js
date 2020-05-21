@@ -196,7 +196,7 @@ app.post('/main/store/task/:id', async (req, res) => {
     }
 });
 
-// Upadate task in Db
+// Update task in Db
 app.post('/main/update/task/:id', async (req, res) => {
     const taskId = req.url.slice(req.url.search(':') + 1);
 
