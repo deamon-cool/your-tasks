@@ -143,7 +143,7 @@ app.post('/main/store/group', async (req, res) => {
 });
 
 // Store new list in Db
-app.post('/main/store/list/:id', async (req, res) => {
+app.post('/main/store/list/:groupid', async (req, res) => {
     if (req.body.name === '') {
         return res.redirect(302, '/main');
     }
@@ -163,14 +163,14 @@ app.post('/main/store/list/:id', async (req, res) => {
 
         return res.redirect(302, '/main');
     } catch (e) {
-        console.log('Err for: /main/store/list/:id ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/store/list/:groupid ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
 });
 
 // Store new task in Db
-app.post('/main/store/task/:id', async (req, res) => {
+app.post('/main/store/task/:listId', async (req, res) => {
     const listId = req.url.slice(req.url.search(':') + 1);
 
     try {
@@ -190,14 +190,14 @@ app.post('/main/store/task/:id', async (req, res) => {
 
         return res.redirect(302, '/main');
     } catch (e) {
-        console.log('Err for: /main/store/task/:id ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/store/task/:listId ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
 });
 
 // Update task in Db
-app.post('/main/update/task/:id', async (req, res) => {
+app.post('/main/update/task/:taskid', async (req, res) => {
     const taskId = req.url.slice(req.url.search(':') + 1);
 
     try {
@@ -212,7 +212,7 @@ app.post('/main/update/task/:id', async (req, res) => {
 
         return res.redirect(302, '/main');
     } catch (e) {
-        console.log('Err for: /main/update/task/:id ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/update/task/:taskid ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
@@ -220,13 +220,13 @@ app.post('/main/update/task/:id', async (req, res) => {
 });
 
 // Update task status in Db
-app.post('/main/update/task/status/:id', async (req, res) => {
+app.post('/main/update/task/status/:taskid', async (req, res) => {
     const taskId = req.url.slice(req.url.search(':') + 1);
 
     try {
         await Task.updateOne({ _id: taskId }, { status: req.body.status });
     } catch (e) {
-        console.log('Err for: /main/update/task/status/:id ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/update/task/status/:taskid ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
