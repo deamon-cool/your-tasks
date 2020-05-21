@@ -127,7 +127,7 @@ function generateListsLi(lists) {
 
     lists.forEach(list => {
         htmlpart += `
-        <li><a href="#scroll-to-id-element">${list.name}</a></li>
+        <li><a href="#${list.id}">${list.name}</a></li>
         `;
     });
 
