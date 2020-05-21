@@ -9,6 +9,10 @@
     margin: 0;
 }
 
+#groups a {
+    cursor: pointer;
+}
+
 #groups button {
     width: 100px;
     text-align: left;
