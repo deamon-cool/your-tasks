@@ -340,6 +340,15 @@ function setListsListeners(listsContainers) {
 
             setTaskListeners(task);
         });
+
+        // Deleting finished Tasks -> Window Functionality
+        let deleteTasksButton = list.querySelector('.header button.delete');
+
+        deleteTasksButton.addEventListener('click', () => {
+            let deleteTaskskWindow = setDeleteTaskskWindow(list, tasks);
+
+            showWindow(deleteTaskskWindow);
+        })
     });
 }
 
