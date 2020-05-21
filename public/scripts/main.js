@@ -429,7 +429,7 @@ function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
 }
 
 
-// Update task in Database
+// Updates task in Database
 async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     let data = {
         position: pos,
@@ -448,7 +448,7 @@ async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     await fetch(url, init);
 }
 
-// Update tasks positions
+// Updates tasks positions
 function updatePosition(container, targetItem, draggedItem) {
     let name = targetItem.className;
     let state = name === 'task-container'
@@ -529,7 +529,7 @@ function setSaveTasksPositionsWindow(list, saveButton) {
     return windowContainer;
 }
 
-// Update tasks positions in Db
+// Updates tasks positions in Db
 async function updateTasksPositionsInDb(list) {
     let url = `/main/update/tasks/position`;
     let data = [];
