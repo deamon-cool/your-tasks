@@ -220,6 +220,8 @@ function renderRightSide(sortedData, renderedGroupId) {
 
         <div id="save-positions" class="window-container"></div>
 
+        <div id="delete-tasks" class="window-container"></div>
+
     </div>
     `;
 
