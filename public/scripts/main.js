@@ -27,7 +27,7 @@ function dataHandler(data) {
 
     renderUser(user);
 
-    renderLeftSide(sortedData);
+    renderLeftSide(sortedData, renderedGroupId);
     renderRightSide(sortedData, renderedGroupId);
 }
 
@@ -77,7 +77,7 @@ function sort(objectsArray) {
 //---------------------------------------- Left side view
 
 // Renders left side
-function renderLeftSide(sortedData) {
+function renderLeftSide(sortedData, renderedGroupId) {
     leftSidelayout.innerHTML = `
     <div id="groups">
         <ul class="groups-ul">
@@ -94,7 +94,7 @@ function renderLeftSide(sortedData) {
     `;
 
     setNewGroupBtnListener(document.querySelector('.new-group-button'));
-    setGroupsListeners(document.querySelectorAll('#groups .groups-ul>li'));
+    setGroupsListeners(document.querySelectorAll('#groups .groups-ul>li'), renderedGroupId);
 }
 
 // Returns groups <li> HTML String
@@ -180,7 +180,7 @@ function setNewGroupBtnListener(button) {
 }
 
 // Sets New List Button listener
-function setGroupsListeners(groupsLi) {
+function setGroupsListeners(groupsLi, renderedGroupId) {
     for (let i = 0; i < groupsLi.length; i++) {
         let a = groupsLi[i].querySelector('a');
 
