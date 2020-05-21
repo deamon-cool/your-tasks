@@ -104,7 +104,7 @@ function generateGroupsLi(groups) {
     groups.forEach(group => {
         htmlpart += `
         <li id="${group.id}">
-            <a href="###">
+            <a>
                 <i class="fa fa-angle-right"></i>${group.name}
             </a>
             <ul class="lists-ul">
