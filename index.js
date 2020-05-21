@@ -242,7 +242,7 @@ app.post('/main/update/tasks/position', async (req, res) => {
             await Task.updateOne({ _id: id }, { position: position });
         }
     } catch (e) {
-        console.log('Err for: /main/update/tasks/position/:id ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/update/tasks/position ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
