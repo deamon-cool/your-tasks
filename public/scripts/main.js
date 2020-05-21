@@ -510,11 +510,15 @@ function setSaveTasksPositionsWindow(list, saveButton) {
         saveButton.style.display = 'none';
     });
 
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
-        }
-    });
+    if (windowContainer.getAttribute('click-listener') !== 'true') {
+        windowContainer.setAttribute('click-listener', 'true');
+
+        windowContainer.addEventListener('click', e => {
+            if (e.target === windowContainer) {
+                windowContainer.style.display = 'none';
+            }
+        });
+    }
 
     return windowContainer;
 }
