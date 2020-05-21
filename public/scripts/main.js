@@ -465,19 +465,19 @@ function updatePosition(container, targetItem, draggedItem) {
 function displaySaveButton() {
     let saveButton = listOfDraggedTask.querySelector('.header .save');
 
-    if (saveButton.style.display === 'block') {
-        return;
-    }
-
     saveButton.style.display = 'block';
 
     let list = listOfDraggedTask;
 
-    saveButton.addEventListener('click', () => {
-        let windowContainer = setSaveTasksPositionsWindow(list, saveButton);
+    if (saveButton.getAttribute('click-listener') !== 'true') {
+        saveButton.setAttribute('click-listener', 'true');
 
-        showWindow(windowContainer);
-    });
+        saveButton.addEventListener('click', () => {
+            let windowContainer = setSaveTasksPositionsWindow(list, saveButton);
+
+            showWindow(windowContainer);
+        });
+    }
 }
 
 // Sets window
