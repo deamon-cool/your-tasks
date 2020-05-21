@@ -137,6 +137,7 @@ function generateListsLi(lists) {
 // Sets window 'Create new Group/List'
 function setWindow(actionForm, title, inputHint) {
     let windowContainer = document.querySelector('#groups .window-container');
+
     windowContainer.innerHTML = `
     <div class="window-create-new">
         <form method="POST" action="${actionForm}">
@@ -156,11 +157,15 @@ function setWindow(actionForm, title, inputHint) {
         windowContainer.style.display = 'none';
     });
 
-    windowContainer.addEventListener('click', e => {
-        if (e.target === windowContainer) {
-            windowContainer.style.display = 'none';
-        }
-    });
+    if (windowContainer.getAttribute('click-listener') !== 'true') {
+        windowContainer.setAttribute('click-listener', 'true');
+
+        windowContainer.addEventListener('click', e => {
+            if (e.target === windowContainer) {
+                windowContainer.style.display = 'none';
+            }
+        });
+    }
 
     return windowContainer;
 }
