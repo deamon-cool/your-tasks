@@ -248,6 +248,11 @@ app.post('/main/update/tasks/position', async (req, res) => {
     }
 });
 
+// Delete tasks in Db and delete tasksIds in List
+app.delete('/main/delete/tasks/:listid', async (req, res) => {
+
+});
+
 
 // app.get('/progress', (req, res) => {
 //     res.render('progress');
