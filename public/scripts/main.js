@@ -478,6 +478,31 @@ function setDeleteTaskskWindow(list, tasks) {
     return windowContainer;
 }
 
+// Deletes tasks in Db
+async function deleteTaskInDb(tasks) {
+    let checkedTasksIds = [];
+
+    tasks.forEach(task => {
+        let id = task.id;
+        let taskCheckbox = task.querySelector('input[type=checkbox]');
+
+        if (taskCheckbox.checked) {
+            checkedTasksIds.push(id);
+        }
+    })
+
+    let url = '/main/delete/tasks/:listid';
+
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    };
+
+    await fetch()
+
+}
+
 // Updates task in Database
 async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
     let data = {
