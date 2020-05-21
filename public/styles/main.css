@@ -485,3 +485,41 @@
 #lists .window-container .window form input[type=submit]:hover {
     background-color: var(--general-lighter-blue-color);
 }
+
+/* Some part of style for save tasks position window */
+
+#lists #save-positions .window p {
+    margin-bottom: 25px;
+}
+
+#lists #save-positions .window input {
+    font-family: inherit;
+    font-size: 20px;
+    color: var(--general-blue-color);
+    border: 1px solid var(--general-light-blue-color);
+    border-radius: var(--general-radius);
+    padding: 5px 10px;
+    /* margin-bottom: 15px; */
+}
+
+#lists #save-positions .window .row input[type=button] {
+    background-color: white;
+    padding: 5px 25px;
+    cursor: pointer;
+}
+
+#lists #save-positions .window .row input[type=button]:hover {
+    background-color: var(--general-lighter-blue-color);
+}
+
+#lists #save-positions .window .row .yes {
+    float: right;
+}
+
+#lists #save-positions .window input:focus {
+    outline: none;
+}
+
+#lists #save-positions .window input::placeholder {
+    color: var(--general-light-blue-color);
+}
