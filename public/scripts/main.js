@@ -34,7 +34,7 @@ function dataHandler(data) {
 // Renders welcome user
 function renderUser(user) {
     let h1 = document.querySelector('#header-layout h1');
-    h1.textContent += `Welcome ${user}`;
+    h1.textContent = `Todo List : Welcome ${user}`;
 }
 
 // Sorts all groups/lists/tasks
