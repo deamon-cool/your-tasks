@@ -505,7 +505,7 @@ function setSaveTasksPositionsWindow(list, saveButton) {
 
 // Update tasks positions in Db
 async function updateTasksPositionsInDb(list) {
-    let url = `/main/update/tasks/position/:${list.id}`;
+    let url = `/main/update/tasks/position`;
     let data = [];
 
     let tasks = list.querySelectorAll('.tasks .task-container');
