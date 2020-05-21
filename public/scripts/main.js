@@ -491,16 +491,16 @@ async function deleteTaskInDb(tasks, list) {
         }
     })
 
-    let url = '/main/delete/tasks/:listid';
+    let listId = list.id;
+    let url = `/main/delete/tasks/:${listId}`;
 
     let init = {
-        method: 'POST',
+        method: 'DELETE',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(checkedTasksIds),
     };
 
-    await fetch()
-
+    await fetch(url, init)
 }
 
 // Updates task in Database
