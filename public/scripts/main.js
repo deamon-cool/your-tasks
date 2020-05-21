@@ -437,6 +437,46 @@ function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
     return windowContainer;
 }
 
+// Sets Window for deleting finished Tasks
+function setDeleteTaskskWindow(list, tasks) {
+    let windowContainer = document.querySelector('#lists #delete-tasks');
+    let listTitle = list.querySelector('.header h2').textContent;
+
+    windowContainer.innerHTML = `
+    <div class="window">
+        <p>Delete finished tasks in ${listTitle} ?</p>
+        <div class="row">
+            <input class="no" type="button" value="X">
+            <input class="yes" type="button" value="✔">
+        </div>
+    </div>
+    `;
+
+    let noButton = windowContainer.querySelector('.row .no');
+    let yesButton = windowContainer.querySelector('.row .yes');
+
+    noButton.addEventListener('click', () => {
+        windowContainer.style.display = 'none';
+    });
+
+    yesButton.addEventListener('click', () => {
+        deleteTaskInDb(tasks);
+
+        windowContainer.style.display = 'none';
+    });
+
+    if (windowContainer.getAttribute('click-listener') !== 'true') {
+        windowContainer.setAttribute('click-listener', 'true');
+
+        windowContainer.addEventListener('click', e => {
+            if (e.target === windowContainer) {
+                windowContainer.style.display = 'none';
+            }
+        });
+    }
+
+    return windowContainer;
+}
 
 // Updates task in Database
 async function updateTaskInDb(url, pos, sta, start, end, tit, descr) {
