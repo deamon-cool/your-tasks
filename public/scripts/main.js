@@ -460,7 +460,7 @@ function setDeleteTaskskWindow(list, tasks) {
     });
 
     yesButton.addEventListener('click', () => {
-        deleteTaskInDb(tasks);
+        deleteTaskInDb(tasks, list);
 
         windowContainer.style.display = 'none';
     });
@@ -479,7 +479,7 @@ function setDeleteTaskskWindow(list, tasks) {
 }
 
 // Deletes tasks in Db
-async function deleteTaskInDb(tasks) {
+async function deleteTaskInDb(tasks, list) {
     let checkedTasksIds = [];
 
     tasks.forEach(task => {
