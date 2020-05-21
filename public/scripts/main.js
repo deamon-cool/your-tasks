@@ -189,6 +189,10 @@ function setGroupsListeners(groupsLi, renderedGroupId) {
                 .then(data => dataHandler(data));
         });
 
+        if (groupsLi[i].id === renderedGroupId) {
+            a.style = 'background-color: rgb(223,227,238); border-radius: 10px;';
+        }
+
         let newListButton = groupsLi[i].querySelector('.new-list-button');
 
         newListButton.addEventListener('click', () => {
