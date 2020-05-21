@@ -117,11 +117,6 @@ app.get('/main/data/:position', async (req, res) => {
     }
 });
 
-// Load other group
-app.get('/main/:id', (req, res) => {
-    // unpack group id and load data from it
-});
-
 // Store new group in Db
 app.post('/main/store/group', async (req, res) => {
     if (req.body.name === '') {
