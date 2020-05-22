@@ -510,8 +510,8 @@ async function deleteTaskInDb(tasksContainer, list) {
         body: JSON.stringify(checkedTasksIds),
     };
 
-    await fetch(url, init);
-    await updateTasksPositionsInDb(list);
+    await fetch(url, init)
+        .then(updateTasksPositionsInDb(list));
 }
 
 // Updates task in Database
