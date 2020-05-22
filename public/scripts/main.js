@@ -495,7 +495,7 @@ async function deleteTaskInDb(tasksContainer, list) {
 
             tasksContainer.removeChild(task);
         }
-    })
+    });
 
     if (isSomeTaskChecked === false) {
         return;
