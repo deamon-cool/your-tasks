@@ -480,16 +480,26 @@ function setDeleteTaskskWindow(list, tasksContainer) {
 
 // Deletes tasks in Db
 async function deleteTaskInDb(tasksContainer, list) {
+    let tasks = tasksContainer.querySelectorAll('.task-container');
     let checkedTasksIds = [];
+    let isSomeTaskChecked = false;
 
     tasks.forEach(task => {
         let id = task.id;
         let taskCheckbox = task.querySelector('input[type=checkbox]');
 
         if (taskCheckbox.checked) {
+            isSomeTaskChecked = true;
+
             checkedTasksIds.push(id);
+
+            tasksContainer.removeChild(task);
         }
     })
+
+    if (isSomeTaskChecked === false) {
+        return;
+    }
 
     let listId = list.id;
     let url = `/main/delete/tasks/:${listId}`;
