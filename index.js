@@ -250,7 +250,23 @@ app.post('/main/update/tasks/position', async (req, res) => {
 
 // Delete tasks in Db and delete tasksIds in List
 app.delete('/main/delete/tasks/:listid', async (req, res) => {
+    const listId = req.url.slice(req.url.search(':') + 1);
 
+    try {
+        let taskIds = req.body;
+
+        await List.updateOne({ _id: listId }, { $pullAll: { taskIds: taskIds } });
+
+        for (let i = 0; i < taskIds.length; i++) {
+            const taskId = taskIds[i];
+
+            await Task.deleteOne({ _id: taskId });
+        }
+    } catch (e) {
+        console.log('Err for: /main/delete/tasks/:listid ----------------------------------------------------->\n' + e);
+
+        return res.redirect(500, '/error');
+    }
 });
 
 
