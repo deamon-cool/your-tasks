@@ -345,7 +345,7 @@ function setListsListeners(listsContainers) {
         let deleteTasksButton = list.querySelector('.header button.delete');
 
         deleteTasksButton.addEventListener('click', () => {
-            let deleteTaskskWindow = setDeleteTaskskWindow(list, tasks);
+            let deleteTaskskWindow = setDeleteTaskskWindow(list, tasksContainer);
 
             showWindow(deleteTaskskWindow);
         })
@@ -438,7 +438,7 @@ function setTaskWindow(taskTime, taskTitle, taskDescr, title, actionForm) {
 }
 
 // Sets Window for deleting finished Tasks
-function setDeleteTaskskWindow(list, tasks) {
+function setDeleteTaskskWindow(list, tasksContainer) {
     let windowContainer = document.querySelector('#lists #delete-tasks');
     let listTitle = list.querySelector('.header h2').textContent;
 
@@ -460,7 +460,7 @@ function setDeleteTaskskWindow(list, tasks) {
     });
 
     yesButton.addEventListener('click', () => {
-        deleteTaskInDb(tasks, list);
+        deleteTaskInDb(tasksContainer, list);
 
         windowContainer.style.display = 'none';
     });
@@ -479,7 +479,7 @@ function setDeleteTaskskWindow(list, tasks) {
 }
 
 // Deletes tasks in Db
-async function deleteTaskInDb(tasks, list) {
+async function deleteTaskInDb(tasksContainer, list) {
     let checkedTasksIds = [];
 
     tasks.forEach(task => {
