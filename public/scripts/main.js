@@ -511,6 +511,7 @@ async function deleteTaskInDb(tasksContainer, list) {
     };
 
     await fetch(url, init);
+    await updateTasksPositionsInDb(list);
 }
 
 // Updates task in Database
