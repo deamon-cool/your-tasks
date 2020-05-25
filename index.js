@@ -111,7 +111,7 @@ app.get('/main/data/:position', async (req, res) => {
 
         return res.json(packet);
     } catch (e) {
-        console.log('Err for: /main ----------------------------------------------------->\n' + e);
+        console.log('Err for: /main/data/:position ----------------------------------------------------->\n' + e);
 
         return res.redirect(500, '/error');
     }
