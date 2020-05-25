@@ -56,9 +56,9 @@ app.get('/main/data/:position', async (req, res) => {
         packet.user = users[0].name;
 
         // TEST -> For users[0]
-        if (users[0].groupIds === undefined || users[0].groupIds.length === 0) {
-            return res.render('main', { packet: packet });
-        }
+        // if (users[0].groupIds === undefined || users[0].groupIds.length === 0) {
+        //     return res.sendFile('main.html', { root: `${__dirname}/public` });
+        // }
 
         //TEST -> load ids of group from test user
         const groupIds = users[0].groupIds;
