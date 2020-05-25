@@ -2,3 +2,4 @@ package-lock.json
 .history/
 FORME-REDME.txt
 node_modules/
+tests/testHTML.html
