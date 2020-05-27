@@ -1,4 +1,23 @@
-let h1 = document.createElement('h1');
-h1.textContent = 'Hello';
+let container = document.querySelector('#container');
 
-document.body.appendChild(h1);
+container.innerHTML = `
+<div class="window">
+    <h1>Login:</h1>
+
+    <form action="/register/store/user" method="POST">
+        <label for="username">User Name:</label>
+        <input type="text" name="username" placeholder="User Name">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Password">
+
+        <div class="row">
+            <input type="submit" value="✔">
+        </div>
+    </form>
+
+    <p><a href="/register">Register...</a></p>
+
+    <p><a href="/register/privacy">Privacy</a></p>
+</div>
+`;
