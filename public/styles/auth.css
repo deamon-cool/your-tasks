@@ -102,6 +102,10 @@ body {
     text-decoration: underline;
 }
 
+#container .window .p-register {
+    border: none;
+}
+
 @keyframes showwindow {
     from {
         opacity: 0;
