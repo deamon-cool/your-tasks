@@ -30,6 +30,9 @@ app.get('/register', (req, res) => {
 
 app.post('/register/store/user', async (req, res) => {
     const user = req.body;
+    const userName = user.username;
+
+
 
     console.log(user);
 });
