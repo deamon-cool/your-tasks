@@ -16,7 +16,7 @@ container.innerHTML = `
         </div>
     </form>
 
-    <p><a href="/register">Register...</a></p>
+    <p class="p-register"><a href="/register">Register...</a></p>
 
     <p><a href="/register/privacy">Privacy</a></p>
 </div>
