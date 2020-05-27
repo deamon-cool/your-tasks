@@ -32,13 +32,18 @@ app.post('/register/store/user', async (req, res) => {
     const user = req.body;
     const userName = user.username;
 
-
-
     console.log(user);
 });
 
 app.get('/login', (req, res) => {
     res.sendFile('login.html', { root: `${__dirname}/public` });
+});
+
+app.post('login/verify', (req, res) => {
+    const user = req.body;
+    const userName = user.username;
+
+    console.log(user);
 });
 
 // Load first group, its lists and its tasks
