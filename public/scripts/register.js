@@ -70,6 +70,8 @@ function isFormValidated() {
 
 // Adds to DOM warning message
 function warningMessage(msg) {
+    clearTimeout(timeout);
+
     warning.textContent = msg;
 
     timeout = setTimeout(removeWarning, 5000);
