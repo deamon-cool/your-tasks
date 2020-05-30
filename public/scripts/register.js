@@ -72,9 +72,17 @@ function isFormValidated() {
 function warningMessage(msg) {
     clearTimeout(timeout);
 
+    clearPasswordsValues();
+
     warning.textContent = msg;
 
     timeout = setTimeout(removeWarning, 5000);
+}
+
+// Clears passwords values
+function clearPasswordsValues() {
+    password.value = '';
+    passwordConfirm.value = '';
 }
 
 // Removes text warning
