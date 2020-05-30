@@ -40,3 +40,24 @@ submit.addEventListener('click', (e) => {
         e.preventDefault();
     }
 });
+
+// Checks form validation
+function isFormValidated() {
+    console.log(username.value);
+    console.log(password.value);
+    console.log(passwordConfirm.value);
+
+    if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
+        warningMessage('Fill out inputs');
+
+        return false;
+    }
+
+    if (password.value !== passwordConfirm.value) {
+        warningMessage('Confirm password is incorrect');
+
+        return false;
+    }
+
+    return true;
+}
