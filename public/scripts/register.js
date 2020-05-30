@@ -63,3 +63,11 @@ function isFormValidated() {
 
     return true;
 }
+
+// Adds to DOM warning message
+function warningMessage(msg) {
+    warning.textContent = msg;
+
+    setTimeout(removeWarning, 5000);
+}
+}
