@@ -50,13 +50,13 @@ submit.addEventListener('click', (e) => {
 // Checks form validation
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
-        warningMessage('Fill out inputs');
+        warningMessage('Fill out Username, Password, Confirm Password');
 
         return false;
     }
 
     if (password.value !== passwordConfirm.value) {
-        warningMessage('Confirm password is incorrect');
+        warningMessage('Password and Confirm Password are incorrect');
 
         return false;
     }
