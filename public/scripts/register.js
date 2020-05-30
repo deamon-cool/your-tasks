@@ -24,3 +24,10 @@ container.innerHTML = `
     <p><a href="/register/privacy">Privacy</a></p>
 </div>
 `;
+
+// DOM
+let username = container.querySelector('.window input[name=username]');
+let password = container.querySelector('.window input[name=password]');
+let passwordConfirm = container.querySelector('.window input[name=confirm]');
+let submit = container.querySelector('.window .row input[type=submit]');
+let warning = container.querySelector('.window .warning');
