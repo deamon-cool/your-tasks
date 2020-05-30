@@ -19,6 +19,8 @@ container.innerHTML = `
         </div>
     </form>
 
+    <p class="redirect"><a href="/login">Login...</a></p>
+
     <p><a href="/register/privacy">Privacy</a></p>
 </div>
 `;
