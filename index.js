@@ -24,10 +24,12 @@ app.use(express.static('public'));
 
 // Request handlers (controllers)
 
+// Get site register
 app.get('/register', (req, res) => {
     res.sendFile('register.html', { root: `${__dirname}/public` });
 });
 
+// Store new User in Db
 app.post('/register/store/user', async (req, res) => {
     const user = req.body;
     const userName = user.username;
