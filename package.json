@@ -1,7 +1,6 @@
 {
-  "name": "to-do-list",
+  "name": "your-tasks",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -15,12 +14,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/deamon-cool/To-do-list.git"
+    "url": "git+https://github.com/deamon-cool/your-tasks.git"
   },
   "author": "Damian Ciesielski",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/deamon-cool/To-do-list/issues"
+    "url": "https://github.com/deamon-cool/your-tasks/issues"
   },
-  "homepage": "https://github.com/deamon-cool/To-do-list#readme"
+  "homepage": "https://github.com/deamon-cool/your-tasks#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
 }
