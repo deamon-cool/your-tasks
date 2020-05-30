@@ -72,7 +72,7 @@ function warningMessage(msg) {
 
     warning.textContent = msg;
 
-    timeout = setTimeout(removeWarning, 5000);
+    timeout = setTimeout(removeWarning, 7000);
 }
 
 // Clears passwords values
