@@ -14,6 +14,8 @@ container.innerHTML = `
         <label for="confirm">Confirm Password:</label>
         <input type="password" name="confirm" placeholder="Confirm Password">
 
+        <div class="warning"></div>
+
         <div class="row">
             <input type="submit" value="✔">
         </div>
