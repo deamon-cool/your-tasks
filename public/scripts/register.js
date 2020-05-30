@@ -70,4 +70,8 @@ function warningMessage(msg) {
 
     setTimeout(removeWarning, 5000);
 }
+
+// Removes text warning
+function removeWarning() {
+    warning.textContent = '';
 }
