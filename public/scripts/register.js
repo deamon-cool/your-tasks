@@ -72,7 +72,7 @@ function isFormValidated() {
 function warningMessage(msg) {
     warning.textContent = msg;
 
-    setTimeout(removeWarning, 5000);
+    timeout = setTimeout(removeWarning, 5000);
 }
 
 // Removes text warning
