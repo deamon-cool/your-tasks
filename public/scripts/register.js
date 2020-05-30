@@ -49,10 +49,6 @@ submit.addEventListener('click', (e) => {
 
 // Checks form validation
 function isFormValidated() {
-    console.log(username.value);
-    console.log(password.value);
-    console.log(passwordConfirm.value);
-
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
         warningMessage('Fill out inputs');
 
