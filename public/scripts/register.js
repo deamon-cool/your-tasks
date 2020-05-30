@@ -28,6 +28,9 @@ container.innerHTML = `
 </div>
 `;
 
+// Global variables
+let timeout;
+
 // DOM
 let username = container.querySelector('.window input[name=username]');
 let password = container.querySelector('.window input[name=password]');
