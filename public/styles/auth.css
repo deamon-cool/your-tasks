@@ -67,7 +67,7 @@ body {
     background-color: var(--general-lighter-blue-color);
 }
 
-#container .window form>input[type=text]:focus {
+#container .window form input:focus {
     background-color: var(--general-lighter-blue-color);
 }
 
