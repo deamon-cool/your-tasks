@@ -9,6 +9,7 @@ const Task = require('./database/model/Task');
 
 const storeUserController = require('./controller/storeUserController');
 
+const registerValidation = require('./middleware/registerValidation');
 
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -32,7 +33,7 @@ app.get('/register', (req, res) => {
 });
 
 // Store new User in Db
-app.post('/register/store/user', storeUserController);
+app.post('/register/store/user', registerValidation, storeUserController);
 
 
 app.get('/login', (req, res) => {
