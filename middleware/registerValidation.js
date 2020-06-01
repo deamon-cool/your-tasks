@@ -1,4 +1,4 @@
-module.exports = (res, req, next) => {
+module.exports = async (req, res, next) => {
 
 
 
