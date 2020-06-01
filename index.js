@@ -7,6 +7,8 @@ const Group = require('./database/model/Group');
 const List = require('./database/model/List');
 const Task = require('./database/model/Task');
 
+const storeUserController = require('./controller/storeUserController');
+
 
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
@@ -30,12 +32,8 @@ app.get('/register', (req, res) => {
 });
 
 // Store new User in Db
-app.post('/register/store/user', async (req, res) => {
-    const user = req.body;
-    const userName = user.username;
+app.post('/register/store/user', storeUserController);
 
-    console.log(user);
-});
 
 app.get('/login', (req, res) => {
     res.sendFile('login.html', { root: `${__dirname}/public` });
