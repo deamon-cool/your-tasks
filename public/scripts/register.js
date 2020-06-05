@@ -41,6 +41,7 @@ let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~
 // DOM
 let username = container.querySelector('.window input[name=username]');
 let email = container.querySelector('.window input[name=email]');
+let activationCode = container.querySelector('.window input[name=code]');
 let password = container.querySelector('.window input[name=password]');
 let passwordConfirm = container.querySelector('.window input[name=confirm]');
 let submit = container.querySelector('.window .row input[type=submit]');
