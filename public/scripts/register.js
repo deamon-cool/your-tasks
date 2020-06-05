@@ -105,19 +105,20 @@ function removeWarning() {
 
 // Checks email validation
 function isEmailValidate(email) {
+    if (!email) return false;
 
-  if (email.length > 256) return false;
+    if (email.length > 256) return false;
 
-  if (!tester.test(email)) return false;
+    if (!tester.test(email)) return false;
 
-  // Further checking of some things regex can't handle
-  let [account, address] = email.split('@');
-  if (account.length > 64) return false;
+    // Further checking of some things regex can't handle
+    let [account, address] = email.split('@');
+    if (account.length > 64) return false;
 
-  let domainParts = address.split('.');
-  if (domainParts.some(function (part) {
-    return part.length > 63;
-  })) return false;
+    let domainParts = address.split('.');
+    if (domainParts.some(function (part) {
+        return part.length > 63;
+    })) return false;
 
-  return true;
+    return true;
 }
