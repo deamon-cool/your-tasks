@@ -90,6 +90,12 @@ function isFormValidated() {
         return false;
     }
 
+    if (activationCode.value === '') {
+        warningMessage('Fill Activation Code');
+
+        return false;
+    }
+
     if (password.value !== passwordConfirm.value) {
         warningMessage('Password and Confirm Password are incorrect');
 
