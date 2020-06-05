@@ -80,6 +80,10 @@ register.addEventListener('click', e => {
     }
 });
 
+// Show DOM element
+function show(element) {
+    element.style.display = 'block';
+}
 // Checks form validation
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
