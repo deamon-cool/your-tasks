@@ -63,6 +63,12 @@ function isFormValidated() {
         return false;
     }
 
+    if (!checkEmailValidation(email.value)) {
+        warningMessage('Wrong Email');
+
+        return false;
+    }
+
     if (password.value !== passwordConfirm.value) {
         warningMessage('Password and Confirm Password are incorrect');
 
