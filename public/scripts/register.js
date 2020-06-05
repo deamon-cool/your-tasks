@@ -12,6 +12,10 @@ container.innerHTML = `
         <label for="email">Email:</label>
         <input type="text" name="email" placeholder="Email">
 
+        <div class="row">
+            <input id="send-code" type="submit" value="Send Code">
+        </div>
+
         <label for="code">Code:</label>
         <input type="text" name="code" placeholder="Activation Code">
 
@@ -41,6 +45,7 @@ let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~
 // DOM
 let username = container.querySelector('.window input[name=username]');
 let email = container.querySelector('.window input[name=email]');
+let sendCode = container.querySelector('.window .row #send-code');
 let activationCode = container.querySelector('.window input[name=code]');
 let password = container.querySelector('.window input[name=password]');
 let passwordConfirm = container.querySelector('.window input[name=confirm]');
