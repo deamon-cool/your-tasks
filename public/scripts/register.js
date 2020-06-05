@@ -27,7 +27,7 @@ container.innerHTML = `
 
         <div class="warning"></div>
 
-        <div class="row">
+        <div id="register-row" class="row">
             <input id="register" type="submit" value="✔">
         </div>
     </form>
