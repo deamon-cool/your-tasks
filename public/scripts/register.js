@@ -64,7 +64,7 @@ function isFormValidated() {
         return false;
     }
 
-    if (!checkEmailValidation(email.value)) {
+    if (!isEmailValidate(email.value)) {
         warningMessage('Wrong Email');
 
         return false;
@@ -102,8 +102,7 @@ function removeWarning() {
 }
 
 // Checks email validation
-function checkEmailValidation(email) {
-  if (!email) return false;
+function isEmailValidate(email) {
 
   if (email.length > 256) return false;
 
