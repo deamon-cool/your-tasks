@@ -53,8 +53,8 @@ register.addEventListener('click', e => {
 
     let state = isFormValidated();
 
-    if (!state) {
-        e.preventDefault();
+    if (state) {
+        // fetching data
     }
 });
 
