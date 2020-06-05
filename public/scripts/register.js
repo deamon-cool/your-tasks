@@ -10,7 +10,7 @@ container.innerHTML = `
         <input type="text" name="username" placeholder="User Name">
 
         <label for="email">Email:</label>
-        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="email" placeholder="Email">
 
         <label for="code">Code:</label>
         <input type="text" name="code" placeholder="Activation Code">
