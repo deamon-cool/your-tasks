@@ -9,6 +9,12 @@ container.innerHTML = `
         <label for="username">User Name:</label>
         <input type="text" name="username" placeholder="User Name">
 
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Email">
+
+        <label for="code">Code:</label>
+        <input type="text" name="code" placeholder="Activation Code">
+
         <label for="password">Password:</label>
         <input type="password" name="password" placeholder="Password">
 
