@@ -53,6 +53,19 @@ let register = container.querySelector('.window .row #register');
 let warning = container.querySelector('.window .warning');
 
 // Listeners
+sendCode.addEventListener('click', e => {
+    e.preventDefault();
+
+    let state = isEmailValidate(email.value);
+
+    if (state) {
+        // fetching data
+    } else {
+        warningMessage('Wrong Email');
+    }
+
+});
+
 register.addEventListener('click', e => {
     e.preventDefault();
 
