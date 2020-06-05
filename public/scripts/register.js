@@ -24,7 +24,7 @@ container.innerHTML = `
         <div class="warning"></div>
 
         <div class="row">
-            <input type="submit" value="✔">
+            <input id="register" type="submit" value="✔">
         </div>
     </form>
 
@@ -44,11 +44,13 @@ let email = container.querySelector('.window input[name=email]');
 let activationCode = container.querySelector('.window input[name=code]');
 let password = container.querySelector('.window input[name=password]');
 let passwordConfirm = container.querySelector('.window input[name=confirm]');
-let submit = container.querySelector('.window .row input[type=submit]');
+let register = container.querySelector('.window .row #register');
 let warning = container.querySelector('.window .warning');
 
 // Listeners
-submit.addEventListener('click', (e) => {
+register.addEventListener('click', e => {
+    e.preventDefault();
+
     let state = isFormValidated();
 
     if (!state) {
