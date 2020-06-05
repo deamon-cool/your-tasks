@@ -4,7 +4,6 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
     color: var(--general-blue-color);
 }
 
@@ -20,7 +19,7 @@ body {
     width: 400px;
     background-color: white;
     padding: 20px;
-    margin: 100px auto auto auto;
+    margin: 50px auto 50px auto;
     border-radius: var(--general-radius);
     box-shadow: 0 5px 50px var(--general-blue-color);
 }
