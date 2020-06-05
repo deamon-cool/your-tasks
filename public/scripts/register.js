@@ -56,6 +56,20 @@ let registerRow = container.querySelector('.window #register-row');
 let register = container.querySelector('.window .row #register');
 let warning = container.querySelector('.window .warning');
 
+// Hide DOM elements after first load
+function hideDOMElements() {
+    hide(activationCode);
+    hide(passwordLabel);
+    hide(password);
+    hide(passwordConfirmLabel);
+    hide(passwordConfirm);
+    hide(register);
+    hide(registerRow);
+    hide(codeLabel);
+}
+
+hideDOMElements();
+
 // Listeners
 sendCode.addEventListener('click', e => {
     e.preventDefault();
