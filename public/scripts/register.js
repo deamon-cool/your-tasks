@@ -99,6 +99,8 @@ registerSubmit.addEventListener('click', e => {
 
     if (state) {
         // fetching data
+    } else {
+        clearPasswordsValues();
     }
 });
 
@@ -141,8 +143,6 @@ function isFormValidated() {
 // Adds message to DOM element
 function displayMessage(element, msg, time) {
     clearTimeout(timeout);
-
-    clearPasswordsValues();
 
     element.textContent = msg;
 
