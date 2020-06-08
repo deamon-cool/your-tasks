@@ -49,6 +49,7 @@ let usernameLabel = container.querySelector('.window label[for=username]');
 let username = container.querySelector('.window input[name=username]');
 let email = container.querySelector('.window input[name=email]');
 let sendCodeSubmit = container.querySelector('.window .row #send-code');
+let info = container.querySelector('.window .info');
 let codeLabel = container.querySelector('.window label[for=code]');
 let activationCode = container.querySelector('.window input[name=code]');
 let passwordLabel = container.querySelector('.window label[for=password]');
