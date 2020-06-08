@@ -104,6 +104,20 @@ registerSubmit.addEventListener('click', e => {
     }
 });
 
+//Show DOM elements
+function showDOMELements() {
+    show(usernameLabel);
+    show(username);
+    show(activationCode);
+    show(passwordLabel);
+    show(password);
+    show(passwordConfirmLabel);
+    show(passwordConfirm);
+    show(registerSubmit);
+    show(registerRow);
+    show(codeLabel);
+}
+
 // Show DOM element
 function show(element) {
     element.style.display = 'block';
