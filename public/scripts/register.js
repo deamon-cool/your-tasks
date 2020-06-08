@@ -16,6 +16,8 @@ container.innerHTML = `
             <input id="send-code" type="submit" value="Send Code">
         </div>
 
+        <div class="info"></div>
+
         <label for="code">Code:</label>
         <input type="text" name="code" placeholder="Activation Code">
 
