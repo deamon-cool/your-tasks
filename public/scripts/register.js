@@ -83,9 +83,11 @@ sendCodeSubmit.addEventListener('click', e => {
     let state = isEmailValidate(email.value);
 
     if (state) {
+
+
         // fetching data
     } else {
-        warningMessage('Wrong Email');
+        displayMessage(warning, 'Wrong Email', 7000);
     }
 
 });
@@ -116,19 +118,19 @@ function hide(element) {
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === ''
         || email.valu === '' || activationCode.value === '') {
-        warningMessage('Fill out Username, Email, Activation Code, Password, Confirm Password');
+        displayMessage(warning, 'Fill out Username, Email, Activation Code, Password, Confirm Password', 7000);
 
         return false;
     }
 
     if (!isEmailValidate(email.value)) {
-        warningMessage('Wrong Email');
+        displayMessage(warning, 'Wrong Email', 7000);
 
         return false;
     }
 
     if (password.value !== passwordConfirm.value) {
-        warningMessage('Password and Confirm Password are incorrect');
+        displayMessage(warning, 'Password and Confirm Password are incorrect', 7000);
 
         return false;
     }
