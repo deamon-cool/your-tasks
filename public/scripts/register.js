@@ -146,7 +146,7 @@ function displayMessage(element, msg, time) {
 
     element.textContent = msg;
 
-    timeout = setTimeout(removeWarning, time);
+    timeout = setTimeout(clearMessage(element), time);
 }
 
 // Clears passwords values
