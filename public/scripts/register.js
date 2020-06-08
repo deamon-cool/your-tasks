@@ -43,6 +43,7 @@ let timeout;
 let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
 // DOM
+let usernameLabel = container.querySelector('.window label[for=username]');
 let username = container.querySelector('.window input[name=username]');
 let email = container.querySelector('.window input[name=email]');
 let sendCodeSubmit = container.querySelector('.window .row #send-code');
@@ -58,6 +59,8 @@ let warning = container.querySelector('.window .warning');
 
 // Hide DOM elements after first load
 function hideDOMElements() {
+    hide(usernameLabel);
+    hide(username);
     hide(activationCode);
     hide(passwordLabel);
     hide(password);
