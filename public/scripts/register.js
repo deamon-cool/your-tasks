@@ -138,7 +138,7 @@ function isFormValidated() {
     return true;
 }
 
-// Adds to DOM warning message
+// Adds message to DOM element
 function displayMessage(element, msg, time) {
     clearTimeout(timeout);
 
