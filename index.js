@@ -36,6 +36,9 @@ app.get('/register', (req, res) => {
     res.sendFile('register.html', { root: `${__dirname}/public` });
 });
 
+// Send authorization code through email
+app.post('/register/email/code', emailCheck, sendEmailCodeController);
+
 // Store new User in Db
 app.post('/register/store/user', registerValidation, storeUserController);
 
