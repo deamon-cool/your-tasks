@@ -107,22 +107,19 @@ function hide(element) {
     element.style.display = 'none';
 }
 
+//
+
 // Checks form validation
 function isFormValidated() {
-    if (username.value === '' || password.value === '' || passwordConfirm.value === '') {
-        warningMessage('Fill out Username, Password, Confirm Password');
+    if (username.value === '' || password.value === '' || passwordConfirm.value === ''
+        || email.valu === '' || activationCode.value === '') {
+        warningMessage('Fill out Username, Email, Activation Code, Password, Confirm Password');
 
         return false;
     }
 
     if (!isEmailValidate(email.value)) {
         warningMessage('Wrong Email');
-
-        return false;
-    }
-
-    if (activationCode.value === '') {
-        warningMessage('Fill Activation Code');
 
         return false;
     }
