@@ -1,14 +1,18 @@
+// npm modules
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+// Models Db
 const User = require('./database/model/User');
 const Group = require('./database/model/Group');
 const List = require('./database/model/List');
 const Task = require('./database/model/Task');
 
+// Controllers
 const storeUserController = require('./controller/storeUserController');
 
+// Middlewares
 const registerValidation = require('./middleware/registerValidation');
 
 // Database connection
