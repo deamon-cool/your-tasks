@@ -45,7 +45,7 @@ let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~
 // DOM
 let username = container.querySelector('.window input[name=username]');
 let email = container.querySelector('.window input[name=email]');
-let sendCode = container.querySelector('.window .row #send-code');
+let sendCodeSubmit = container.querySelector('.window .row #send-code');
 let codeLabel = container.querySelector('.window label[for=code]');
 let activationCode = container.querySelector('.window input[name=code]');
 let passwordLabel = container.querySelector('.window label[for=password]');
@@ -53,7 +53,7 @@ let password = container.querySelector('.window input[name=password]');
 let passwordConfirmLabel = container.querySelector('.window label[for=confirm]');
 let passwordConfirm = container.querySelector('.window input[name=confirm]');
 let registerRow = container.querySelector('.window #register-row');
-let register = container.querySelector('.window .row #register');
+let registerSubmit = container.querySelector('.window .row #register');
 let warning = container.querySelector('.window .warning');
 
 // Hide DOM elements after first load
@@ -63,7 +63,7 @@ function hideDOMElements() {
     hide(password);
     hide(passwordConfirmLabel);
     hide(passwordConfirm);
-    hide(register);
+    hide(registerSubmit);
     hide(registerRow);
     hide(codeLabel);
 }
@@ -71,7 +71,7 @@ function hideDOMElements() {
 hideDOMElements();
 
 // Listeners
-sendCode.addEventListener('click', e => {
+sendCodeSubmit.addEventListener('click', e => {
     e.preventDefault();
 
     let state = isEmailValidate(email.value);
@@ -84,7 +84,7 @@ sendCode.addEventListener('click', e => {
 
 });
 
-register.addEventListener('click', e => {
+registerSubmit.addEventListener('click', e => {
     e.preventDefault();
 
     let state = isFormValidated();
