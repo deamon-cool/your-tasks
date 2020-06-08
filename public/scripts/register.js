@@ -155,9 +155,9 @@ function clearPasswordsValues() {
     passwordConfirm.value = '';
 }
 
-// Removes text warning
-function removeWarning() {
-    warning.textContent = '';
+// Clears text element
+function clearMessage(element) {
+    element.textContent = '';
 }
 
 // Checks email validation
