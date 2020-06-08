@@ -11,9 +11,12 @@ const Task = require('./database/model/Task');
 
 // Controllers
 const storeUserController = require('./controller/storeUserController');
+const sendEmailCodeController = require('./controller/sendEmailCodeController');
 
 // Middlewares
 const registerValidation = require('./middleware/registerValidation');
+const emailCheck = require('./middleware/emailCheck');
+
 
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
