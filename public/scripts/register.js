@@ -137,14 +137,14 @@ function isFormValidated() {
 }
 
 // Adds to DOM warning message
-function warningMessage(msg) {
+function displayMessage(element, msg, time) {
     clearTimeout(timeout);
 
     clearPasswordsValues();
 
-    warning.textContent = msg;
+    element.textContent = msg;
 
-    timeout = setTimeout(removeWarning, 7000);
+    timeout = setTimeout(removeWarning, time);
 }
 
 // Clears passwords values
