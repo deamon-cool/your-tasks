@@ -155,11 +155,6 @@ function clearPasswordsValues() {
     passwordConfirm.value = '';
 }
 
-// Clears text element
-function clearMessage(element) {
-    element.textContent = '';
-}
-
 // Checks email validation
 function isEmailValidate(email) {
     if (!email) return false;
