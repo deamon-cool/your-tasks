@@ -86,10 +86,8 @@ sendCodeSubmit.addEventListener('click', e => {
         let data = {
             email: email.value
         };
-        sendEmail(data);
 
-        hide(sendCodeSubmit);
-        showDOMELements();
+        sendEmail(data);
     } else {
         displayMessage(warning, 'Wrong Email', 7000);
     }
