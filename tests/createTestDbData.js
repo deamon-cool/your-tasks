@@ -30,7 +30,7 @@ async function createDb() {
         password: 'aaa'
     });
 
-    let user = await User.findOne({ name: 'Damian' });
+    let user = await User.findOne({ username: 'Damian' });
 
     // create groups
     for (let i = 3; i >= 0; i--) {
