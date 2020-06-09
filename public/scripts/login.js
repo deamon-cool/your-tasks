@@ -5,8 +5,8 @@ container.innerHTML = `
     <h1>Login:</h1>
 
     <form action="/register/store/user" method="POST">
-        <label for="username">User Name:</label>
-        <input type="text" name="username" placeholder="User Name">
+        <label for="email">Email:</label>
+        <input type="text" name="email" placeholder="Email">
 
         <label for="password">Password:</label>
         <input type="password" name="password" placeholder="Password">
