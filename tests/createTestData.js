@@ -18,15 +18,19 @@ db.once('open', () => {
 
 // Create database
 async function createDb() {
-    const users = await User.find({});
-    if (users === null || users.length === 0) {
-        await User.create({
-            name: 'Damian Hehe',
-            password: '123',
-        });
-    }
+    await User.create({
+        username: 'Damian',
+        email: 'd@d.pl',
+        password: 'ddd'
+    });
 
-    let user = await User.findOne({ name: 'Damian Hehe' });
+    await User.create({
+        username: 'Aga',
+        email: 'a@a.pl',
+        password: 'aaa'
+    });
+
+    let user = await User.findOne({ name: 'Damian' });
 
     // create groups
     for (let i = 3; i >= 0; i--) {
