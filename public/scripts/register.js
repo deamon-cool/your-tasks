@@ -184,14 +184,25 @@ function isFormValidated() {
     return true;
 }
 
-// Adds message to DOM element
-function displayMessage(element, msg, time) {
-    clearTimeout(timeout);
+// Adds warning message to DOM element
+function displayWarningMessage(msg, time) {
+    clearTimeout(warningTimeout);
 
-    element.textContent = msg;
+    warning.textContent = msg;
 
-    timeout = setTimeout(() => {
-        element.textContent = '';
+    warningTimeout = setTimeout(() => {
+        warning.textContent = '';
+    }, time);
+}
+
+// Adds info message to DOM element
+function displayInfoMessage(msg, time) {
+    clearTimeout(infoTimeout);
+
+    info.textContent = msg;
+
+    infoTimeout = setTimeout(() => {
+        info.textContent = '';
     }, time);
 }
 
