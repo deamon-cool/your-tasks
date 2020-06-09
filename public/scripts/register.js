@@ -109,7 +109,7 @@ registerSubmit.addEventListener('click', e => {
 });
 
 // Send email to the server
-async function sendEmail(url, data) {
+async function sendEmail(data) {
     let url = '/register/email/code';
 
     let init = {
