@@ -159,8 +159,6 @@ function hide(element) {
     element.style.display = 'none';
 }
 
-//
-
 // Checks form validation
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === ''
