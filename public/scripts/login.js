@@ -28,7 +28,7 @@ container.innerHTML = `
 let timeout;
 
 // DOM
-let username = container.querySelector('.window input[name=username]');
+let email = container.querySelector('.window input[name=email]');
 let password = container.querySelector('.window input[name=password]');
 let submit = container.querySelector('.window .row input[type=submit]');
 let warning = container.querySelector('.window .warning');
