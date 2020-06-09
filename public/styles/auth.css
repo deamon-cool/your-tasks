@@ -111,7 +111,7 @@ body {
     color: red;
 }
 
-@keyframes showwindow {
+@keyframes opacityanimation {
     from {
         opacity: 0;
     }
