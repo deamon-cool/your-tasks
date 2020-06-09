@@ -35,10 +35,12 @@ let warning = container.querySelector('.window .warning');
 
 // Listeners
 submit.addEventListener('click', (e) => {
+    e.preventDefault();
+
     let state = isFormValidated();
 
-    if (!state) {
-        e.preventDefault();
+    if (state) {
+        // fetch data
     }
 });
 
