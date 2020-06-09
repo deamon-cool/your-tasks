@@ -86,7 +86,7 @@ sendCodeSubmit.addEventListener('click', e => {
         let data = {
             email: email.value
         };
-        sendEmail('/register/email/code', data);
+        sendEmail(data);
 
         hide(sendCodeSubmit);
         showDOMELements();
@@ -110,6 +110,8 @@ registerSubmit.addEventListener('click', e => {
 
 // Send email to the server
 async function sendEmail(url, data) {
+    let url = '/register/email/code';
+
     let init = {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
