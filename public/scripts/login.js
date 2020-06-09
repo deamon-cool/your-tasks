@@ -47,8 +47,14 @@ submit.addEventListener('click', (e) => {
 
 // Checks form validation
 function isFormValidated() {
-    if (username.value === '' || password.value === '') {
-        warningMessage('Fill out Username and Password');
+    if (email.value === '' || password.value === '') {
+        warningMessage('Fill out Email and Password');
+
+        return false;
+    }
+
+    if(!isEmailValidate(email.value)) {
+        warningMessage('Wrong Email');
 
         return false;
     }
