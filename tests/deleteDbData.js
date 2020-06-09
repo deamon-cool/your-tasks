@@ -12,6 +12,7 @@ db.once('open', () => {
     deleteDb().then(console.log('completed -> Database is deleted :)'));
 });
 
+// Deletes whole your tasks db
 async function deleteDb() {
     await mongoose.connection.db.dropDatabase('your-tasks-db');
 }
