@@ -89,7 +89,7 @@ sendCodeSubmit.addEventListener('click', e => {
 
         sendEmail(data);
     } else {
-        displayMessage(warning, 'Wrong Email', 7000);
+        displayWarningMessage('Wrong Email', 7000);
     }
 
 });
@@ -120,18 +120,16 @@ async function sendEmail(data) {
         .then(response => response.json())
         .then(data => {
             if (!data.error) {
-                displayMessage(info, data.serverOutput, 12000);
+                displayInfoMessage(data.serverOutput, 12000)
 
                 hide(sendCodeSubmit);
                 showDOMELements();
             } else {
-                displayMessage(warning, data.serverOutput, 12000);
+                displayWarningMessage(data.serverOutput, 12000)
             }
         })
         .catch(e => {
-            console.log(e);
-
-            displayMessage(warning, 'Error sending email. Try later', 12000);
+            displayWarningMessage('Error sending email. Try later', 12000);
         });
 }
 
@@ -165,19 +163,19 @@ function hide(element) {
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === ''
         || email.valu === '' || activationCode.value === '') {
-        displayMessage(warning, 'Fill out Username, Email, Activation Code, Password, Confirm Password', 7000);
+        displayWarningMessage('Fill out Username, Email, Activation Code, Password, Confirm Password', 7000);
 
         return false;
     }
 
     if (!isEmailValidate(email.value)) {
-        displayMessage(warning, 'Wrong Email', 7000);
+        displayWarningMessage('Wrong Email', 7000);
 
         return false;
     }
 
     if (password.value !== passwordConfirm.value) {
-        displayMessage(warning, 'Password and Confirm Password are incorrect', 7000);
+        displayWarningMessage('Password and Confirm Password are incorrect', 7000);
 
         return false;
     }
