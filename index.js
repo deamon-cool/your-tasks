@@ -37,7 +37,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 
-// Enpoints handlers
+// Endpoints handlers
 
 // Get site register
 app.get('/register', (req, res) => {
