@@ -117,13 +117,21 @@ async function sendEmail(data) {
     };
 
     await fetch(url, init)
-        .then(() => {
-            displayMessage(info, 'Check your email and type in your activation code here', 7000);
+        .then(response => response.json())
+        .then(data => {
+            if (!data.error) {
+                displayMessage(info, data.serverOutput, 12000);
+
+                hide(sendCodeSubmit);
+                showDOMELements();
+            } else {
+                displayMessage(warning, data.serverOutput, 12000);
+            }
         })
         .catch(e => {
             console.log(e);
 
-            displayMessage(warning, 'error', 10000);
+            displayMessage(warning, 'Error sending email. Try later', 12000);
         });
 }
 
