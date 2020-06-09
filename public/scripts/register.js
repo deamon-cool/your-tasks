@@ -120,6 +120,8 @@ async function sendEmail(data) {
         .then(response => response.json())
         .then(data => {
             if (!data.error) {
+                warning.textContent = '';
+
                 displayInfoMessage(data.serverOutput, 12000)
 
                 hide(sendCodeSubmit);
