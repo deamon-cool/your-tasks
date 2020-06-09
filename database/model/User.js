@@ -1,23 +1,21 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    name: String,
-    password: String,
+    username: {
+        type: String,
+        required: [true, 'Fill out Username'],
+    },
+    email: {
+        type: String,
+        required: [true, 'Fill out Email'],
+        unique: true
+    },
+    password: {
+        type: String,
+        required: [true, 'Fill out Password']
+    },
     groupIds: [mongoose.Types.ObjectId]
 });
-
-// const UserSchema = mongoose.Schema({
-//     name: {
-//         type: String,
-//         required: [true, 'Fill out Username'],
-//         unique: [true, 'This User exists. Change Username']
-//     },
-//     password: {
-//         type: String,
-//         required: [true, 'Fill out Password']
-//     },
-//     groupIds: [mongoose.Types.ObjectId]
-// });
 
 const User = mongoose.model('Users', UserSchema);
 
