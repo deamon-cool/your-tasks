@@ -18,6 +18,11 @@ const registerValidation = require('./middleware/registerValidation');
 const emailCheck = require('./middleware/emailCheck');
 
 
+// Mongoose configuration
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
