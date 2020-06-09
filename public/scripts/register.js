@@ -16,8 +16,6 @@ container.innerHTML = `
             <input id="send-code" type="submit" value="Send Code">
         </div>
 
-        <div class="info"></div>
-
         <label for="code">Code:</label>
         <input type="text" name="code" placeholder="Activation Code">
 
@@ -27,6 +25,7 @@ container.innerHTML = `
         <label for="confirm">Confirm Password:</label>
         <input type="password" name="confirm" placeholder="Confirm Password">
 
+        <div class="info"></div>
         <div class="warning"></div>
 
         <div id="register-row" class="row">
