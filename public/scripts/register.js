@@ -83,7 +83,6 @@ sendCodeSubmit.addEventListener('click', e => {
     let state = isEmailValidate(email.value);
 
     if (state) {
-        // fetching data
         hide(sendCodeSubmit);
         showDOMELements();
 
