@@ -105,6 +105,25 @@ registerSubmit.addEventListener('click', e => {
     }
 });
 
+// Send email to the server
+async function sendEmail(url, data) {
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    };
+
+    await fetch(url, init)
+        .then(() => {
+            displayMessage(info, 'Check your email and type in your activation code here', 7000);
+        })
+        .catch(e => {
+            console.log(e);
+
+            displayMessage(warning, 'error', 10000);
+        });
+}
+
 //Show DOM elements
 function showDOMELements() {
     show(usernameLabel);
