@@ -83,10 +83,13 @@ sendCodeSubmit.addEventListener('click', e => {
     let state = isEmailValidate(email.value);
 
     if (state) {
+        let data = {
+            email: email.value
+        };
+        sendEmail('/register/email/code', data);
+
         hide(sendCodeSubmit);
         showDOMELements();
-
-        displayMessage(info, 'Check your email and type in your activation code here', 7000);
     } else {
         displayMessage(warning, 'Wrong Email', 7000);
     }
