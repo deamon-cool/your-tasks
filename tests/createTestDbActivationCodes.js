@@ -59,6 +59,11 @@ let openDbPromise = db.once('open', () => {
     return Promise.resolve();
 });
 
+// Wating for finish all promises
+Promise.all([sampleCodesPromise, openDbPromise]).then(() => {
+    createData();
+});
+
 async function createData() {
     await ActivationCode.create({
         code: code
