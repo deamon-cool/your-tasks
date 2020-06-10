@@ -4,6 +4,15 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const ActivationCode = require('../database/model/ActivationCode');
 
+// Global variables
+let intervalID;
+let finshedIntervalCounter = 0;
+let saltRounds = 10;
+let hashCodes = [];
+let emails = ['d@a.pl', 'd@w.eu', 'k@ap.ru'];
+
+console.log(`----------------> Your emails:\n${emails}`);
+
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
