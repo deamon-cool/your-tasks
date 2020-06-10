@@ -3,3 +3,4 @@ package-lock.json
 FORME-REDME.txt
 node_modules/
 tests/testHTML.html
+tests/sendEmailTest.js
