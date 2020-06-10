@@ -64,8 +64,26 @@ Promise.all([sampleCodesPromise, openDbPromise]).then(() => {
     createData();
 });
 
+// Creates data with ActivationCodes in Db
 async function createData() {
-    await ActivationCode.create({
-        code: code
-    });
+    intervalID = setInterval(async () => {
+        for (let i = 0; i < hashCodes.length; i++) {
+            const activationCode = hashCodes[i];
+
+            await ActivationCode.create({
+                code: activationCode
+            });
+        }
+
+        console.log('----------------> completed:\nCollection ActivationCodes is filled :)')
+
+        finshedIntervalCounter += 1;
+
+        // Clear interval after 3 times
+        if (finshedIntervalCounter >= 3) {
+            clearInterval(intervalID);
+        }
+
+    }, 30000);
+
 }
