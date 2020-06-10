@@ -1,6 +1,7 @@
 //---------------------------TEST deleting test Db-------------------------------
 
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 const ActivationCode = require('../database/model/ActivationCode');
 
 // Database connection
