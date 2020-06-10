@@ -4,7 +4,7 @@ const ActivationCodeSchema = mongoose.Schema({
     code: String,
     createdAt: {
         type: Date,
-        expires: '2m',
+        expires: '5m',
         default: Date.now
     }
 });
