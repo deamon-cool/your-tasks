@@ -52,10 +52,11 @@ async function checkHashWithOriginals() {
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error :|'));
-db.once('open', () => {
-    console.log('test: connected to db :)');
 
-    createData().then(console.log('completed -> Collection ActivationCodes is filled :)'));
+let openDbPromise = db.once('open', () => {
+    console.log('----------------> test: connected to db :)');
+
+    return Promise.resolve();
 });
 
 async function createData() {
