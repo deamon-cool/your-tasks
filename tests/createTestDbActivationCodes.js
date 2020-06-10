@@ -31,6 +31,23 @@ async function createSampleCodes() {
 }
 
 let sampleCodesPromise = createSampleCodes();
+
+// Checks if hashes are suited
+async function checkHashWithOriginals() {
+    let checks = [];
+
+    for (let i = 0; i < hashCodes.length; i++) {
+        const hashCode = hashCodes[i];
+        const email = emails[i];
+
+        const state = await bcrypt.compare(email, hashCode);
+
+        checks.push(state);
+    }
+
+    console.log(`----------------> Checks emails with hashCodes:\n${checks}`);
+}
+
 // Database connection
 mongoose.connect('mongodb://localhost/your-tasks-db', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
