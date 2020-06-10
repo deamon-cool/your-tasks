@@ -1,6 +1,17 @@
-module.exports = (req, res) => {
+const bcrypt = require('bcrypt');
+const ActivationCode = require('../database/model/ActivationCode');
+
+module.exports = async (req, res) => {
     try {
-        let email = req.body.email;
+        const email = req.body.email;
+
+        const activationCode = await bcrypt.hash(email, 10);
+
+        await ActivationCode.create({
+            email,
+            activationCode
+        });
+
         // send email
 
         console.log(`Sent email to ${email}`);
