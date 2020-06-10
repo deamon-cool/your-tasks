@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
             from: 'youremail@gmail.com',
             to: email,
             subject: 'Copy Activation Code',
-            text: `$2b$10$TW7/Sz3E3zwlGrMW26AjzuRU4MS4pn6tkIIsLMs8AMPe2gFDgP6R2`
+            text: activationCode
         };
 
         transport.sendMail(message, (err, info) => {
