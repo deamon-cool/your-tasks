@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const ActivationCodeSchema = mongoose.Schema({
-    code: String,
     email: String,
+    code: String,
     createdAt: {
         type: Date,
         expires: '5m',
