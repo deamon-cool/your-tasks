@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
         // Sends email
         transport.sendMail(message, (err, info) => {
             if (err) {
-                return res.send({ error: true, serverOutput: 'Cannot sant email' });
+                return res.send({ error: true, serverOutput: 'Could not send email' });
             } else {
                 return res.send({ error: false, serverOutput: 'Check your email and type in your Activation Code' });
             }
