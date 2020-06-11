@@ -4,3 +4,5 @@ FORME-REDME.txt
 node_modules/
 tests/testHTML.html
 tests/sendEmailTest.js
+config/productionData.json
+tests/getProductionDataTest.js
