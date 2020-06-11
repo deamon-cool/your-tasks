@@ -1,15 +1,16 @@
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 const ActivationCode = require('../database/model/ActivationCode');
+const data = require('../config/productionData.json');
 
-// email configuration
+// Email configuration
 const transport = nodemailer.createTransport({
-    host: 'gmail',
+    host: data.email.host,
     secure: true,
     port: 465,
     auth: {
-        user: 'youremail@gmail.com',
-        pass: 'password'
+        user: data.email.auth.user,
+        pass: data.email.auth.pass
     }
 });
 
@@ -26,7 +27,7 @@ module.exports = async (req, res) => {
 
         // Message configuration
         const message = {
-            from: 'youremail@gmail.com',
+            from: data.email.auth.user,
             to: email,
             subject: 'Copy Activation Code',
             text: activationCode
