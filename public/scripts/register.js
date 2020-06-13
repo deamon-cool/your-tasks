@@ -146,24 +146,18 @@ async function sendEmail(data) {
 async function sendData(data) {
     let url = '/register/store/user';
 
+// Fetches data to the server
+async function fetchData(data, url) {
     let init = {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     };
 
-    await fetch(url, init)
-        .then(response => response.json())
-        .then(data => {
-            if (!data.error) {
-                warning.textContent = '';
-            } else {
-                displayWarningMessage(data.serverOutput, 12000)
-            }
-        })
-        .catch(e => {
-            displayWarningMessage('Register error. Try later', 12000);
-        });
+    let promise = await fetch(url, init)
+        .then(response => response.json());
+
+    return promise;
 }
 
 //Show DOM elements
