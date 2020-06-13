@@ -142,6 +142,30 @@ async function sendEmail(data) {
         });
 }
 
+// Sends user data to the server
+async function sendData(data) {
+    let url = '/register/store/user';
+
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    };
+
+    await fetch(url, init)
+        .then(response => response.json())
+        .then(data => {
+            if (!data.error) {
+                warning.textContent = '';
+            } else {
+                displayWarningMessage(data.serverOutput, 12000)
+            }
+        })
+        .catch(e => {
+            displayWarningMessage('Register error. Try later', 12000);
+        });
+}
+
 //Show DOM elements
 function showDOMELements() {
     show(usernameLabel);
