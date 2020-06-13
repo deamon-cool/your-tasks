@@ -21,8 +21,8 @@ module.exports = async (req, res) => {
         const activationCode = await bcrypt.hash(userEmail, 1);
 
         await ActivationCode.create({
-            userEmail,
-            activationCode
+            email: userEmail,
+            code: activationCode
         });
 
         // Message configuration
