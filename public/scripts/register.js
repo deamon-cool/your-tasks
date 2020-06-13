@@ -100,7 +100,14 @@ registerSubmit.addEventListener('click', e => {
     let state = isFormValidated();
 
     if (state) {
-        // fetching data
+        let data = {
+            username: username.value,
+            email: email.value,
+            code: activationCode.value,
+            password: password.value
+        };
+
+        sendData(data);
     } else {
         clearPasswordsValues();
     }
