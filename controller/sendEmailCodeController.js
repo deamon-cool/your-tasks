@@ -18,7 +18,7 @@ module.exports = async (req, res) => {
     try {
         const email = req.body.email;
 
-        const activationCode = await bcrypt.hash(email, 10);
+        const activationCode = await bcrypt.hash(email, 1);
 
         await ActivationCode.create({
             email,
