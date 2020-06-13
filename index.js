@@ -16,6 +16,7 @@ const sendEmailCodeController = require('./controller/sendEmailCodeController');
 // Middlewares
 const registerValidation = require('./middleware/registerValidation');
 const emailCheck = require('./middleware/emailCheck');
+const activationCodeValidation = require('./middleware/activationCodeValidation');
 
 
 // Mongoose configuration
