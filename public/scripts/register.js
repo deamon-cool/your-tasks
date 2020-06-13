@@ -117,24 +117,17 @@ registerSubmit.addEventListener('click', e => {
 async function sendEmail(data) {
     let url = '/register/email/code';
 
-    let init = {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    };
-
-    await fetch(url, init)
-        .then(response => response.json())
-        .then(data => {
-            if (!data.error) {
+    await fetchData(data, url)
+        .then(responseData => {
+            if (!responseData.error) {
                 warning.textContent = '';
 
-                displayInfoMessage(data.serverOutput, 12000)
+                displayInfoMessage(responseData.serverOutput, 12000)
 
                 hide(sendCodeSubmit);
                 showDOMELements();
             } else {
-                displayWarningMessage(data.serverOutput, 12000)
+                displayWarningMessage(responseData.serverOutput, 12000)
             }
         })
         .catch(e => {
