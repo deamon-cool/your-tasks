@@ -16,19 +16,19 @@ const transport = nodemailer.createTransport({
 
 module.exports = async (req, res) => {
     try {
-        const email = req.body.email;
+        const userEmail = req.body.email;
 
-        const activationCode = await bcrypt.hash(email, 1);
+        const activationCode = await bcrypt.hash(userEmail, 1);
 
         await ActivationCode.create({
-            email,
+            userEmail,
             activationCode
         });
 
         // Message configuration
         const message = {
             from: data.email.auth.user,
-            to: email,
+            to: userEmail,
             subject: 'Copy Activation Code',
             text: activationCode
         };
