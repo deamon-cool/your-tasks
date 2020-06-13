@@ -49,7 +49,7 @@ app.get('/register', (req, res) => {
 app.post('/register/email/code', emailCheck, sendEmailCodeController);
 
 // Store new User in Db
-app.post('/register/store/user', registerValidation, storeUserController);
+app.post('/register/store/user', activationCodeValidation, registerValidation, storeUserController);
 
 
 app.get('/login', (req, res) => {
