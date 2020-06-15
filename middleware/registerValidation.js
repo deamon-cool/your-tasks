@@ -22,4 +22,5 @@ module.exports = (req, res, next) => {
         console.log('Err for: registerValidation ----------------------------------------------------->\n' + e);
 
         return res.redirect(400, '/error');
-    };
+    }
+}
