@@ -137,7 +137,7 @@ async function sendEmail(data) {
 
 // Sends user data to the server
 async function sendData(data) {
-    let url = '/register/store/use';
+    let url = '/register/store/user';
 
     await fetchData(data, url)
         .then(responseData => {
