@@ -13,7 +13,7 @@ module.exports = (req, res, next) => {
             });
         }
 
-        if (emailValidator.validate(email)) {
+        if (!emailValidator.validate(email)) {
             return res.send({ error: true, serverOutput: 'Wrong Email' });
         }
 
