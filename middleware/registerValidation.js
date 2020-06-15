@@ -1,6 +1,6 @@
 const emailValidator = require('email-validator');
 
-module.exports = async (req, res, next) => {
+module.exports = (req, res, next) => {
     try {
         const username = req.body.username;
         const email = req.body.email;
