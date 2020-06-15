@@ -1,6 +1,9 @@
-module.exports = async (req, res, next) => {
-    const user = req.body;
-    const userName = user.username;
+module.exports = async (req, res) => {
+    try {
 
-    console.log(user);
-}
+    } catch (e) {
+        console.log('Err for: storeUserController ----------------------------------------------------->\n' + e);
+
+        return res.redirect(400, '/error');
+    }
+};
