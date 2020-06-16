@@ -169,6 +169,8 @@ async function sendData(data) {
             warning.textContent = '';
         } else {
             displayWarningMessage(newData.serverOutput, messageTime)
+
+            clearPasswordsValues();
         }
     } catch (e) {
         displayWarningMessage('Register error. Try later', messageTime);
