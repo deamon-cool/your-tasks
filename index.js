@@ -51,7 +51,7 @@ app.post('/register/email/code', emailCheck, sendEmailCodeController);
 // Store new User in Db
 app.post('/register/store/user', registerValidation, activationCodeValidation, storeUserController);
 
-
+// Get site login
 app.get('/login', (req, res) => {
     res.sendFile('login.html', { root: `${__dirname}/public` });
 });
