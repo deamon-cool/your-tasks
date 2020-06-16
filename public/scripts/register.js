@@ -139,6 +139,12 @@ async function sendEmail(data) {
 async function sendData(data) {
     let url = '/register/store/user';
 
+    let init = {
+        method: 'POST',
+        redirect: 'follow',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    };
 }
 
 // Fetches data to the server
