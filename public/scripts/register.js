@@ -42,6 +42,7 @@ container.innerHTML = `
 // Global variables
 let warningTimeout;
 let infoTimeout;
+let messageTime = 15000; // 15000ms = 15s
 let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
 // DOM
