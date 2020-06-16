@@ -139,16 +139,6 @@ async function sendEmail(data) {
 async function sendData(data) {
     let url = '/register/store/user';
 
-    await fetchData(data, url)
-        .then(responseData => {
-            if (!responseData.error) {
-                warning.textContent = '';
-            } else {
-                displayWarningMessage(responseData.serverOutput, 12000)
-            }
-        }).catch(e => {
-            displayWarningMessage('Register error. Try later', 12000);
-        });
 }
 
 // Fetches data to the server
