@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
             password: hashedPassword
         });
 
-        return res.redirect('/login');
+        return res.redirect(301, '/login');
     } catch (e) {
         console.log('Err for: storeUserController ----------------------------------------------------->\n' + e);
 
