@@ -145,6 +145,26 @@ async function sendData(data) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     };
+
+    try {
+        let response = await fetch(url, init);
+
+        if (response.redirected) {
+            window.location.href = response.url;
+
+            return;
+        }
+
+        let newData = await response.json();
+
+        if (!newData.error) {
+            warning.textContent = '';
+        } else {
+            displayWarningMessage(newData.serverOutput, 12000)
+        }
+    } catch (e) {
+        displayWarningMessage('Register error. Try later', 12000);
+    }
 }
 
 // Fetches data to the server
