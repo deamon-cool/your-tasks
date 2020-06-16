@@ -175,20 +175,6 @@ async function sendData(data) {
     }
 }
 
-// Fetches data to the server
-async function fetchData(data, url) {
-    let init = {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    };
-
-    let promise = await fetch(url, init)
-        .then(response => response.json());
-
-    return promise;
-}
-
 //Show DOM elements
 function showDOMELements() {
     show(usernameLabel);
