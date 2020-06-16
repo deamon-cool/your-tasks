@@ -123,16 +123,16 @@ async function sendEmail(data) {
             if (!responseData.error) {
                 warning.textContent = '';
 
-                displayInfoMessage(responseData.serverOutput, 12000)
+                displayInfoMessage(responseData.serverOutput, messageTime)
 
                 hide(sendCodeSubmit);
                 showDOMELements();
             } else {
-                displayWarningMessage(responseData.serverOutput, 12000)
+                displayWarningMessage(responseData.serverOutput, messageTime)
             }
         })
         .catch(e => {
-            displayWarningMessage('Error sending email. Try later', 12000);
+            displayWarningMessage('Error sending email. Try later', messageTime);
         });
 }
 
@@ -161,10 +161,10 @@ async function sendData(data) {
         if (!newData.error) {
             warning.textContent = '';
         } else {
-            displayWarningMessage(newData.serverOutput, 12000)
+            displayWarningMessage(newData.serverOutput, messageTime)
         }
     } catch (e) {
-        displayWarningMessage('Register error. Try later', 12000);
+        displayWarningMessage('Register error. Try later', messageTime);
     }
 }
 
@@ -210,19 +210,19 @@ function hide(element) {
 function isFormValidated() {
     if (username.value === '' || password.value === '' || passwordConfirm.value === ''
         || email.valu === '' || activationCode.value === '') {
-        displayWarningMessage('Fill out Username, Email, Activation Code, Password, Confirm Password', 7000);
+        displayWarningMessage('Fill out Username, Email, Activation Code, Password, Confirm Password', messageTime);
 
         return false;
     }
 
     if (!isEmailValidate(email.value)) {
-        displayWarningMessage('Wrong Email', 7000);
+        displayWarningMessage('Wrong Email', messageTime);
 
         return false;
     }
 
     if (password.value !== passwordConfirm.value) {
-        displayWarningMessage('Password and Confirm Password are incorrect', 7000);
+        displayWarningMessage('Password and Confirm Password are incorrect', messageTime);
 
         return false;
     }
