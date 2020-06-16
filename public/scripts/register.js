@@ -118,17 +118,24 @@ registerSubmit.addEventListener('click', e => {
 async function sendEmail(data) {
     let url = '/register/email/code';
 
-    await fetchData(data, url)
-        .then(responseData => {
-            if (!responseData.error) {
+    let init = {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    };
+
+    await fetch(url, init)
+        .then(response => response.json())
+        .then(newData => {
+            if (!newData.error) {
                 warning.textContent = '';
 
-                displayInfoMessage(responseData.serverOutput, messageTime)
+                displayInfoMessage(newData.serverOutput, messageTime)
 
                 hide(sendCodeSubmit);
                 showDOMELements();
             } else {
-                displayWarningMessage(responseData.serverOutput, messageTime)
+                displayWarningMessage(newData.serverOutput, messageTime)
             }
         })
         .catch(e => {
