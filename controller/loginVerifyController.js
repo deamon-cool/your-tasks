@@ -1,7 +1,7 @@
 const User = require('../database/model/User');
 const bcrypt = require('bcrypt');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
     try {
 
         return res.send({ error: true, serverOutput: 'Could not log in' });
