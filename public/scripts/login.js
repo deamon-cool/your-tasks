@@ -42,7 +42,12 @@ submit.addEventListener('click', (e) => {
     let state = isFormValidated();
 
     if (state) {
-        // fetch data
+        data = {
+            email: email.value,
+            password: password.value
+        };
+
+        sendData(data);
     }
 });
 
