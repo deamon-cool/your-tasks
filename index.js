@@ -12,6 +12,7 @@ const Task = require('./database/model/Task');
 // Controllers
 const storeUserController = require('./controller/storeUserController');
 const sendEmailCodeController = require('./controller/sendEmailCodeController');
+const loginVerifyController = require('./controller/loginVerifyController');
 
 // Middlewares
 const registerValidation = require('./middleware/registerValidation');
@@ -57,12 +58,7 @@ app.get('/login', (req, res) => {
 });
 
 // Verify User
-app.post('login/verify', (req, res) => {
-    const user = req.body;
-    const userName = user.username;
-
-    console.log(user);
-});
+app.post('login/verify', loginVerifyController);
 
 // Load first group, its lists and its tasks
 app.get('/main', async (req, res) => {
