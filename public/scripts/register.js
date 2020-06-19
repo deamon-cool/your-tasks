@@ -168,7 +168,7 @@ async function sendData(data) {
         if (!newData.error) {
             warning.textContent = '';
         } else {
-            displayWarningMessage(newData.serverOutput, messageTime)
+            displayWarningMessage(newData.serverOutput, messageTime);
 
             clearPasswordsValues();
         }
