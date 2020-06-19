@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
                 <p>It's just an email verification. We just need to know that you are you :)</p>
                 <p>This is your verification code:</p>
                 <h2><b>${activationCode}</b></h2>
-                <p>Please type this code into <b>Activation Code</b> on our website and then fill out the rest stuff.</p>
+                <p>Please copy this code and paste into <b>Activation Code</b> on our website and then fill out the rest stuff.</p>
                 <p><i>You’re receiving this email because you recently created a new Your Tasks account.
                 If this wasn’t you, please ignore this email.</i></p>
             `
