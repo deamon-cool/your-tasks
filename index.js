@@ -58,7 +58,7 @@ app.get('/login', (req, res) => {
 });
 
 // Verify User
-app.post('login/verify', loginVerifyController);
+app.post('/login/verify', loginVerifyController);
 
 // Load first group, its lists and its tasks
 app.get('/main', async (req, res) => {
