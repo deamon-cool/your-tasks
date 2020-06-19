@@ -103,3 +103,8 @@ function isEmailValidate(email) {
 
     return true;
 }
+
+// Clears password value
+function clearPasswordValue() {
+    password.value = '';
+}
