@@ -26,6 +26,7 @@ container.innerHTML = `
 
 // Global variables
 let timeout;
+let messageTime = 15000; // 15000ms = 15s
 let tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
 // DOM
@@ -70,7 +71,7 @@ function warningMessage(msg) {
 
     warning.textContent = msg;
 
-    timeout = setTimeout(removeWarning, 7000);
+    timeout = setTimeout(removeWarning, messageTime);
 }
 
 // Removes text warning
