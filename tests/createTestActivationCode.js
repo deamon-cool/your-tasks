@@ -14,7 +14,7 @@ db.once('open', () => {
 async function createActivationCodeInDb() {
     await ActivationCode.create({
         email: 'w@w.pl',
-        code: '$2b$04$nBVp/Fov6yPFy4G7gs2pNOHi.54QWNRsf8WjX45hQs2X0.7V.Qk/O'
+        code: 'a'
     });
 
     return Promise.resolve();
