@@ -51,6 +51,39 @@ submit.addEventListener('click', (e) => {
     }
 });
 
+// Sends login data to the server
+async function sendData(data) {
+    let url = '/login/verify';
+    let init = {
+        method: 'POST',
+        redirect: 'follow',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    }
+
+    try {
+        let response = await fetch(url, init);
+
+        if (response.redirected) {
+            window.location.href = response.url;
+
+            return;
+        }
+
+        let newData = await response.json();
+
+        if (!newData.error) {
+            warning.textContent = '';
+        } else {
+            warningMessage(newData.serverOutput, messageTime);
+
+            clearPasswordValue();
+        }
+    } catch (e) {
+        warningMessage('Login error. Try later', messageTime);
+    }
+}
+
 // Checks form validation
 function isFormValidated() {
     if (email.value === '' || password.value === '') {
