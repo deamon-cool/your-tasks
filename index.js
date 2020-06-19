@@ -56,6 +56,7 @@ app.get('/login', (req, res) => {
     res.sendFile('login.html', { root: `${__dirname}/public` });
 });
 
+// Verify User
 app.post('login/verify', (req, res) => {
     const user = req.body;
     const userName = user.username;
