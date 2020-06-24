@@ -303,9 +303,9 @@ app.delete('/main/delete/tasks/:listid', async (req, res) => {
 // });
 
 
-// If none reponsed then this is a difault endpoint
+// If none responsed then this is a default endpoint
 app.get('/*', (req, res) => {
-    res.sendFile('login.html', { root: `${__dirname}/public` });
+    res.redirect(404, '/error');
 });
 
 
