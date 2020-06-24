@@ -35,7 +35,7 @@ container.innerHTML = `
 
     <p class="redirect"><a href="/login">Login...</a></p>
 
-    <p><a href="/register/privacy">Privacy</a></p>
+    <p><a href="/info">Info</a></p>
 </div>
 `;
 

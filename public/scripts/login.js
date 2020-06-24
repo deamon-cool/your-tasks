@@ -20,7 +20,7 @@ container.innerHTML = `
 
     <p class="redirect"><a href="/register">Register...</a></p>
 
-    <p><a href="/register/privacy">Privacy</a></p>
+    <p><a href="/info">Info</a></p>
 </div>
 `;
 
