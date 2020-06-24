@@ -6,7 +6,7 @@ module.exports = async (req, res) => {
         const user = await User.findOne({ email: req.body.email });
 
         if (user === null) {
-            return res.send({ error: true, serverOutput: 'Not found User' });
+            return res.send({ error: true, serverOutput: 'User not found' });
         }
 
         let passwordCorrect = await bcrypt.compare(req.body.password, user.password);
